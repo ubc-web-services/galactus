@@ -1,0 +1,196 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the galactus theme.
+ */
+
+use Drupal\Component\Utility\String;
+use Drupal\Component\Utility\Xss;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function galactus_preprocess_html(&$variables) {
+  // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-first';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-second';
+  }
+  else {
+    $variables['attributes']['class'][] = 'layout-no-sidebars';
+  }
+
+  if (!empty($variables['page']['featured'])) {
+    $variables['attributes']['class'][] = 'featured';
+  }
+
+  if (!empty($variables['page']['triptych_first'])
+    || !empty($variables['page']['triptych_middle'])
+    || !empty($variables['page']['triptych_last'])) {
+    $variables['attributes']['class'][] = 'triptych';
+  }
+
+  if (!empty($variables['page']['footer_firstcolumn'])
+    || !empty($variables['page']['footer_secondcolumn'])
+    || !empty($variables['page']['footer_thirdcolumn'])
+    || !empty($variables['page']['footer_fourthcolumn'])) {
+    $variables['attributes']['class'][] = 'footer-columns';
+  }
+  
+  // add in custom theme variables so they are available in html.twig
+  $variables['color_option'] = theme_get_setting('clf_clf_theme_new');
+  $variables['layout_option2'] = theme_get_setting('clf_layout');
+  
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function galactus_preprocess_page(&$variables) {
+  // Set the options that apply to both page and maintenance page.
+  _galactus_process_page($variables);
+
+  // Since the title and the shortcut link are both block level elements,
+  // positioning them next to each other is much simpler with a wrapper div.
+  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
+    // Add a wrapper div using the title_prefix and title_suffix render
+    // elements.
+    $variables['title_prefix']['shortcut_wrapper'] = array(
+      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#weight' => 100,
+    );
+    $variables['title_suffix']['shortcut_wrapper'] = array(
+      '#markup' => '</div>',
+      '#weight' => -99,
+    );
+    // Make sure the shortcut link is the first item in title_suffix.
+    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+  }
+  
+  // add in our custom theme variables so we can use them in page.twig
+  // general options
+  $variables['layout_option'] = theme_get_setting('clf_layout');
+  $variables['mobilenav_option'] = theme_get_setting('clf_navoption') ? FALSE : TRUE;
+  $variables['campus_option'] = theme_get_setting('clf_unit_campus');
+  $variables['faculty_option'] = theme_get_setting('clf_faculty') ? FALSE : TRUE;
+  $variables['faculty_name'] = theme_get_setting('clf_faculty_name');
+  $variables['unit_name'] = theme_get_setting('clf_unitname');
+  $variables['breadcrumb_option'] = theme_get_setting('breadcrumb_name') ? TRUE : FALSE;
+  
+  // search options
+  $variables['searchlabel_option'] = theme_get_setting('clf_searchlabel', $theme);
+  $variables['searchdomain_option'] = theme_get_setting('clf_searchdomain', $theme);
+  //$variables['searchoverride_option'] = theme_get_setting('clf_subunit_override');
+  
+  // footer options
+  $variables['address_option'] = theme_get_setting('clf_streetaddr');
+  $variables['locality_option'] = theme_get_setting('clf_locality');
+  $variables['region_option'] = theme_get_setting('clf_region');
+  $variables['country_option'] = theme_get_setting('clf_country');
+  $variables['postal_option'] = theme_get_setting('clf_postal');
+  $variables['phone_option'] = theme_get_setting('clf_telephone');
+  $variables['fax_option'] = theme_get_setting('clf_fax');
+  $variables['email_option'] = theme_get_setting('clf_email');
+  $variables['website_option'] = theme_get_setting('clf_website');
+  
+  // social media options
+  $variables['facebook_option'] = theme_get_setting('clf_social_facebook');
+  $variables['twitter_option'] = theme_get_setting('clf_social_twitter');
+  $variables['linkedin_option'] = theme_get_setting('clf_social_linkedin');
+  $variables['googleplus_option'] = theme_get_setting('clf_social_googleplus');
+  $variables['youtube_option'] = theme_get_setting('clf_social_youtube');
+  
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for maintenance-page.html.twig.
+ */
+function galactus_preprocess_maintenance_page(&$variables) {
+  // By default, site_name is set to Drupal if no db connection is available
+  // or during site installation. Setting site_name to an empty string makes
+  // the site and update pages look cleaner.
+  // @see template_preprocess_maintenance_page
+  if (!$variables['db_is_active']) {
+    $variables['site_name'] = '';
+  }
+
+  // galactus has custom styling for the maintenance page.
+  $variables['#attached']['library'][] = 'galactus/maintenance_page';
+
+  // Set the options that apply to both page and maintenance page.
+  _galactus_process_page($variables);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function galactus_preprocess_node(&$variables) {
+  // Remove the "Add new comment" link on teasers or when the comment form is
+  // displayed on the page.
+  if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+    unset($variables['content']['links']['comment']['#links']['comment-add']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function galactus_preprocess_block(&$variables) {
+  // Add a clearfix class to system branding blocks.
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    $variables['attributes']['class'][] = 'clearfix';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu.html.twig.
+ */
+function galactus_preprocess_menu(&$variables) {
+  $variables['attributes']['class'][] = 'clearfix';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for field.html.twig.
+ *
+ * @see template_preprocess_field()
+ */
+function galactus_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if ($element['#field_type'] == 'taxonomy_term_reference') {
+    $variables['title_attributes']['class'][] = 'field-label';
+    if ($variables['element']['#label_display'] == 'inline') {
+      $variables['title_attributes']['class'][] = 'inline';
+    }
+  }
+}
+
+/**
+ * Helper function for handling the site name and slogan.
+ */
+function _galactus_process_page(&$variables) {
+  $site_config = \Drupal::config('system.site');
+  // Always print the site name and slogan, but if they are toggled off, we'll
+  // just hide them visually.
+  $variables['hide_site_name']  = theme_get_setting('features.name') ? FALSE : TRUE;
+  $variables['hide_site_slogan'] = theme_get_setting('features.slogan') ? FALSE : TRUE;
+  if ($variables['hide_site_name']) {
+    // If toggle_name is FALSE, the site_name will be empty, so we rebuild it.
+    $variables['site_name'] = String::checkPlain($site_config->get('name'));
+  }
+  if ($variables['hide_site_slogan']) {
+    // If toggle_site_slogan is FALSE, the site_slogan will be empty, so we
+    // rebuild it.
+    $variables['site_slogan'] = Xss::filterAdmin($site_config->get('slogan'));
+  }
+}

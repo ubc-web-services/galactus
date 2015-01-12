@@ -19,6 +19,11 @@ sites/all/README.txt
 sites/all/modules/README.txt
 sites/all/themes/README.txt
 
+# ignore espresso settings and codekit files
+*.espressostorage
+*.codekit
+*.espproj
+
 # Ignore everything but the "sites" folder ( for non core developer )
 .htaccess
 web.config

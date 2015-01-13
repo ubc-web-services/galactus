@@ -58,11 +58,11 @@ function galactus_form_system_theme_settings_alter(&$form, &$form_state) {
     '#group' => 'clf',
   );
 
-  $form['general']['clf_clf_theme_new'] = array(
+  $form['general']['clf_theme_colour'] = array(
     '#type' => 'select',
     '#title' => t('CLF Colour Scheme'),
     '#description' => t('View <a href="http://clf.ubc.ca/design-specifications/">colour theme options</a> and design specifications.'),
-    '#default_value' => theme_get_setting('clf_clf_theme_new'),
+    '#default_value' => theme_get_setting('clf_theme_colour'),
     '#options' => array(
       '' => t('White on Blue'),
       '-wg' => t('White on Grey'),

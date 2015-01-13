@@ -49,8 +49,9 @@ function galactus_preprocess_html(&$variables) {
   }
   
   // add in custom theme variables so they are available in html.twig
-  $variables['color_option'] = theme_get_setting('clf_clf_theme_new');
+  $variables['color_option'] = theme_get_setting('clf_theme_colour');
   $variables['layout_option2'] = theme_get_setting('clf_layout');
+  $variables['unuglify'] = theme_get_setting('unuglify') ? TRUE : FALSE;
   
 }
 

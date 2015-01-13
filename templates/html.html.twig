@@ -26,23 +26,34 @@
  * @ingroup themeable
  */
 #}
+{% if layout_option2 == 'full' %}
 {%
-  set fullClasses = [
+  set layoutClasses = [
     'full-width',
   ]
 %}
+{% endif %}
+{% if layout_option2 == 'fluid' %}
 {%
-  set fluidClasses = [
+  set layoutClasses = [
     'full-width',
     'full-width-left',
   ]
 %}
+{% endif %}
+{% if unuglify %}
+{%
+  set niceClasses = [
+    'make-nice',
+  ]
+%}
+{% endif %}
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
     {{ head }}
     <title>{{ head_title }}</title>
-    <link href="//cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full{{ color_option2 }}.min.css" rel="stylesheet">
+    <link href="//cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full{{ color_option }}.min.css" rel="stylesheet">
     <!--[if lte IE 7]>
     <link href="//cdn.ubc.ca/clf/7.0.4/css/font-awesome-ie7.css" rel="stylesheet">
     <![endif]-->
@@ -58,15 +69,7 @@
     {{ scripts }}
     
   </head>
-  {% if layout_option2 == 'full' %}
-  <body{{ attributes.addClass(fullClasses) }}>
-  {% endif %}
-  {% if layout_option2 == 'fluid' %}
-  <body{{ attributes.addClass(fluidClasses) }}>
-  {% endif %}
-  {% if layout_option2 == '' %}
-  <body{{ attributes }}>
-  {% endif %}
+  <body{{ attributes.addClass(layoutClasses).addClass(niceClasses) }}>
     <a href="#main-content" class="visually-hidden focusable skip-link">
       {{ 'Skip to main content'|t }}
     </a>

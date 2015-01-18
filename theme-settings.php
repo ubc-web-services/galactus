@@ -174,14 +174,14 @@ function galactus_form_system_theme_settings_alter(&$form, &$form_state) {
   );
  
   $form['unit']['breadcrumb_display'] = array(
-   '#type' => 'select',
-   '#title' => t('Breadcrumbs Display Option'),
+   '#type' => 'checkbox',
+   '#title' => t('Breadcrumb Display Option (Highly Recommended)'),
    '#description' => t('See <a href="http://clf.ubc.ca/parts-of-the-clf/#breadcrumbs" title="earn more about the breadcrumbs guidelines" target="_blank">breadcrumbs guidelines</a>.'),
    '#default_value' => theme_get_setting('breadcrumb_display'),
-   '#options' => array(
-     'yes' => t('Yes (Highly Recommended'),
-     'no' => t('No'),
-   ),
+   //'#options' => array(
+   //  'yes' => t('Yes (Highly Recommended'),
+   //  'no' => t('No'),
+   //),
   );
   
   

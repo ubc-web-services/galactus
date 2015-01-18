@@ -142,6 +142,17 @@ function galactus_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
+  // Add node--node_type--view_mode.html.twig suggestions
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['elements']['#node']->bundle() . '__' . $variables['view_mode'];
+
+  // Add node--view_mode.html.twig suggestions
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
+
+  // Add a class for the view mode.
+  if (!$variables['teaser']) {
+    $variables['content_attributes'][] = 'view-mode-' . $variables['view_mode'];
+  }
+  
 }
 
 /**

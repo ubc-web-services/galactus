@@ -90,8 +90,8 @@ function galactus_preprocess_page(&$variables) {
   $variables['breadcrumb_option'] = theme_get_setting('breadcrumb_name') ? TRUE : FALSE;
   
   // search options
-  $variables['searchlabel_option'] = theme_get_setting('clf_searchlabel', $theme);
-  $variables['searchdomain_option'] = theme_get_setting('clf_searchdomain', $theme);
+  $variables['searchlabel_option'] = theme_get_setting('clf_searchlabel');
+  $variables['searchdomain_option'] = theme_get_setting('clf_searchdomain');
   //$variables['searchoverride_option'] = theme_get_setting('clf_subunit_override');
   
   // footer options
@@ -142,17 +142,18 @@ function galactus_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
+  /**
   // Add node--node_type--view_mode.html.twig suggestions
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['elements']['#node']->bundle() . '__' . $variables['view_mode'];
-
+  
   // Add node--view_mode.html.twig suggestions
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
-
+  
   // Add a class for the view mode.
   if (!$variables['teaser']) {
     $variables['content_attributes'][] = 'view-mode-' . $variables['view_mode'];
   }
-  
+  **/
 }
 
 /**
@@ -191,7 +192,7 @@ function galactus_preprocess_field(&$variables) {
  * Helper function for handling the site name and slogan.
  */
 function _galactus_process_page(&$variables) {
-  $site_config = \Drupal::config('system.site');
+  /*$site_config = \Drupal::config('system.site');
   // Always print the site name and slogan, but if they are toggled off, we'll
   // just hide them visually.
   $variables['hide_site_name']  = theme_get_setting('features.name') ? FALSE : TRUE;
@@ -204,5 +205,5 @@ function _galactus_process_page(&$variables) {
     // If toggle_site_slogan is FALSE, the site_slogan will be empty, so we
     // rebuild it.
     $variables['site_slogan'] = Xss::filterAdmin($site_config->get('slogan'));
-  }
+  }*/
 }

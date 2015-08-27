@@ -52,7 +52,7 @@
 <html{{ html_attributes }}>
   <head>
     {{ head }}
-    <title>{{ head_title }}</title>
+    <title>{{ head_title|safe_join(' | ') }}</title>
     <link href="//cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full{{ color_option }}.min.css" rel="stylesheet">
     <!--[if lte IE 7]>
     <link href="//cdn.ubc.ca/clf/7.0.4/css/font-awesome-ie7.css" rel="stylesheet">

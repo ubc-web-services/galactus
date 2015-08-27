@@ -75,6 +75,13 @@
  * @see html.html.twig
  */
 #}
+{% if layout_option == 'full' or 'fluid' %}
+{%
+  set layoutClasses = [
+    'full-width',
+  ]
+%}
+{% endif %}
 
 {% if layout_option == '' %}
 <div class="container">
@@ -194,8 +201,11 @@
   <!-- UBC Unit Breadcrumbs -->
   {% if layout_option == 'full' or 'fluid' %}
   <div class="full-width-container">
+    
   {% endif %}
-  {% if breadcrumb_option == '' %}{{ breadcrumb }}{% endif %}
+  {% if breadcrumb_option == '' %}
+    {{ breadcrumb }}
+  {% endif %}
   <!-- End of UBC Unit Breadcrumbs -->
   {% if messages %}
     {% if layout_option == '' %}
@@ -359,7 +369,7 @@
         <ul>
           <li><a href="//cdn.ubc.ca/clf/ref/emergency">Emergency Procedures</a> <span class="divider">|</span></li>
           <li><a href="//cdn.ubc.ca/clf/ref/terms">Terms of Use</a> <span class="divider">|</span></li>
-          <li><a href="//cdn.ubc.ca/clf/ref/copyright">Copyright</a> <span class="divider">|</span></li>
+          <li><a href="//cdn.ubc.ca/clf/ref/copyright">UBC Copyright</a> <span class="divider">|</span></li>
           <li><a href="//cdn.ubc.ca/clf/ref/accessibility">Accessibility</a></li>
         </ul>
       </div>

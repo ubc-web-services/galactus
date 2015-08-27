@@ -1,9 +1,8 @@
-{% extends "@classy/block--search-form-block.html.twig" %}
+{# % extends "@classy/block--search-form-block.html.twig" % #}
 {#
 /**
  * @file
- * clf's theme implementation for a search form block. Extends Classy's
- * search form block template.
+ * clf's theme implementation for a search form block.
  *
  * Available variables:
  * - content: The content of this block.
@@ -16,8 +15,25 @@
  * @ingroup themeable
  */
 #}
-{% block content %}
+{# % block content %}
   <div{{ content_attributes.addClass('content', 'container-inline') }}>
     {{ parent() }}
   </div>
-{% endblock %}
+  { % endblock % #}
+
+{%
+  set classes = [
+    'content',
+    'container-inline',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</div>

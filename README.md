@@ -16,7 +16,6 @@ Drupal / Theme level:
 - page / content type template suggestions (beyond page and blog)
 - body classes to indicate page section and path for easier theming
 - HTML5 markup
-- Node Template suggestions for view modes
 
 Usage:
  - unzip the content to your Drupal installation, ie for Linux RHEL6.x.

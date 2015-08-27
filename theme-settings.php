@@ -35,7 +35,7 @@ function galactus_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('UBC CLF 7.0.4 Drupal Theme Information'), 
     '#prefix' => '<h1>' . t('UBC CLF for Drupal') . '</h1>',
     '#weight' => -10,
-    '#description' => t('The CLF 7.0.4 Drupal theme is a responsive theme, developed by the <a href="http://web.it.ubc.ca/forms/webservices/" title="Contact UBC IT Web Services" target="_blank">UBC IT Web Services Department</a>.<br /><br />The <a href="http://brand.ubc.ca/clf" title="Discover the UBC CLF Brand" target="_blank">CLF</a> is developed and distributed by Communications &amp; Marketing. For support <a href="http://clf.ubc.ca/support/" title="Contact UBC Communications & Marketing" target="_blank">please contact us</a>.<br /><br />To report an issue with this theme, please visit <a href="https://github.com/ubc-web-services/Megatron" target="_bank">the repository on Github</a>'),
+    '#description' => t('The CLF 7.0.4 Drupal theme is a responsive theme, developed by the <a href="http://web.it.ubc.ca/forms/webservices/" title="Contact UBC IT Web Services" target="_blank">UBC IT Web Services Department</a>.<br /><br />The <a href="http://brand.ubc.ca/clf" title="Discover the UBC CLF Brand" target="_blank">CLF</a> is developed and distributed by Communications &amp; Marketing. For support <a href="http://clf.ubc.ca/support/" title="Contact UBC Communications & Marketing" target="_blank">please contact us</a>.<br /><br />To report an issue with this theme, please visit <a href="https://github.com/ubc-web-services/Galactus" target="_bank">the repository on Github</a>'),
     //'#collapsible' => FALSE,
     //'#collapsed' => FALSE,
   );  

@@ -1,6 +1,6 @@
 name: galactus
 type: theme
-# base theme: classy
+base theme: classy
 description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
 package: galactus
 version: 0.11

@@ -78,7 +78,7 @@ function galactus_preprocess_page(&$variables) {
     // Make sure the shortcut link is the first item in title_suffix.
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
-  
+    
   // add in our custom theme variables so we can use them in page.twig
   // general options
   $variables['layout_option'] = theme_get_setting('clf_layout');

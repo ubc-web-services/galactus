@@ -1,58 +1,63 @@
 /* ---------- Color Module Styles ----------- */
 
-body {
-  color: #3b3b3b;
+/* ---------- Unit Colour ----------- */
+#ubc7-unit,
+#preview-ubc7-unit {
+	background-color: #002145;
 }
-.comment .comment-arrow {
-  border-color: #ffffff;
+
+/* ---------- Text ----------- */
+.all-content {
+  color: #222222;
 }
-#page,
-#main-wrapper,
-.region-primary-menu .menu li a.active,
-.region-primary-menu .menu li .active-trail a {
-  background: #ffffff;
+
+/* ---------- Primary Colours ----------- */
+
+.unit-content .primary {
+  background-color: #002143;
 }
-.tabs ul.primary li a.active {
-  background-color: #ffffff;
+.unit-content .secondary {
+  background-color: #222223;
 }
-.tabs ul.primary li.active a {
-  background-color: #ffffff;
-  border-bottom-color: #ffffff;
+
+/* ---------- Headings ----------- */
+.unit-content h1,
+.unit-content .h1 {
+  color: #0779bf;
 }
-#header {
-  background-color: #1d84c3;
-  background-image: -webkit-linear-gradient(top, #055a8e 0%, #1d84c3 100%);
-  background-image: linear-gradient(to bottom, #055a8e 0%, #1d84c3 100%);
+.unit-content h2,
+.unit-content .h2 {
+  color: #e1e1e1;
 }
-a,
-.link {
-  color: #0071b3;
+.unit-content h3,
+.unit-content .h3 {
+  color: #d1d1d1;
 }
-a:hover,
-a:focus,
-.link:hover,
-.link:focus {
-  color: #018fe2;
+.unit-content h4,
+.unit-content .h4 {
+  color: #e3e3e3;
 }
-a:active,
-.link:active {
-  color: #23aeff;
+.unit-content h5,
+.unit-content .h5 {
+  color: #d2d2d2;
 }
-.sidebar .block {
-  background-color: #f6f6f2;
-  border-color: #f9f9f9;
+.unit-content h6,
+.unit-content .h6 {
+  color: #e5e5e5;
 }
-#page-wrapper,
-#footer-wrapper {
-  background: #292929;
+
+/* ---------- Links ----------- */
+.unit-content a,
+.unit-content .link {
+  color: #0779af;
 }
-.region-header,
-.region-header a,
-.region-header li a.active,
-#name-and-slogan,
-.site-branding-block,
-#name-and-slogan a,
-.site-branding-block a,
-.region-secondary-menu .menu li a {
-  color: #fffeff;
+.unit-content a:hover,
+.unit-content a:focus,
+.unit-content .link:hover,
+.unit-content .link:focus {
+  color: #2f5d7c;
+}
+.unit-content a:active,
+.unit-content .link:active {
+  color: #2f5d7d;
 }

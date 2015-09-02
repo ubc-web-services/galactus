@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Overrides some default clf styles
+ */
+
+
+.make-nice #ubc7-unit {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.make-nice #ubc7-unit-name a, 
+.make-nice #ubc7-unit-name a:hover {
+  text-shadow: none;
+}

@@ -9,37 +9,30 @@
   Drupal.color = {
     logoChanged: false,
     callback: function (context, settings, form, farb, height, width) {
-      // Change the logo to be the real one.
-      if (!this.logoChanged) {
-        $('#preview #preview-logo img').attr('src', drupalSettings.color.logo);
-        this.logoChanged = true;
-      }
-      // Remove the logo if the setting is toggled off.
-      if (drupalSettings.color.logo === null) {
-        $('div').remove('#preview-logo');
-      }
+      
+      // Unit background.
+      form.find('#preview-ubc7-unit').css('background-color', form.find('.js-color-palette input[name="palette[unit]"]').val());
+      
+      // Text Colour
+      form.find('.all-content').css('color', form.find('.js-color-palette input[name="palette[text]"]').val());
+      
+      // Primary and Secondary Colours
+      form.find('.unit-content .primary').css('backgroundColor', form.find('.js-color-palette input[name="palette[primary]"]').val());
+      form.find('.unit-content .secondary').css('backgroundColor', form.find('.js-color-palette input[name="palette[secondary]"]').val());
+      
+      // Heading Colours
+      form.find('.unit-content h1').css('color', form.find('.js-color-palette input[name="palette[heading1]"]').val());
+      form.find('.unit-content h2').css('color', form.find('.js-color-palette input[name="palette[heading2]"]').val());
+      form.find('.unit-content h3').css('color', form.find('.js-color-palette input[name="palette[heading3]"]').val());
+      form.find('.unit-content h4').css('color', form.find('.js-color-palette input[name="palette[heading4]"]').val());
+      form.find('.unit-content h5').css('color', form.find('.js-color-palette input[name="palette[heading5]"]').val());
+      form.find('.unit-content h6').css('color', form.find('.js-color-palette input[name="palette[heading6]"]').val());
+      
+      // Links preview.
+      form.find('.unit-content .link').css('color', form.find('.js-color-palette input[name="palette[link]"]').val());
+      form.find('.unit-content .link:hover').css('color', form.find('.js-color-palette input[name="palette[linkhover]"]').val());
+      form.find('.unit-content .link:active').css('color', form.find('.js-color-palette input[name="palette[linkactive]"]').val());
 
-      // Solid background.
-      form.find('#preview').css('backgroundColor', $('#palette input[name="palette[bg]"]').val());
-
-      // Text preview.
-      form.find('#preview #preview-main h2, #preview .preview-content').css('color', form.find('#palette input[name="palette[text]"]').val());
-      form.find('#preview #preview-content a').css('color', form.find('#palette input[name="palette[link]"]').val());
-
-      // Sidebar block.
-      form.find('#preview #preview-sidebar #preview-block').css('background-color', form.find('#palette input[name="palette[sidebar]"]').val());
-      form.find('#preview #preview-sidebar #preview-block').css('border-color', form.find('#palette input[name="palette[sidebarborders]"]').val());
-
-      // Footer wrapper background.
-      form.find('#preview #preview-footer-wrapper', form).css('background-color', form.find('#palette input[name="palette[footer]"]').val());
-
-      // CSS3 Gradients.
-      var gradient_start = form.find('#palette input[name="palette[top]"]').val();
-      var gradient_end = form.find('#palette input[name="palette[bottom]"]').val();
-
-      form.find('#preview #preview-header').attr('style', "background-color: " + gradient_start + "; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(" + gradient_start + "), to(" + gradient_end + ")); background-image: -moz-linear-gradient(-90deg, " + gradient_start + ", " + gradient_end + ");");
-
-      form.find('#preview #preview-site-name').css('color', form.find('#palette input[name="palette[titleslogan]"]').val());
     }
   };
 })(jQuery, Drupal, drupalSettings);

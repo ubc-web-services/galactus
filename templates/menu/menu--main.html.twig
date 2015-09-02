@@ -18,6 +18,10 @@
 {% import _self as menus %}
 
 {#
+{{ kint() }}
+#}
+
+{#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
@@ -32,11 +36,17 @@
       <ul class="dropdown-menu">
     {% endif %}
       {% for item in items %}
-        <li{{ item.attributes }}>
-          {{ link(item.title, item.url) }}
-          {% if item.below %}
+        {% if item.below %}
+        <li{{ item.attributes.addClass('dropdown').removeClass('menu-item') }}>
+          <div class="btn-group">
+            {{ link(item.title, item.url, item.attributes.addClass('btn')) }}
+            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
             {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-          {% endif %}
+          </div>
+        {% else %}
+        <li{{ item.attributes.removeClass('menu-item') }}>
+          {{ link(item.title, item.url) }}
+        {% endif %}
         </li>
       {% endfor %}
     </ul>

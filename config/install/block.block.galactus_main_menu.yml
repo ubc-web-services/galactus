@@ -1,0 +1,28 @@
+#Defines settings for the Main Menu block
+
+uuid: 63810b4d-925b-4832-bc00-f1ae567cc86f
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - galactus
+id: galactus_main_menu
+theme: galactus
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  cache:
+    max_age: -1
+  level: 1
+  depth: 2
+visibility: {  }

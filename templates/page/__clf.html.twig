@@ -1,10 +1,10 @@
 {# Extending the page template to abstract blocks for the CLF areas out of the template -- currently not working... #}
 
-{% extends 'themes/custom/galactus/templates/page/page.html' %}
+{% extends "@galactus/page/page.html.twig" %}
 
-{% block clfsearchbox %}
+{# % block clfsearchbox %}
 <div id="ubc7-search-box">      
-  <form class="form-search" method="get" action="http://www.ubc.ca/search/refine/" role="search">
+  <form class="form-search" method="get" action="https://www.ubc.ca/search/refine/" role="search">
     {% if searchlabel_option %}
     <input type="text" name="q" placeholder="{{ searchlabel_option }}" class="input-xlarge search-query">
     {% else %}
@@ -19,9 +19,9 @@
     <button type="submit" class="btn">Search</button>
   </form>
 </div>
-{% endblock clfsearchbox %}
+{% endblock clfsearchbox % #}
 
-{% block clfheader %}
+{# % block clfheader %}
 <div class="span1">
   <div id="ubc7-logo">
     <a href="http://www.ubc.ca">The University of British Columbia</a>
@@ -47,11 +47,10 @@
     <noscript><a id="ubc7-global-utility-no-script" href="http://www.ubc.ca/">UBC Search</a></noscript>
   </div>
 </div>
-{% endblock clfheader %}
+{% endblock clfheader % #}
     
-{% block clfunitarea %}
+{# % block clfunitarea %}
 <div class="span12">
-  <!-- Mobile Menu Icon -->
   <div class="navbar">
     <a class="btn btn-navbar" data-toggle="collapse" data-target="#ubc7-unit-navigation">
       <span class="icon-bar"></span>
@@ -59,8 +58,6 @@
       <span class="icon-bar"></span>
     </a>
   </div>
-  <!-- Read more about Unit Name Treatment on http://brand.ubc.ca/clf -->
-  <!-- No Faculty Treatment --><!--<div id="ubc7-unit-name" class="ubc7-single-element"> -->
   {% if faculty_option %}
   <div id="ubc7-unit-name">
     <a href="/">
@@ -72,11 +69,11 @@
     <span id="ubc7-unit-identifier">{{ unit_name }}</span></a>
   </div>
 </div>
-{% endblock clfunitarea %}
+{% endblock clfunitarea % #}
     
 
-{% block clfmobilenav %}
-<!-- Footer Area Unit Menu - Mobile Only -->
+{# Footer Area Unit Menu - Mobile Only #}
+{# % block clfmobilenav %}
 <div id="ubc7-unit-alternate-navigation" class="navbar expand visible-phone" role="navigation">
   <div class="navbar-inner expand">
     <div class="nav-collapse collapse">
@@ -84,10 +81,9 @@
     </div>
   </div>
 </div>
-<!-- End of Footer Area Unit Menu -->
-{% endblock clfmobilenav %}
+{% endblock clfmobilenav % #}
 
-{% block clffooter %}
+{# % block clffooter %}
 <div class="span10" id="ubc7-unit-address">
   <div id="ubc7-address-unit-name">{{ unit_name }}</div>
   {% if campus_option %}
@@ -118,14 +114,14 @@
   </div>
   {% endif %}
 </div>
-{% endblock clffooter %}
+{% endblock clffooter % #}
 
 {% block clfglobalfooter %}
 <div class="span12">
   <ul>
     <li><a href="//cdn.ubc.ca/clf/ref/emergency">Emergency Procedures</a> <span class="divider">|</span></li>
     <li><a href="//cdn.ubc.ca/clf/ref/terms">Terms of Use</a> <span class="divider">|</span></li>
-    <li><a href="//cdn.ubc.ca/clf/ref/copyright">Copyright</a> <span class="divider">|</span></li>
+    <li><a href="//cdn.ubc.ca/clf/ref/copyright">UBC Copyright</a> <span class="divider">|</span></li>
     <li><a href="//cdn.ubc.ca/clf/ref/accessibility">Accessibility</a></li>
   </ul>
 </div>

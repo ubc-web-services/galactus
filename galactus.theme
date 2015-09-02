@@ -40,13 +40,6 @@ function galactus_preprocess_html(&$variables) {
     || !empty($variables['page']['triptych_last'])) {
     $variables['attributes']['class'][] = 'triptych';
   }
-
-  if (!empty($variables['page']['footer_firstcolumn'])
-    || !empty($variables['page']['footer_secondcolumn'])
-    || !empty($variables['page']['footer_thirdcolumn'])
-    || !empty($variables['page']['footer_fourthcolumn'])) {
-    $variables['attributes']['class'][] = 'footer-columns';
-  }
   
   // add in custom theme variables so they are available in html.twig
   $variables['color_option'] = theme_get_setting('clf_theme_colour');
@@ -142,7 +135,7 @@ function galactus_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
-  /**
+  
   // Add node--node_type--view_mode.html.twig suggestions
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['elements']['#node']->bundle() . '__' . $variables['view_mode'];
   
@@ -153,7 +146,7 @@ function galactus_preprocess_node(&$variables) {
   if (!$variables['teaser']) {
     $variables['content_attributes'][] = 'view-mode-' . $variables['view_mode'];
   }
-  **/
+
 }
 
 /**
@@ -192,9 +185,10 @@ function galactus_preprocess_field(&$variables) {
  * Helper function for handling the site name and slogan.
  */
 function _galactus_process_page(&$variables) {
-  /*$site_config = \Drupal::config('system.site');
+  $site_config = \Drupal::config('system.site');
   // Always print the site name and slogan, but if they are toggled off, we'll
   // just hide them visually.
+  /*
   $variables['hide_site_name']  = theme_get_setting('features.name') ? FALSE : TRUE;
   $variables['hide_site_slogan'] = theme_get_setting('features.slogan') ? FALSE : TRUE;
   if ($variables['hide_site_name']) {
@@ -207,3 +201,4 @@ function _galactus_process_page(&$variables) {
     $variables['site_slogan'] = Xss::filterAdmin($site_config->get('slogan'));
   }*/
 }
+

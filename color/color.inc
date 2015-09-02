@@ -6,116 +6,70 @@
  */
 
 // Put the logo path into JavaScript for the live preview.
-$js_attached['#attached']['drupalSettings']['color']['logo'] = theme_get_setting('logo.url', 'galactus');
-drupal_render($js_attached);
+//$js_attached['#attached']['drupalSettings']['color']['logo'] = theme_get_setting('logo.url', 'galactus');
+drupal_process_attached($js_attached);
 
 $info = array(
   // Available colors and color labels used in theme.
   'fields' => array(
-    'top' => t('Header background top'),
-    'bottom' => t('Header background bottom'),
-    'bg' => t('Main background'),
-    'sidebar' => t('Sidebar background'),
-    'sidebarborders' => t('Sidebar borders'),
-    'footer' => t('Footer background'),
-    'titleslogan' => t('Title and slogan'),
-    'text' => t('Text color'),
-    'link' => t('Link color'),
+    'unit' => t('Unit Colour'),
+    'text' => t('Text Colour'),
+    'primary' => t('Primary Colour'),
+    'secondary' => t('Secondary Colour'),
+    'heading1' => t('Heading 1 Title'),
+    'heading2' => t('Heading 2 Title'),
+    'heading3' => t('Heading 3 Title'),
+    'heading4' => t('Heading 4 Title'),
+    'heading5' => t('Heading 5 Title'),
+    'heading6' => t('Heading 6 Title'),
+    'link' => t('Link Colour'),
+    'linkhover' => t('Link Hover Colour'),
+    'linkactive' => t('Link Active Colour'),
   ),
   // Pre-defined color schemes.
   'schemes' => array(
     'default' => array(
-      'title' => t('Blue Lagoon (default)'),
+      'title' => t('CLF (default)'),
       'colors' => array(
-        'top' => '#055a8e',
-        'bottom' => '#1d84c3',
-        'bg' => '#ffffff',
-        'sidebar' => '#f6f6f2',
-        'sidebarborders' => '#f9f9f9',
-        'footer' => '#292929',
-        'titleslogan' => '#fffeff',
-        'text' => '#3b3b3b',
-        'link' => '#0071B3',
+        'unit' => '#002145',
+        'text' => '#222222',
+        'primary' => '#002143',
+        'secondary' => '#222223',
+        'heading1' => '#0779bf',
+        'heading2' => '#e1e1e1',
+        'heading3' => '#d1d1d1',
+        'heading4' => '#e3e3e3',
+        'heading5' => '#d2d2d2',
+        'heading6' => '#e5e5e5',
+        'link' => '#0779af',
+        'linkhover' => '#2f5d7c',
+        'linkactive' => '#2f5d7d',
       ),
     ),
-    'firehouse' => array(
-      'title' => t('Firehouse'),
+    'alternate' => array(
+      'title' => t('Alternate'),
       'colors' => array(
-        'top' => '#cd2d2d',
-        'bottom' => '#d64e4e',
-        'bg' => '#ffffff',
-        'sidebar' => '#f1f4f0',
-        'sidebarborders' => '#ededed',
-        'footer' => '#1f1d1c',
-        'titleslogan' => '#fffeff',
-        'text' => '#888888',
-        'link' => '#d6121f',
-      ),
-    ),
-    'ice' => array(
-      'title' => t('Ice'),
-      'colors' => array(
-        'top' => '#d0d0d0',
-        'bottom' => '#c2c4c5',
-        'bg' => '#ffffff',
-        'sidebar' => '#ffffff',
-        'sidebarborders' => '#cccccc',
-        'footer' => '#016b83',
-        'titleslogan' => '#000000',
-        'text' => '#4a4a4a',
-        'link' => '#019dbf',
-      ),
-    ),
-    'plum' => array(
-      'title' => t('Plum'),
-      'colors' => array(
-        'top' => '#4c1c58',
-        'bottom' => '#593662',
-        'bg' => '#fffdf7',
-        'sidebar' => '#edede7',
-        'sidebarborders' => '#e7e7e7',
-        'footer' => '#2c2c28',
-        'titleslogan' => '#ffffff',
-        'text' => '#301313',
-        'link' => '#9d408d',
-      ),
-    ),
-    'slate' => array(
-      'title' => t('Slate'),
-      'colors' => array(
-        'top' => '#4a4a4a',
-        'bottom' => '#4e4e4e',
-        'bg' => '#ffffff',
-        'sidebar' => '#ffffff',
-        'sidebarborders' => '#d0d0d0',
-        'footer' => '#161617',
-        'titleslogan' => '#ffffff',
-        'text' => '#3b3b3b',
-        'link' => '#0073b6',
+        'unit' => '#0779bf',
+        'text' => '#333333',
+        'primary' => '#0779bf',
+        'secondary' => '#333333',
+        'heading1' => '#002145',
+        'heading2' => '#002145',
+        'heading3' => '#002145',
+        'heading4' => '#002145',
+        'heading5' => '#002145',
+        'heading6' => '#002145',
+        'link' => '#0779bf',
+        'linkhover' => '#2f5d7c',
+        'linkactive' => '#2f5d7c',
       ),
     ),
   ),
+
 
   // CSS files (excluding @import) to rewrite with new color scheme.
   'css' => array(
     'css/colors.css',
-  ),
-
-  // Files to copy.
-  'copy' => array(
-    'logo.png',
-  ),
-
-  // Gradient definitions.
-  'gradients' => array(
-    array(
-      // (x, y, width, height).
-      'dimension' => array(0, 0, 0, 0),
-      // Direction of gradient ('vertical' or 'horizontal').
-      'direction' => 'vertical',
-      // Keys of colors to use for the gradient.
-      'colors' => array('top', 'bottom'),
-    ),
   ),
 
   // Preview files.

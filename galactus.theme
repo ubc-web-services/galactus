@@ -80,7 +80,7 @@ function galactus_preprocess_page(&$variables) {
   $variables['faculty_option'] = theme_get_setting('clf_faculty') ? FALSE : TRUE;
   $variables['faculty_name'] = theme_get_setting('clf_faculty_name');
   $variables['unit_name'] = theme_get_setting('clf_unitname');
-  $variables['breadcrumb_option'] = theme_get_setting('breadcrumb_name') ? TRUE : FALSE;
+  //$variables['breadcrumb_option'] = theme_get_setting('breadcrumb_name') ? TRUE : FALSE;
   
   // search options
   $variables['searchlabel_option'] = theme_get_setting('clf_searchlabel');

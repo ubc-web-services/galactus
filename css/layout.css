@@ -38,13 +38,10 @@ body,
 #main-wrapper {
   min-height: 300px;
 }
-#content .section,
 .sidebar .section {
   padding: 0 15px;
 }
-.breadcrumb {
-  margin: 0 15px;
-}
+
 #footer-wrapper {
   padding: 35px 0 30px;
 }
@@ -230,3 +227,4 @@ body,
     width: 25%;
   }
 }
+*/

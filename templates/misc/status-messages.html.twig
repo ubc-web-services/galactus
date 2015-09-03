@@ -27,16 +27,18 @@
 {% for type, messages in message_list %}
   {%
     set classes = [
-      'messages',
-      'messages--' ~ type,
+      'alert',
+      'alert-block',
+      'alert-' ~ type,
     ]
   %}
   <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-    {% if type == 'error' %}
+    {#% if type == 'error' %}
       <div role="alert">
-    {% endif %}
+    {% endif %#}
+      <a class="close" data-dismiss="alert" href="#">x</a>
       {% if status_headings[type] %}
-        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
+        <h4 class="alert-heading">{{ status_headings[type] }}</h4>
       {% endif %}
       {% if messages|length > 1 %}
         <ul class="messages__list">

@@ -1,8 +1,12 @@
 /* ---------- Color Module Styles ----------- */
+/*
+  NOTE: 
+  - Colours here must match the default colours set in color.inc. 
+  - Styles that use a single value in this file (ie. #eeeeee) will ALL be changed if ONE valid value is changed on the settings page.
+*/ 
 
 /* ---------- Unit Colour ----------- */
-#ubc7-unit,
-#preview-ubc7-unit {
+#ubc7-unit {
 	background-color: #002145;
 }
 
@@ -12,52 +16,43 @@
 }
 
 /* ---------- Primary Colours ----------- */
+/* TO DO: aggregate all primary items and secondary items to change the foreground and background colours with these settings */
 
-.unit-content .primary {
+.unit-content .primary-colored-items {
   background-color: #002143;
 }
-.unit-content .secondary {
+.unit-content .secondary-colored-items {
   background-color: #222223;
 }
 
 /* ---------- Headings ----------- */
-.unit-content h1,
-.unit-content .h1 {
+.unit-content h1 {
   color: #0779bf;
 }
-.unit-content h2,
-.unit-content .h2 {
+.unit-content h2 {
   color: #e1e1e1;
 }
-.unit-content h3,
-.unit-content .h3 {
+.unit-content h3 {
   color: #d1d1d1;
 }
-.unit-content h4,
-.unit-content .h4 {
+.unit-content h4 {
   color: #e3e3e3;
 }
-.unit-content h5,
-.unit-content .h5 {
+.unit-content h5 {
   color: #d2d2d2;
 }
-.unit-content h6,
-.unit-content .h6 {
+.unit-content h6 {
   color: #e5e5e5;
 }
 
 /* ---------- Links ----------- */
-.unit-content a,
-.unit-content .link {
+.unit-content a {
   color: #0779af;
 }
 .unit-content a:hover,
-.unit-content a:focus,
-.unit-content .link:hover,
-.unit-content .link:focus {
+.unit-content a:focus {
   color: #2f5d7c;
 }
-.unit-content a:active,
-.unit-content .link:active {
+.unit-content a:active {
   color: #2f5d7d;
 }

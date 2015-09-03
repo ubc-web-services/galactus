@@ -5,8 +5,6 @@
  * Lists available colors and color schemes for the galactus theme.
  */
 
-// Put the logo path into JavaScript for the live preview.
-//$js_attached['#attached']['drupalSettings']['color']['logo'] = theme_get_setting('logo.url', 'galactus');
 drupal_process_attached($js_attached);
 
 $info = array(
@@ -30,6 +28,7 @@ $info = array(
   'schemes' => array(
     'default' => array(
       'title' => t('CLF (default)'),
+      // Default colours MUST match those in the css file. Changing via the form will create a custom colour set.
       'colors' => array(
         'unit' => '#002145',
         'text' => '#222222',

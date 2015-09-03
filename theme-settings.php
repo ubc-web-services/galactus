@@ -59,6 +59,15 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#title' => t('General Settings'),
     '#group' => 'clf',
   );
+  
+  $form['general']['clf_unitname'] = array(
+    '#type' => 'textfield', 
+    '#title' => t('This field will populate the <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>. '), 
+    '#default_value' => theme_get_setting('clf_unitname'),
+    '#size' => 60, 
+    '#maxlength' => 128,
+    '#required' => true,
+  );
 
   $form['general']['clf_theme_colour'] = array(
     '#type' => 'select',
@@ -85,13 +94,13 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
      ),
    );
  
-  $navoption = isset($variables['general']['clf_navoption']) ? $variables['general']['clf_navoption'] : true;
+  //$navoption = isset($variables['general']['clf_navoption']) ? $variables['general']['clf_navoption'] : true;
   $form['general']['clf_navoption'] = array(
     '#type' => 'checkbox', 
     '#title' => t('Primary Navigation Mobile Placement'),
     '#description' => t('Show the Primary Navigation at the bottom of the page on Mobile devices, in addition to the top navigation placement'),
-    //'#default_value' => theme_get_setting('clf_navoption'),
-    '#default_value' => $navoption,
+    '#default_value' => theme_get_setting('clf_navoption'),
+    //'#default_value' => $navoption,
   );
 
 
@@ -150,38 +159,25 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     ),
   );
   
-  //$unitname = isset($variables['unit']['clf_unitname']) ? $variables['unit']['clf_unitname'] : 'UBC Unit Name';
-  $form['unit']['clf_unitname'] = array(
-    '#type' => 'textfield', 
-    '#title' => t('This field will populate the <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>. '), 
-    //'#default_value' => $unitname, 
-    '#default_value' => theme_get_setting('clf_unitname'),
-    '#size' => 60, 
-    '#maxlength' => 128,
-    '#required' => true,
-  );
-  
-  //$unitcolor = isset($variables['unit']['clf_theme_colour']) ? $variables['unit']['clf_theme_colour'] : '0093c9';
   $form['unit']['clf_theme_colour'] = array(
-    '#type' => 'textfield',
+    '#type' => 'details',
     '#title' => t('Unit Name Background Colour'),
-    '#description' => t('See design specifications for <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-colors" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>. Use HEX colour (do not include the #)'),
-    '#size' => 7,
-    '#maxlength' => 7,
-    '#default_value' => theme_get_setting('clf_theme_colour'),
+    '#description' => t('Now set though the Color Scheme options below. See design specifications for <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-colors" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>.'),
+    '#collapsible' => FALSE,
+    //'#collapsed' => FALSE,
+    //'#size' => 7,
+    //'#maxlength' => 7,
+    //'#default_value' => theme_get_setting('clf_theme_colour'),
   );
   
-  //$nogradient = isset($variables['unit']['unuglify']) ? $variables['unit']['unuglify'] : true;
   $form['unit']['unuglify'] = array(
     '#type' => 'checkbox',
     '#title' => t('Remove the gradient from the unit name area'),
     '#description' => t(''),
-    //'#size' => 7,
-    //'#maxlength' => 7,
     '#default_value' => theme_get_setting('unuglify'),
   );
  
-  //$showbreadcrumbs = isset($variables['unit']['breadcrumb_display']) ? $variables['unit']['breadcrumb_display'] : true;
+ /*
   $form['unit']['breadcrumb_display'] = array(
    '#type' => 'checkbox',
    '#title' => t('Breadcrumb Display Option (Highly Recommended)'),
@@ -192,6 +188,7 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
    //  'no' => t('No'),
    //),
   );
+  */
   
   
   /** LOCATION INFORMATION
@@ -202,7 +199,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#group' => 'clf',
   );
 
-  //$unitstreet = isset($variables['location']['clf_streetaddr']) ? $variables['location']['clf_streetaddr'] : '123 Main St';
   $form['location']['clf_streetaddr'] = array(
     '#type' => 'textfield', 
     '#title' => t('Street Address'), 
@@ -212,17 +208,14 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#maxlength' => 128,
   );
   
-  //$unitcity = isset($variables['location']['clf_locality']) ? $variables['location']['clf_locality'] : 'Vancouver';
   $form['location']['clf_locality'] = array(
     '#type' => 'textfield', 
     '#title' => t('City'), 
-    //'#default_value' => $unitcity, 
     '#default_value' => theme_get_setting('clf_locality'),
     '#size' => 60, 
     '#maxlength' => 128,
   );
 
-  //$unitprovince = isset($variables['location']['clf_region']) ? $variables['location']['clf_region'] : 'BC';
   $form['location']['clf_region'] = array(
     '#type' => 'textfield', 
     '#title' => t('Province / Region'), 
@@ -232,7 +225,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#maxlength' => 128,
   );
 
-  //$unitcountry = isset($variables['location']['clf_country']) ? $variables['location']['clf_country'] : 'Canada';
   $form['location']['clf_country'] = array(
     '#type' => 'textfield', 
     '#title' => t('Country'), 
@@ -336,13 +328,13 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#description' => t('Format of https://www.xyz.com'),
   );
 
+
   // SEARCH.
   $form['search'] = array(
     '#type' => 'details',
     '#title' => t('Search Settings'),
     '#group' => 'clf',
   );
-
 
   $form['search']['clf_searchdomain'] = array(
     '#type' => 'textfield', 
@@ -362,8 +354,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#description' => t('This appears inside the search field as placeholder text. e.g. <strong>Search Pharmacy</strong>'),
     
   );
-
-
 
 // Return the additional form widgets
 return $form;

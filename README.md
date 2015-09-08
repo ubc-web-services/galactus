@@ -1,4 +1,4 @@
-UBC CLF 7.0.4 DRUPAL THEME (aka Galactus)
+UBC CLF 7.0.4 DRUPAL THEME (aka Galactus) - WORK IN PROGRESS
 =======================================
 
 A responsive UBC CLF (Common Look and Feel) theme for Drupal 8. Created by the UBC IT Web Services Department.
@@ -7,21 +7,7 @@ A responsive UBC CLF (Common Look and Feel) theme for Drupal 8. Created by the U
 UBC CLF 7.0.4 DRUPAL THEME FEATURES
 _________________
 
-Bootstrap / CLF:
-grid, menu system (click to expand), status / alerts, form elements, markup compatible with default bootstrap markup, no need for conditional IE stylesheets
-
-Drupal / Theme level:
-- Modernizr
-- Unit LESS files (and uncompressed CSS for everyone else)
-- page / content type template suggestions (beyond page and blog)
-- body classes to indicate page section and path for easier theming
-- HTML5 markup
-
-Usage:
- - unzip the content to your Drupal installation, ie for Linux RHEL6.x.
-/var/www/html/your_drupal_site/themes/
-chown -R root:apache ubc_clf_drupal_template_7.0.2
-- login to your Drupal website as admin --> Appearance --> Enable and Set as Default for UBC-CLF
+TBA
 
 IE8 Support
 _________________

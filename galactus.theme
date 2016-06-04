@@ -141,12 +141,6 @@ function galactus_preprocess_node(&$variables) {
   
   // Add node--view_mode.html.twig suggestions
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
-  
-  // Add a class for the view mode.
-  if (!$variables['teaser']) {
-    $variables['content_attributes'][] = 'view-mode-' . $variables['view_mode'];
-  }
-
 }
 
 /**

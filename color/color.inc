@@ -5,8 +5,6 @@
  * Lists available colors and color schemes for the galactus theme.
  */
 
-//drupal_process_attached($js_attached);
-
 $info = array(
   // Available colors and color labels used in theme.
   'fields' => array(

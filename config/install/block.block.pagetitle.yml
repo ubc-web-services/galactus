@@ -1,0 +1,20 @@
+#Defines settings for the Page Title block
+
+uuid: 9d79b353-3e70-4a00-b1cd-08269c1932c8
+langcode: en
+status: true
+dependencies:
+  theme:
+    - galactus
+id: pagetitle
+theme: galactus
+region: content
+weight: -1
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

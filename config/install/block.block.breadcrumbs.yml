@@ -1,0 +1,22 @@
+#Defines settings for the Breadcrumbs block
+
+uuid: fd63f029-d23f-4bcd-b8d2-6e17986091f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - galactus
+id: breadcrumbs
+theme: galactus
+region: featured
+weight: -2
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

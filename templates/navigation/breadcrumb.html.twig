@@ -1,25 +1,24 @@
 {#
 /**
  * @file
- * Theme implementation for a breadcrumb trail.
+ * Theme override for a breadcrumb trail.
  *
  * Available variables:
  * - breadcrumb: Breadcrumb trail items.
- *
- * @ingroup themeable
  */
 #}
 {% if breadcrumb %}
+<div class="container crumbs">
   <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb'|t }}</h2>
   <ul class="breadcrumb expand" role="navigation" aria-labelledby="system-breadcrumb">
   {% for item in breadcrumb %}
-  <li>
     {% if item.url %}
-      <a href="{{ item.url }}">{{ item.text }}</a> <span class="divider">/</span>
+      <li><a href="{{ item.url }}">{{ item.text }}</a> <span class="divider">/</span>
     {% else %}
-      {{ item.text }}
+      <li class="active">{{ item.text }}
     {% endif %}
     </li>
   {% endfor %}
   </ul>
+</div>
 {% endif %}

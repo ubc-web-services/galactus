@@ -9,7 +9,7 @@
    background-color: #fff;
  }
  
- // remove the inset shadoes and text shadows from the unit area
+ /* remove the inset shadoes and text shadows from the unit area */
 .make-nice #ubc7-unit {
   box-shadow: none;
   -webkit-box-shadow: none;

@@ -42,7 +42,6 @@
  *
  * Regions:
  * - page.header: Items for the header region.
- * - page.highlighted: Items for the highlighted region.
  * - page.primary_menu: Items for the primary menu region.
  * - page.secondary_menu: Items for the secondary menu region.
  * - page.highlighted: Items for the highlighted content region.
@@ -50,9 +49,6 @@
  * - page.content: The main content of the current page.
  * - page.sidebar_first: Items for the first sidebar.
  * - page.sidebar_second: Items for the second sidebar.
- * - page.triptych_first: Items for the triptych first region.
- * - page.triptych_middle: Items for the triptych middle region.
- * - page.triptych_last: Items for the triptych last region.
  * - page.footer: Items for the footer region.
  * - page.breadcrumb: Items for the breadcrumb region.
  *
@@ -188,16 +184,10 @@
     </div>
   </nav>
   <!-- End of UBC Unit Navigation -->
-  <!-- UBC Unit Breadcrumbs -->
   {% if layout_option == 'full' or 'fluid' %}
   <div class="full-width-container">
   {% endif %}
-  {% if page.breadcrumb %}
-    <div class="container crumbs">
-    {{ page.breadcrumb }}
-    </div> <!-- /.breadcrumb -->
-  {% endif %}
-  <!-- End of UBC Unit Breadcrumbs -->
+  {{ page.breadcrumb }}
   {% if page.featured %}
     <div id="featured">
       <aside class="section clearfix" role="complementary">
@@ -213,25 +203,6 @@
       <section class="section">
         {% if page.highlighted %}
         <div id="highlighted">{{ page.highlighted }}</div>
-        {% endif %}
-        <a id="main-content" tabindex="-1"></a>
-        {{ title_prefix }}
-        {% if title %}
-        <h1 class="title" id="page-title">
-          {{ title }}
-        </h1>
-        {% endif %}
-        {{ title_suffix }}
-        {% if tabs %}
-        <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
-          {{ tabs }}
-        </nav>
-        {% endif %}
-        {{ page.help }}
-        {% if action_links %}
-        <ul class="action-links">
-          {{ action_links }}
-        </ul>
         {% endif %}
         {{ page.content }}
       </section>
@@ -254,15 +225,6 @@
     </div>
     {% endif %}
 </div><!-- /#main -->
-  {% if page.triptych_first or page.triptych_middle or page.triptych_last %}
-  <div id="triptych-wrapper">
-    <aside id="triptych" class="clearfix" role="complementary">
-      {{ page.triptych_first }}
-      {{ page.triptych_middle }}
-      {{ page.triptych_last }}
-    </aside>
-  </div><!-- /#triptych, /#triptych-wrapper -->
-  {% endif %}
   <!-- End of Content Area -->
   {% if layout_option == 'full' or 'fluid' %}
   </div> <!-- /container -->

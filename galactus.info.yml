@@ -1,9 +1,8 @@
 name: galactus
 type: theme
-# base theme: classy
 description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
 package: galactus
-version: 0.11
+version: 0.12
 core: 8.x
 
 libraries:
@@ -25,7 +24,4 @@ regions:
   content: Content
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
-  triptych_first: 'Triptych first'
-  triptych_middle: 'Triptych middle'
-  triptych_last: 'Triptych last'
   footer: Footer

@@ -358,5 +358,3 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
 // Return the additional form widgets
 return $form;
 }
-
-

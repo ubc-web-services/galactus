@@ -1,18 +1,36 @@
+galactus.tiny:
+  label: tiny
+  mediaQuery: '(max-width: 319px)'
+  weight: 5
+  multipliers:
+    - 1x
 galactus.mobile:
   label: mobile
-  mediaQuery: '(min-width: 0px)'
-  weight: 0
+  mediaQuery: 'all and (min-width: 320px) and (max-width: 479px)'
+  weight: 4
+  multipliers:
+    - 1x
+galactus.small:
+  label: narrow
+  mediaQuery: 'all and (min-width: 480px) and (max-width: 767px)'
+  weight: 3
   multipliers:
     - 1x
 galactus.narrow:
   label: narrow
-  mediaQuery: 'all and (min-width: 560px) and (max-width: 850px)'
+  mediaQuery: 'all and (min-width: 768px) and (max-width: 979px)'
+  weight: 2
+  multipliers:
+    - 1x
+galactus.default:
+  label: default
+  mediaQuery: 'all and (min-width: 980px) and (max-width: 1199px)'
   weight: 1
   multipliers:
     - 1x
 galactus.wide:
   label: wide
-  mediaQuery: 'all and (min-width: 851px)'
-  weight: 2
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 0
   multipliers:
     - 1x

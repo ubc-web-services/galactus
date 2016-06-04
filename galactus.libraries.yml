@@ -17,14 +17,6 @@ global-styling:
   dependencies:
     - core/jquery
 
-
-# Script for Theme Settings page      
-#adminscript:
-#  version: VERSION
-#  js:
-#    js/galactus.admin.js: {}
-
-
 # Color Module Files
 color.preview:
   version: VERSION

@@ -1,0 +1,72 @@
+
+// Core variables and mixins
+@import "lib/bootstrap/variables.less";
+@import "lib/bootstrap/mixins.less";
+
+//
+// Grid system (copied from lib/bootstrap/grids.less and prefixed with non-clf class where needed
+// --------------------------------------------------
+
+// change the default boz sizing
+.non-clf * {
+  box-sizing: border-box;
+}
+
+
+// Container widths
+.non-clf .container {
+  .container-fixed();
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+}
+
+
+// Fluid container
+.non-clf .container-fluid {
+  .container-fixed();
+}
+
+
+// Row
+.non-clf .row {
+  .make-row();
+}
+
+
+// Columns
+.make-grid-columns();
+
+
+// Extra small grid
+.make-grid(xs);
+
+
+// Small grid
+@media (min-width: @screen-sm-min) {
+  .make-grid(sm);
+}
+
+
+// Medium grid
+@media (min-width: @screen-md-min) {
+  .make-grid(md);
+}
+
+
+// Large grid
+@media (min-width: @screen-lg-min) {
+  .make-grid(lg);
+}
+
+
+
+// Core utility classes
+@import "lib/bootstrap/utilities.less";

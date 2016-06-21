@@ -1,0 +1,30 @@
+# galactus.libraries.yml
+
+# Global Styles
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/clf.fixes.css: {}
+      css/system.theme.local.css: {}
+      css/layout.css: {}
+      # css/style.css: {}
+      css/colors.css: {}
+      css/print.css: { media: print }
+  js:
+    //cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
+    js/lib/bootstrap-alert.js: {}
+  dependencies:
+    - core/jquery
+
+# Color Module Files
+color.preview:
+  version: VERSION
+  css:
+    theme:
+      color/preview.css: {}
+  js:
+    color/preview.js: {}
+  dependencies:
+    - color/drupal.color
+

@@ -1,0 +1,5 @@
+# Schema for the configuration files of the clf theme.
+
+clf.settings:
+  type: theme_settings
+  label: 'clf settings'

@@ -1,0 +1,30 @@
+name: CLF
+type: theme
+base theme: galactus
+description: 'A child theme for the UBC CLF. Relies on the Galactus theme'
+package: galactus
+core: 8.x
+
+#libraries:
+#  - galactus/global-styling
+
+libraries-override:
+  galactus/global-styling:
+    css:
+      theme:
+        css/colors.css: css/clf-colors.css
+
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  help: Help
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  breadcrumb: 'Breadcrumb'
+  highlighted: Highlighted
+  featured: Featured
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer

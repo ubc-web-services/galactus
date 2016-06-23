@@ -69,14 +69,14 @@ clf-fw-bw:
       css/clf/full-width/minimal-clf-7.0.4-bw.css: {}
       
 # Full-width, White on Grey
-clf-fw-wb:
+clf-fw-wg:
   version: VERSION
   css:
     theme:
       css/clf/full-width/minimal-clf-7.0.4-wg.css: {}
 
 # Full-width, Grey on White
-clf-fw-bw:
+clf-fw-gw:
   version: VERSION
   css:
     theme:
@@ -97,14 +97,14 @@ clf-sw-bw:
       css/clf/standard/minimal-clf-7.0.4-bw.css: {}
 
 # Standard-width, White on Grey
-clf-sw-wb:
+clf-sw-wg:
   version: VERSION
   css:
     theme:
       css/clf/standard/minimal-clf-7.0.4-wg.css: {}
 
 # Standard-width, Grey on White
-clf-sw-bw:
+clf-sw-gw:
   version: VERSION
   css:
     theme:

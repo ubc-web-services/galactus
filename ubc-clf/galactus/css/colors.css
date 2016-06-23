@@ -56,3 +56,15 @@
 .unit-content a:active {
   color: #2f5d7d;
 }
+
+#ubc7-unit-menu .nav>li.active>a,
+#ubc7-unit-alternate-navigation .nav>li.active>a,
+#ubc7-unit-menu .nav>li.active>.btn-group {
+  background-color:#d7e0e7;
+}
+#ubc7-unit-menu .nav-collapse .nav>li>a:hover,
+#ubc7-unit-menu .nav-collapse .dropdown-menu a:hover,
+#ubc7-unit-alternate-navigation .nav-collapse .nav>li>a:hover,
+#ubc7-unit-alternate-navigation .nav-collapse .dropdown-menu a:hover {
+  background-color:#002141;
+}

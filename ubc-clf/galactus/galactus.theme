@@ -46,45 +46,45 @@ function galactus_preprocess_html(&$variables) {
   $clfLayout = theme_get_setting('clf_layout');
   
   // switch between locally hosted CLF libraries
-  if ($localClf != '') {
+  if ($localClf == TRUE) {
     $variables['#attached']['library'][] = 'galactus/local-clf-fixes';
-    if (($clfColor === 'wb') && ($clfLayout === '')) {
+    if (($clfColor == 'wb') && ($clfLayout == FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-sw-wb';
     }
-    elseif (($clfColor === 'wb') && ($clfLayout != '')) {
+    elseif (($clfColor == 'wb') && ($clfLayout != FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-fw-wb';
     }
-    elseif (($clfColor === 'bw') && ($clfLayout === '')) {
+    elseif (($clfColor == 'bw') && ($clfLayout == FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-sw-bw';
     }
-    elseif (($clfColor === 'bw') && ($clfLayout != '')) {
+    elseif (($clfColor == 'bw') && ($clfLayout != FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-fw-bw';
     }
-    elseif (($clfColor === 'wg') && ($clfLayout === '')) {
+    elseif (($clfColor == 'wg') && ($clfLayout == FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-sw-wg';
     }
-    elseif (($clfColor === 'wg') && ($clfLayout != '')) {
+    elseif (($clfColor == 'wg') && ($clfLayout != FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-fw-wg';
     }
-    elseif (($clfColor === 'gw') && ($clfLayout === '')) {
+    elseif (($clfColor == 'gw') && ($clfLayout == FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-sw-gw';
     }
-    elseif (($clfColor === 'gw') && ($clfLayout != '')) {
+    elseif (($clfColor == 'gw') && ($clfLayout != FALSE)) {
       $variables['#attached']['library'][] = 'galactus/clf-fw-gw';
     }
   }
   // switch between CDN hosted CLF libraries
-  if ($localClf == '') {
-    if (theme_get_setting('clf_theme_colour') === 'wb') {
+  if ($localClf == FALSE) {
+    if (theme_get_setting('clf_theme_colour') == 'wb') {
       $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-wb';
     }
-    elseif (theme_get_setting('clf_theme_colour') === 'bw') {
+    elseif (theme_get_setting('clf_theme_colour') == 'bw') {
       $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-bw';
     }
-    elseif (theme_get_setting('clf_theme_colour') === 'wg') {
+    elseif (theme_get_setting('clf_theme_colour') == 'wg') {
       $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-wg';
     }
-    elseif (theme_get_setting('clf_theme_colour') === 'gw') {
+    elseif (theme_get_setting('clf_theme_colour') == 'gw') {
       $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-gw';
     }
   }

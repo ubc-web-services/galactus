@@ -1,7 +1,7 @@
 # Set Defaults for the CLF Theme Settings Form (via export)
 
 general:
-  clf_theme_colour: 'wb'
+  clf_theme_colour: 'bw'
   clf_layout: ''
   clf_navoption: true
 identity:
@@ -31,7 +31,7 @@ logo:
 favicon:
   use_default: true
   path: ''
-clf_theme_colour: 'wb'
+clf_theme_colour: 'bw'
 clf_layout: full
 clf_navoption: 1
 clf_unit_campus: ''

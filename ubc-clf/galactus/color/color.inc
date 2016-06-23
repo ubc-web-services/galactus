@@ -21,6 +21,8 @@ $info = array(
     'link' => t('Link Colour'),
     'linkhover' => t('Link Hover Colour'),
     'linkactive' => t('Link Active Colour'),
+    'primarylinkhover' => t('Primary Nav Link Hover Colour'),
+    'primarylinkactive' => t('Primary Nav Link Active Colour'),
   ),
   // Pre-defined color schemes.
   'schemes' => array(
@@ -41,6 +43,8 @@ $info = array(
         'link' => '#0779af',
         'linkhover' => '#2f5d7c',
         'linkactive' => '#2f5d7d',
+        'primarylinkhover' => '#002141',
+        'primarylinkactive' => '#d7e0e7',
       ),
     ),
     'alternate' => array(
@@ -59,6 +63,8 @@ $info = array(
         'link' => '#0779bf',
         'linkhover' => '#2f5d7c',
         'linkactive' => '#2f5d7c',
+        'primarylinkhover' => '#002145',
+        'primarylinkactive' => '#d7e0e7',
       ),
     ),
   ),

@@ -34,6 +34,10 @@
       $colorPreview.find('.unit-content .link').css('color', $colorPalette.find('input[name="palette[link]"]').val());
       $colorPreview.find('.unit-content .link:hover').css('color', $colorPalette.find('input[name="palette[linkhover]"]').val());
       $colorPreview.find('.unit-content .link:active').css('color', $colorPalette.find('input[name="palette[linkactive]"]').val());
+      
+      // Primary Nav Links
+      $colorPreview.find('.unit-nav .link').css('color', $colorPalette.find('input[name="palette[primarylinkhover]"]').val());
+      $colorPreview.find('.unit-content .link.active').css('color', $colorPalette.find('input[name="palette[primarylinkactive]"]').val());
 
     }
   };

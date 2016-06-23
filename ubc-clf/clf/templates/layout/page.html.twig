@@ -67,24 +67,14 @@
     'col-md-3',
   ]
 %}
-{% if page.sidebar_first|default is empty %}
 {%
-  set mainClasses = [
-    'column',
-    'col-md-9',
+  set contentClasses = [
+    page.sidebar_first and page.sidebar_second ? 'col-sm-6',
+    page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
+    page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
+    page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
   ]
 %}
-{% endif %}
-{% if page.sidebar_second|default is empty %}
-{%
-  set mainClasses = [
-    'column',
-    'col-md-9',
-  ]
-%}
-{% endif %}
-
-
 {% if layout_option == 'full' or 'fluid' %}
 {%
   set layoutClasses = [
@@ -92,6 +82,7 @@
   ]
 %}
 {% endif %}
+
 
 {% if layout_option == '' %}
 <div class="container">
@@ -208,23 +199,20 @@
     </div>
   </nav>
   <!-- End of UBC Unit Navigation -->
-  {% if layout_option == 'full' or 'fluid' %}
-  <div class="full-width-container">
-  {% endif %}
   {{ page.breadcrumb }}
   {% if page.featured %}
-    <div id="featured" class="non-clf">
-      <section class="section clearfix" role="complementary">
-      {{ page.featured }}
-      </section>
-    </div> <!-- /.section, /#featured -->
+  <div id="featured" class="non-clf">
+    <section class="section clearfix" role="complementary">
+    {{ page.featured }}
+    </section>
+  </div> <!-- /.section, /#featured -->
   {% endif %}
   <div class="content expand unit-content non-clf">
     {% if layout_option == 'full' or 'fluid' %}
     <div class="container clearfix">
     {% endif %}
-    <div class="row">
-      <main id="content" role="main"{{ attributes.addClass(mainClasses) }}>
+    <div class="row clearfix">
+      <main id="content" role="main"{{ attributes.addClass(contentClasses) }}>
         <section class="section">
           {% if page.highlighted %}
           <div id="highlighted">{{ page.highlighted }}</div>
@@ -233,28 +221,25 @@
         </section>
       </main> <!-- /.section, /#content -->
       {% if page.sidebar_first %}
-      <div id="sidebar-first"{{ attributes.addClass(sideClasses) }}>
+      <div id="sidebar-first" class="column sidebar col-sm-3">
         <aside class="section" role="complementary">
           {{ page.sidebar_first }}
         </aside>
       </div><!-- /.section, /#sidebar-first -->
       {% endif %}
       {% if page.sidebar_second %}
-      <div id="sidebar-second"{{ attributes.addClass(sideClasses) }}>
+      <div id="sidebar-second" class="column sidebar col-sm-3">
         <aside class="section" role="complementary">
           {{ page.sidebar_second }}
         </aside>
       </div><!-- /.section, /#sidebar-second -->
       {% endif %}
-      {% if layout_option == 'full' or 'fluid' %}
-      </div>
-      {% endif %}
-    </div><!-- /.unit-content -->
-  </div>
+    </div><!-- /.row -->
+    {% if layout_option == 'full' or 'fluid' %}
+    </div>
+    {% endif %}
+  </div><!-- /.unit-content -->
   <!-- End of Content Area -->
-  {% if layout_option == 'full' or 'fluid' %}
-  </div> <!-- /container -->
-  {% endif %}
   {% if mobilenav_option == '' %}
   <!-- Footer Area Unit Menu - Mobile Only -->
   <div id="ubc7-unit-alternate-navigation" class="navbar expand visible-phone" role="navigation">

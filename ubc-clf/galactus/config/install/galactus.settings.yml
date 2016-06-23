@@ -1,8 +1,9 @@
 # Set Defaults for the Galactus Theme Settings Form (via export)
 
 general:
-  clf_theme_colour: ''
+  clf_theme_colour: 'wb'
   clf_layout: ''
+  clf_override: false
   clf_navoption: true
 identity:
   clf_unit_campus: ''
@@ -31,8 +32,9 @@ logo:
 favicon:
   use_default: true
   path: ''
-clf_theme_colour: ''
+clf_theme_colour: 'wb'
 clf_layout: full
+clf_override: 0
 clf_navoption: 1
 clf_unit_campus: ''
 clf_faculty: 0

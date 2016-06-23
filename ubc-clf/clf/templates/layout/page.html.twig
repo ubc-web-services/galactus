@@ -60,6 +60,30 @@
 {#
 {{ kint() }}
 #}
+{%
+  set sideClasses = [
+    'column',
+    'sidebar',
+    'col-md-3',
+  ]
+%}
+{% if page.sidebar_first|default is empty %}
+{%
+  set mainClasses = [
+    'column',
+    'col-md-9',
+  ]
+%}
+{% endif %}
+{% if page.sidebar_second|default is empty %}
+{%
+  set mainClasses = [
+    'column',
+    'col-md-9',
+  ]
+%}
+{% endif %}
+
 
 {% if layout_option == 'full' or 'fluid' %}
 {%
@@ -189,42 +213,44 @@
   {% endif %}
   {{ page.breadcrumb }}
   {% if page.featured %}
-    <div id="featured">
-      <aside class="section clearfix" role="complementary">
+    <div id="featured" class="non-clf">
+      <section class="section clearfix" role="complementary">
       {{ page.featured }}
-      </aside>
+      </section>
     </div> <!-- /.section, /#featured -->
   {% endif %}
-  <div class="content expand unit-content">
+  <div class="content expand unit-content non-clf">
     {% if layout_option == 'full' or 'fluid' %}
     <div class="container clearfix">
     {% endif %}
-    <main id="content" class="column" role="main">
-      <section class="section">
-        {% if page.highlighted %}
-        <div id="highlighted">{{ page.highlighted }}</div>
-        {% endif %}
-        {{ page.content }}
-      </section>
-    </main> <!-- /.section, /#content -->
-    {% if page.sidebar_first %}
-    <div id="sidebar-first" class="column sidebar">
-      <aside class="section" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    </div><!-- /.section, /#sidebar-first -->
-    {% endif %}
-    {% if page.sidebar_second %}
-    <div id="sidebar-second" class="column sidebar">
-      <aside class="section" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    </div><!-- /.section, /#sidebar-second -->
-    {% endif %}
-    {% if layout_option == 'full' or 'fluid' %}
-    </div>
-    {% endif %}
-</div><!-- /#main -->
+    <div class="row">
+      <main id="content" role="main"{{ attributes.addClass(mainClasses) }}>
+        <section class="section">
+          {% if page.highlighted %}
+          <div id="highlighted">{{ page.highlighted }}</div>
+          {% endif %}
+          {{ page.content }}
+        </section>
+      </main> <!-- /.section, /#content -->
+      {% if page.sidebar_first %}
+      <div id="sidebar-first"{{ attributes.addClass(sideClasses) }}>
+        <aside class="section" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      </div><!-- /.section, /#sidebar-first -->
+      {% endif %}
+      {% if page.sidebar_second %}
+      <div id="sidebar-second"{{ attributes.addClass(sideClasses) }}>
+        <aside class="section" role="complementary">
+          {{ page.sidebar_second }}
+        </aside>
+      </div><!-- /.section, /#sidebar-second -->
+      {% endif %}
+      {% if layout_option == 'full' or 'fluid' %}
+      </div>
+      {% endif %}
+    </div><!-- /.unit-content -->
+  </div>
   <!-- End of Content Area -->
   {% if layout_option == 'full' or 'fluid' %}
   </div> <!-- /container -->

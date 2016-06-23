@@ -21,7 +21,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
   $form['core'] = array(
     '#type' => 'vertical_tabs',
     '#prefix' => '<h2><small>' . t('Override Global Settings') . '</small></h2>',
-    //'#attributes' => array('class' => array('entity-meta')),
     '#weight' => 0,
   );
   
@@ -38,15 +37,12 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#prefix' => '<h1>' . t('UBC CLF for Drupal') . '</h1>',
     '#weight' => -10,
     '#description' => t('The CLF 7.0.4 Drupal theme is a responsive theme, developed by the <a href="http://web.it.ubc.ca/forms/webservices/" title="Contact UBC IT Web Services" target="_blank">UBC IT Web Services Department</a>.<br /><br />The <a href="http://brand.ubc.ca/clf" title="Discover the UBC CLF Brand" target="_blank">CLF</a> is developed and distributed by Communications &amp; Marketing. For support <a href="http://clf.ubc.ca/support/" title="Contact UBC Communications & Marketing" target="_blank">please contact us</a>.<br /><br />To report an issue with this theme, please visit <a href="https://github.com/ubc-web-services/Galactus" target="_bank">the repository on Github</a>'),
-    //'#collapsible' => FALSE,
-    //'#collapsed' => FALSE,
   );  
     
   // Custom settings in Vertical Tabs container
   $form['clf'] = array(
     '#type' => 'vertical_tabs',
     '#prefix' => '<h2>' . t('CLF Settings') . '</h2>',
-    //'#attributes' => array('class' => array('entity-meta')),
     '#weight' => -9,
     '#default_tab' => 'general',
   );  
@@ -75,10 +71,10 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#description' => t('View <a href="http://clf.ubc.ca/design-specifications/">colour theme options</a> and design specifications.'),
     '#default_value' => theme_get_setting('clf_theme_colour'),
     '#options' => array(
-      '' => t('White on Blue'),
-      '-wg' => t('White on Grey'),
-      '-gw' => t('Grey on White'),
-      '-bw' => t('Blue on White'),
+      'wb' => t('White on Blue'),
+      'wg' => t('White on Grey'),
+      'gw' => t('Grey on White'),
+      'bw' => t('Blue on White'),
     ),
   );
   
@@ -93,14 +89,19 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
       'full' => t('Full Width CLF (Centered)'),
      ),
    );
+   
+   $form['general']['clf_override'] = array(
+     '#type' => 'checkbox', 
+     '#title' => t('Local CLF'), 
+     '#description' => t('Use a local, minimal copy of the clf css files.<br /><strong>Warning</strong>: Advanced users only. This will require creating and adding your own css form non-clf regions of the site, including navigation.'),
+     '#default_value' => theme_get_setting('clf_override'),
+    );
  
-  //$navoption = isset($variables['general']['clf_navoption']) ? $variables['general']['clf_navoption'] : true;
   $form['general']['clf_navoption'] = array(
     '#type' => 'checkbox', 
     '#title' => t('Primary Navigation Mobile Placement'),
     '#description' => t('Show the Primary Navigation at the bottom of the page on Mobile devices, in addition to the top navigation placement'),
     '#default_value' => theme_get_setting('clf_navoption'),
-    //'#default_value' => $navoption,
   );
 
 
@@ -160,14 +161,10 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
   );
   
   $form['unit']['clf_theme_colour'] = array(
-    '#type' => 'details',
+    '#type' => 'fieldset',
     '#title' => t('Unit Name Background Colour'),
-    '#description' => t('Now set though the Color Scheme options below. See design specifications for <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-colors" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>.'),
-    '#collapsible' => FALSE,
-    //'#collapsed' => FALSE,
-    //'#size' => 7,
-    //'#maxlength' => 7,
-    //'#default_value' => theme_get_setting('clf_theme_colour'),
+    '#description' => t('<strong>Now set though the <em>Colour Scheme</em> options in the <em><a href="/admin/appearance/settings/galactus">Galactus</a></em> parent theme</strong>. Changes made in a child theme will <em>not</em> be output to the child theme due to a bug in the Drupal color picker.</br />See design specifications for <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-colors" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>.'),
+    ///'#collapsible' => TRUE,
   );
   
   $form['unit']['unuglify'] = array(
@@ -177,19 +174,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     '#default_value' => theme_get_setting('unuglify'),
   );
  
- /*
-  $form['unit']['breadcrumb_display'] = array(
-   '#type' => 'checkbox',
-   '#title' => t('Breadcrumb Display Option (Highly Recommended)'),
-   '#description' => t('See <a href="http://clf.ubc.ca/parts-of-the-clf/#breadcrumbs" title="earn more about the breadcrumbs guidelines" target="_blank">breadcrumbs guidelines</a>.'),
-   '#default_value' => theme_get_setting('breadcrumb_display'),
-   //'#options' => array(
-   //  'yes' => t('Yes (Highly Recommended'),
-   //  'no' => t('No'),
-   //),
-  );
-  */
-  
   
   /** LOCATION INFORMATION
   ---------------------------------------------------------- */
@@ -202,7 +186,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
   $form['location']['clf_streetaddr'] = array(
     '#type' => 'textfield', 
     '#title' => t('Street Address'), 
-    //'#default_value' => $unitstreet, 
     '#default_value' => theme_get_setting('clf_streetaddr'),
     '#size' => 60, 
     '#maxlength' => 128,
@@ -219,7 +202,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
   $form['location']['clf_region'] = array(
     '#type' => 'textfield', 
     '#title' => t('Province / Region'), 
-    //'#default_value' => $unitprovince, 
     '#default_value' => theme_get_setting('clf_region'),
     '#size' => 60, 
     '#maxlength' => 128,
@@ -228,7 +210,6 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
   $form['location']['clf_country'] = array(
     '#type' => 'textfield', 
     '#title' => t('Country'), 
-    //'#default_value' => $unitcountry, 
     '#default_value' => theme_get_setting('clf_country'),
     '#size' => 60, 
     '#maxlength' => 128,
@@ -276,7 +257,8 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
   );
 
 
-  // SOCIAL.
+  /** SOCIAL
+  ---------------------------------------------------------- */
   $form['social'] = array(
     '#type' => 'details',
     '#title' => t('Social Media Settings'),
@@ -329,7 +311,8 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
   );
 
 
-  // SEARCH.
+  /** SEARCH
+  ---------------------------------------------------------- */
   $form['search'] = array(
     '#type' => 'details',
     '#title' => t('Search Settings'),
@@ -355,6 +338,5 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
     
   );
 
-// Return the additional form widgets
 return $form;
 }

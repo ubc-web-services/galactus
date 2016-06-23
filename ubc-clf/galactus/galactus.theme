@@ -34,18 +34,61 @@ function galactus_preprocess_html(&$variables) {
   if (!empty($variables['page']['featured'])) {
     $variables['attributes']['class'][] = 'featured';
   }
-
-  if (!empty($variables['page']['triptych_first'])
-    || !empty($variables['page']['triptych_middle'])
-    || !empty($variables['page']['triptych_last'])) {
-    $variables['attributes']['class'][] = 'triptych';
-  }
   
   // add in custom theme variables so they are available in html.twig
   $variables['color_option'] = theme_get_setting('clf_theme_colour');
   $variables['layout_option2'] = theme_get_setting('clf_layout');
+  $variables['local_clf'] = theme_get_setting('clf_override');
   $variables['unuglify'] = theme_get_setting('unuglify') ? TRUE : FALSE;
   
+  $localClf = theme_get_setting('clf_override');
+  $clfColor = theme_get_setting('clf_theme_colour');
+  $clfLayout = theme_get_setting('clf_layout');
+  
+  // switch between locally hosted CLF libraries
+  if ($localClf != '') {
+    $variables['#attached']['library'][] = 'galactus/local-clf-fixes';
+    if (($clfColor === 'wb') && ($clfLayout === '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-sw-wb';
+    }
+    elseif (($clfColor === 'wb') && ($clfLayout != '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-fw-wb';
+    }
+    elseif (($clfColor === 'bw') && ($clfLayout === '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-sw-bw';
+    }
+    elseif (($clfColor === 'bw') && ($clfLayout != '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-fw-bw';
+    }
+    elseif (($clfColor === 'wg') && ($clfLayout === '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-sw-wg';
+    }
+    elseif (($clfColor === 'wg') && ($clfLayout != '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-fw-wg';
+    }
+    elseif (($clfColor === 'gw') && ($clfLayout === '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-sw-gw';
+    }
+    elseif (($clfColor === 'gw') && ($clfLayout != '')) {
+      $variables['#attached']['library'][] = 'galactus/clf-fw-gw';
+    }
+  }
+  // switch between CDN hosted CLF libraries
+  if ($localClf == '') {
+    if (theme_get_setting('clf_theme_colour') === 'wb') {
+      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-wb';
+    }
+    elseif (theme_get_setting('clf_theme_colour') === 'bw') {
+      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-bw';
+    }
+    elseif (theme_get_setting('clf_theme_colour') === 'wg') {
+      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-wg';
+    }
+    elseif (theme_get_setting('clf_theme_colour') === 'gw') {
+      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-gw';
+    }
+  }
+
 }
 
 /**

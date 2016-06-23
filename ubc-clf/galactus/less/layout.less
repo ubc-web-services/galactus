@@ -1,0 +1,112 @@
+
+/* ---------- Basic Layout Styles ----------- */
+
+html,
+body,
+#page  {
+  height: 100%;
+}
+#page-wrapper {
+  min-height: 100%;
+}
+#header div.section,
+#featured aside.section,
+#messages div.section,
+#main,
+#footer {
+  width: 100%;
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#header div.section {
+  position: relative;
+}
+.region-header {
+  float: right;
+  margin: .5em 5px .75em;
+}
+.region-secondary-menu .block-menu {
+  width: 100%;
+  margin: 0 auto;
+}
+#main-wrapper {
+  min-height: 300px;
+}
+.sidebar .section {
+  padding: 0 15px;
+}
+#footer-wrapper {
+  padding: 35px 0 30px;
+}
+#footer-wrapper .section {
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+
+@media all and (min-width: 560px) and (max-width: 850px) {
+  #sidebar-first {
+    display: inline;
+    float: left;
+    position: relative;
+  }
+  #sidebar-first,
+  #sidebar-second {
+    width: 50%;
+  }
+  #sidebar-second {
+    margin-left: 50%;
+  }
+  .layout-one-sidebar #sidebar-first,
+  .layout-one-sidebar #sidebar-second {
+    width: 100%;
+  }
+  .layout-one-sidebar #sidebar-second {
+    margin-left: 0;
+  }
+}
+
+@media all and (min-width: 851px) {
+  #header div.section,
+  #featured aside.section,
+  #messages div.section,
+  #main,
+  #footer {
+    max-width: 1290px;
+  }
+  #content,
+  #sidebar-first,
+  #sidebar-second {
+    display: inline;
+    float: left;
+    position: relative;
+  }
+  .layout-two-sidebars #content {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+  }
+  .layout-one-sidebar #content {
+    width: 75%;
+  }
+  .layout-no-sidebars #content {
+    width: 100%;
+  }
+  .layout-sidebar-first #content {
+    margin-left: 25%;
+    margin-right: 0;
+  }
+  .layout-sidebar-second #content {
+    margin-right: 25%;
+    margin-left: 0;
+  }
+  #sidebar-first {
+    width: 25%;
+    margin-left: -100%; 
+  }
+  #sidebar-second {
+    width: 25%;
+    margin-left: -25%; 
+    clear: none;
+  }
+}

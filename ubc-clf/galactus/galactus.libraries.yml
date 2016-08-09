@@ -4,7 +4,7 @@
 global-styling:
   version: VERSION
   css:
-    theme:
+    layout:
       css/clf.fixes.css: {}
       css/system.theme.local.css: {}
       css/layout.css: {}
@@ -21,28 +21,28 @@ global-styling:
 clf-cdn-fw-wb:
   version: 7.0.4
   css:
-    theme:
+    base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external, minified: true }
       
 # Full-width, Blue on White
 clf-cdn-fw-bw:
   version: 7.0.4
   css:
-    theme:
+    base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external, minified: true }
       
 # Full-width, White on Grey
 clf-cdn-fw-wg:
   version: 7.0.4
   css:
-    theme:
+    base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external, minified: true }
       
 # Full-width, Grey on White
 clf-cdn-fw-gw:
   version: 7.0.4
   css:
-    theme:
+    base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
     
 ### Local CLF Versions ###
@@ -51,63 +51,63 @@ clf-cdn-fw-gw:
 local-clf-fixes:
   version: VERSION
   css:
-    theme:
+    base:
       css/local.clf.fixes.css: {}
 
 # Full-width, White on Blue
 clf-fw-wb:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/full-width/minimal-clf-7.0.4.css: {}
       
 # Full-width, Blue on White
 clf-fw-bw:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/full-width/minimal-clf-7.0.4-bw.css: {}
       
 # Full-width, White on Grey
 clf-fw-wg:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/full-width/minimal-clf-7.0.4-wg.css: {}
 
 # Full-width, Grey on White
 clf-fw-gw:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/full-width/minimal-clf-7.0.4-gw.css: {}
 
 # Standard-width, White on Blue
 clf-sw-wb:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/standard/minimal-clf-7.0.4.css: {}
 
 # Standard-width, Blue on White
 clf-sw-bw:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/standard/minimal-clf-7.0.4-bw.css: {}
 
 # Standard-width, White on Grey
 clf-sw-wg:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/standard/minimal-clf-7.0.4-wg.css: {}
 
 # Standard-width, Grey on White
 clf-sw-gw:
   version: VERSION
   css:
-    theme:
+    base:
       css/clf/standard/minimal-clf-7.0.4-gw.css: {}
 
 # Color Module Files

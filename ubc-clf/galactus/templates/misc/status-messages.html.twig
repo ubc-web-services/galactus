@@ -50,9 +50,9 @@
       {% else %}
         {{ messages|first }}
       {% endif %}
-    {% if type == 'error' %}
+    {#% if type == 'error' %}
       </div>
-    {% endif %}
+    {% endif % #}
   </div>
   {# Remove type specific classes. #}
   {{ attributes.removeClass(classes) }}

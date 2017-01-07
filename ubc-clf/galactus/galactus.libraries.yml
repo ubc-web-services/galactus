@@ -1,10 +1,10 @@
 # galactus.libraries.yml
 
-# Global Styles
+### Global Styles ###
 global-styling:
   version: VERSION
   css:
-    layout:
+    theme:
       css/clf.fixes.css: {}
       css/system.theme.local.css: {}
       css/layout.css: {}
@@ -45,7 +45,7 @@ clf-cdn-fw-gw:
     base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
     
-### Local CLF Versions ###
+### Minimal CLF Versions ###
 
 # First, a file to clean up any inconsistencies
 local-clf-fixes:
@@ -56,61 +56,61 @@ local-clf-fixes:
 
 # Full-width, White on Blue
 clf-fw-wb:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/full-width/minimal-clf-7.0.4.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
       
 # Full-width, Blue on White
 clf-fw-bw:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/full-width/minimal-clf-7.0.4-bw.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
       
 # Full-width, White on Grey
 clf-fw-wg:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/full-width/minimal-clf-7.0.4-wg.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external, minified: true }
 
 # Full-width, Grey on White
 clf-fw-gw:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/full-width/minimal-clf-7.0.4-gw.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external, minified: true }
 
 # Standard-width, White on Blue
 clf-sw-wb:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/standard/minimal-clf-7.0.4.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external, minified: true }
 
 # Standard-width, Blue on White
 clf-sw-bw:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/standard/minimal-clf-7.0.4-bw.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external, minified: true }
 
 # Standard-width, White on Grey
 clf-sw-wg:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/standard/minimal-clf-7.0.4-wg.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external, minified: true }
 
 # Standard-width, Grey on White
 clf-sw-gw:
-  version: VERSION
+  version: 7.0.4
   css:
     base:
-      css/clf/standard/minimal-clf-7.0.4-gw.css: {}
+      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
 
-# Color Module Files
+### Color Module Files ###
 color.preview:
   version: VERSION
   css:
@@ -120,15 +120,16 @@ color.preview:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
+    - galactus/global-styling
 
-# Local Task Files    
+### Local Task Files ###  
 local-tasks:
   version: VERSION
   css:
     theme:
       css/local-tasks.css: {}
 
-# Message / Alert Files         
+### Message / Alert Files ###         
 messages:
   version: VERSION
   css:
@@ -139,3 +140,9 @@ messages:
   dependencies:
     - core/jquery
 
+ ### Maintenance Page ###         
+maintenance-page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}

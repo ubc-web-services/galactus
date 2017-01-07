@@ -92,8 +92,8 @@ function galactus_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\For
    
    $form['general']['clf_override'] = array(
      '#type' => 'checkbox', 
-     '#title' => t('Local CLF'), 
-     '#description' => t('Use a local, minimal copy of the clf css files.<br /><strong>Warning</strong>: Advanced users only. This will require creating and adding your own css form non-clf regions of the site, including navigation.'),
+     '#title' => t('Minimal CLF'), 
+     '#description' => t('Use an external, minimal copy of the clf css files.<br /><strong>Warning</strong>: Advanced users only. This will require creating and adding your own css form non-clf regions of the site, including navigation.'),
      '#default_value' => theme_get_setting('clf_override'),
     );
  

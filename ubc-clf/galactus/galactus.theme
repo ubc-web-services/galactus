@@ -6,6 +6,26 @@
  */
 
 /**
+ * Implements hook_page_attachments_alter().
+ */
+function galactus_page_attachments_alter(array &$page) {
+  $use_local_clf = theme_get_setting('clf_override');
+  $clf_theme_color = theme_get_setting('clf_theme_colour');
+  $clf_layout = theme_get_setting('clf_layout');
+
+  // Switch between locally hosted CLF libraries.
+  if ($use_local_clf) {
+    $clf_layout_id = $clf_layout ? 'sw' : 'fw';
+    $variables['#attached']['library'][] = 'galactus/local-clf-fixes';
+    $variables['#attached']['library'][] = 'galactus/clf-' . $clf_layout_id . '-' . $clf_theme_color;
+  }
+  else {
+    // Switch between CDN hosted CLF libraries.
+    $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-' . $clf_theme_color;
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() for HTML document templates.
  *
  * Adds body classes if certain regions have content.
@@ -30,61 +50,12 @@ function galactus_preprocess_html(&$variables) {
   if (!empty($variables['page']['featured'])) {
     $variables['attributes']['class'][] = 'featured';
   }
-  
+
   // add in custom theme variables so they are available in html.twig
   $variables['color_option'] = theme_get_setting('clf_theme_colour');
   $variables['layout_option2'] = theme_get_setting('clf_layout');
   $variables['local_clf'] = theme_get_setting('clf_override');
   $variables['unuglify'] = theme_get_setting('unuglify') ? TRUE : FALSE;
-  
-  $localClf = theme_get_setting('clf_override');
-  $clfColor = theme_get_setting('clf_theme_colour');
-  $clfLayout = theme_get_setting('clf_layout');
-  
-  // switch between locally hosted CLF libraries
-  if ($localClf == TRUE) {
-    $variables['#attached']['library'][] = 'galactus/local-clf-fixes';
-    if (($clfColor == 'wb') && ($clfLayout == FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-sw-wb';
-    }
-    elseif (($clfColor == 'wb') && ($clfLayout != FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-fw-wb';
-    }
-    elseif (($clfColor == 'bw') && ($clfLayout == FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-sw-bw';
-    }
-    elseif (($clfColor == 'bw') && ($clfLayout != FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-fw-bw';
-    }
-    elseif (($clfColor == 'wg') && ($clfLayout == FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-sw-wg';
-    }
-    elseif (($clfColor == 'wg') && ($clfLayout != FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-fw-wg';
-    }
-    elseif (($clfColor == 'gw') && ($clfLayout == FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-sw-gw';
-    }
-    elseif (($clfColor == 'gw') && ($clfLayout != FALSE)) {
-      $variables['#attached']['library'][] = 'galactus/clf-fw-gw';
-    }
-  }
-  // switch between CDN hosted CLF libraries
-  if ($localClf == FALSE) {
-    if (theme_get_setting('clf_theme_colour') == 'wb') {
-      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-wb';
-    }
-    elseif (theme_get_setting('clf_theme_colour') == 'bw') {
-      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-bw';
-    }
-    elseif (theme_get_setting('clf_theme_colour') == 'wg') {
-      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-wg';
-    }
-    elseif (theme_get_setting('clf_theme_colour') == 'gw') {
-      $variables['#attached']['library'][] = 'galactus/clf-cdn-fw-gw';
-    }
-  }
-
 }
 
 /**
@@ -110,7 +81,7 @@ function galactus_preprocess_page(&$variables) {
     // Make sure the shortcut link is the first item in title_suffix.
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
-    
+
   // add in our custom theme variables so we can use them in page.twig
   // general options
   $variables['layout_option'] = theme_get_setting('clf_layout');
@@ -120,12 +91,12 @@ function galactus_preprocess_page(&$variables) {
   $variables['faculty_name'] = theme_get_setting('clf_faculty_name');
   $variables['unit_name'] = theme_get_setting('clf_unitname');
   //$variables['breadcrumb_option'] = theme_get_setting('breadcrumb_name') ? TRUE : FALSE;
-  
+
   // search options
   $variables['searchlabel_option'] = theme_get_setting('clf_searchlabel');
   $variables['searchdomain_option'] = theme_get_setting('clf_searchdomain');
   //$variables['searchoverride_option'] = theme_get_setting('clf_subunit_override');
-  
+
   // footer options
   $variables['address_option'] = theme_get_setting('clf_streetaddr');
   $variables['locality_option'] = theme_get_setting('clf_locality');
@@ -136,14 +107,14 @@ function galactus_preprocess_page(&$variables) {
   $variables['fax_option'] = theme_get_setting('clf_fax');
   $variables['email_option'] = theme_get_setting('clf_email');
   $variables['website_option'] = theme_get_setting('clf_website');
-  
+
   // social media options
   $variables['facebook_option'] = theme_get_setting('clf_social_facebook');
   $variables['twitter_option'] = theme_get_setting('clf_social_twitter');
   $variables['linkedin_option'] = theme_get_setting('clf_social_linkedin');
   $variables['googleplus_option'] = theme_get_setting('clf_social_googleplus');
   $variables['youtube_option'] = theme_get_setting('clf_social_youtube');
-  
+
 }
 
 /**
@@ -174,10 +145,10 @@ function galactus_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
-  
+
   // Add node--node_type--view_mode.html.twig suggestions
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['elements']['#node']->bundle() . '__' . $variables['view_mode'];
-  
+
   // Add node--view_mode.html.twig suggestions
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
 }

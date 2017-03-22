@@ -26,48 +26,48 @@ html.js #preview {
 }
 
 #preview-ubc7-header {
-	border-top: 5px solid #002145;
-	background: white;
-	color: #002145;
-	padding: 1em;
-	font-size: 18px;
+  border-top: 5px solid #002145;
+  background: white;
+  color: #002145;
+  padding: 1em;
+  font-size: 18px;
 }
 
 #preview-ubc7-unit {
-	background-color: #002145;
-	color: #fff;
-	padding: 1em;
-	font-size: 18px;
+  background-color: #002145;
+  color: #fff;
+  padding: 1em;
+  font-size: 18px;
 }
 
 #preview-ubc7-unit-menu {
-	background: #e6e6e6;
+  background: #e6e6e6;
 }
 #preview-ubc7-unit-navigation ul {
-	list-style: none;
-	margin: 0;
-	
+  list-style: none;
+  margin: 0;
+
 }
 #preview-ubc7-unit-navigation li {
-	float: left;
+  float: left;
 }
 #preview-ubc7-unit-navigation a {
-	display: block;
-	padding: 8px 14px;
+  display: block;
+  padding: 8px 14px;
 }
 
 #preview-ubc7-unit-navigation a.active {
-	color: #002145;
-	background-color: #d7e0e7;
-	-webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
-	-moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
-	box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+  color: #002145;
+  background-color: #d7e0e7;
+  -webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+  -moz-box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
+  box-shadow: inset 0 3px 8px rgba(0,0,0,.125);
 }
 #preview-ubc7-unit-navigation a:hover,
 #preview-ubc7-unit-navigation a.active:hover {
-	background-color: #002145;
-	color: white;
-	text-decoration: none;
+  background-color: #002145;
+  color: white;
+  text-decoration: none;
 }
 
 

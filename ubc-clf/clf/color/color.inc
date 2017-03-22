@@ -5,9 +5,9 @@
  * Lists available colors and color schemes for the galactus theme.
  */
 
-$info = array(
+$info = [
   // Available colors and color labels used in theme.
-  'fields' => array(
+  'fields' => [
     'unit' => t('Unit Colour'),
     'text' => t('Text Colour'),
     'primary' => t('Primary Colour'),
@@ -21,13 +21,13 @@ $info = array(
     'link' => t('Link Colour'),
     'linkhover' => t('Link Hover Colour'),
     'linkactive' => t('Link Active Colour'),
-  ),
+  ],
   // Pre-defined color schemes.
-  'schemes' => array(
-    'default' => array(
+  'schemes' => [
+    'default' => [
       'title' => t('CLF (default)'),
       // Default colours MUST match those in the css file. Changing via the form will create a custom colour set.
-      'colors' => array(
+      'colors' => [
         'unit' => '#002145',
         'text' => '#222222',
         'primary' => '#002143',
@@ -41,11 +41,11 @@ $info = array(
         'link' => '#0779af',
         'linkhover' => '#2f5d7c',
         'linkactive' => '#2f5d7d',
-      ),
-    ),
-    'alternate' => array(
+      ],
+    ],
+    'alternate' => [
       'title' => t('Alternate'),
-      'colors' => array(
+      'colors' => [
         'unit' => '#0779bf',
         'text' => '#333333',
         'primary' => '#0779bf',
@@ -59,17 +59,17 @@ $info = array(
         'link' => '#0779bf',
         'linkhover' => '#2f5d7c',
         'linkactive' => '#2f5d7c',
-      ),
-    ),
-  ),
+      ],
+    ],
+  ],
 
 
   // CSS files (excluding @import) to rewrite with new color scheme.
-  'css' => array(
+  'css' => [
     'css/clf-colors.css',
-  ),
+  ],
 
   // Preview files.
   'preview_library' => 'clf/color.preview',
   'preview_html' => 'color/preview.html',
-);
+];

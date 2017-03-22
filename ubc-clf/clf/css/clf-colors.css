@@ -1,13 +1,13 @@
 /* ---------- Color Module Styles ----------- */
 /*
-  NOTE: 
-  - Colours here must match the default colours set in color.inc. 
+  NOTE:
+  - Colours here must match the default colours set in color.inc.
   - Styles that use a single value in this file (ie. #eeeeee) will ALL be changed if ONE valid value is changed on the settings page.
-*/ 
+*/
 
 /* ---------- Unit Colour ----------- */
 #ubc7-unit {
-	background-color: #002145;
+  background-color: #002145;
 }
 
 /* ---------- Text ----------- */

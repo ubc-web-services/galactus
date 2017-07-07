@@ -1,7 +1,7 @@
 # Set Defaults for the Galactus Theme Settings Form (via export)
 
 general:
-  clf_theme_colour: 'wb'
+  clf_theme_colour: 'bw'
   clf_layout: ''
   clf_override: false
   clf_navoption: true
@@ -9,7 +9,7 @@ identity:
   clf_unit_campus: ''
 unit:
   clf_unitname: 'UBC Unit'
-  clf_theme_colour: 0093c9
+  clf_theme_unit_colour: 002145
   unuglify: true
   breadcrumb_display: true
 location:
@@ -32,7 +32,7 @@ logo:
 favicon:
   use_default: true
   path: ''
-clf_theme_colour: 'wb'
+clf_theme_colour: 'bw'
 clf_layout: full
 clf_override: 0
 clf_navoption: 1

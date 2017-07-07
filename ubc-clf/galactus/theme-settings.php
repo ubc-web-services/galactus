@@ -156,13 +156,13 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
       'Sauder School of Business' => t('Sauder School of Business'),
     ],
   ];
-  $form['unit']['clf_theme_colour'] = [
-    '#type' => 'fieldset',
+  $form['unit']['clf_theme_unit_colour'] = [
+    '#type' => 'textfield',
     '#title' => t('Unit Name Background Colour'),
-    '#description' => t('<strong>Now set though the <em>Colour Scheme</em> options in the <em><a href=":url">Galactus</a></em> parent theme</strong>. Changes made in a child theme will <em>not</em> be output to the child theme due to a bug in the Drupal color picker.</br />See design specifications for <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-colors" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>.', [
-      ':url' => '/admin/appearance/settings/galactus',
-    ]),
-    ///'#collapsible' => TRUE,
+    '#description' => t('See design specifications for <a href="http://clf.ubc.ca/parts-of-the-clf/#unit-colors" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>. Use HEX colour (do not include the #)'),
+    '#size' => 7,
+    '#maxlength' => 7,
+    '#default_value' => theme_get_setting('clf_theme_unit_colour'),
   ];
   $form['unit']['unuglify'] = [
     '#type' => 'checkbox',

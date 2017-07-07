@@ -8,7 +8,7 @@ identity:
   clf_unit_campus: ''
 unit:
   clf_unitname: 'UBC Unit'
-  clf_theme_colour: 0093c9
+  clf_theme_unit_colour: 002145
   unuglify: true
   breadcrumb_display: true
 location:

@@ -51,11 +51,22 @@ function galactus_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'featured';
   }
 
-  // add in custom theme variables so they are available in html.twig
+  // Add in custom theme variables so they are available in html.twig
   $variables['color_option'] = theme_get_setting('clf_theme_colour');
   $variables['layout_option2'] = theme_get_setting('clf_layout');
   $variables['local_clf'] = theme_get_setting('clf_override');
   $variables['unuglify'] = theme_get_setting('unuglify') ? TRUE : FALSE;
+
+  // Add inline banner colour
+  $unit_color_option = theme_get_setting('clf_theme_unit_colour');
+  $css = "#ubc7-unit { background-color: #$unit_color_option !important; }";
+  $variables['page']['#attached']['html_head'][] = [
+    [
+      '#tag' => 'style',
+      '#value' => $css,
+    ],
+    'unit-colour-css'
+  ];
 }
 
 /**

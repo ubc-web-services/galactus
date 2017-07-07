@@ -1,6 +1,6 @@
 name: galactus
 type: theme
-description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+description: 'A flexible UBC CLF theme with many regions and a responsive, mobile-first layout.'
 package: galactus
 version: 0.12
 core: 8.x
@@ -12,16 +12,15 @@ ckeditor_stylesheets:
   - css/ckeditor-iframe.css
 
 regions:
-  header: Header
+  header: 'Header'
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
-  help: Help
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
+  featured: 'Featured'
   breadcrumb: 'Breadcrumb'
-  highlighted: Highlighted
-  featured: Featured
-  content: Content
+  help: 'Help'
+  highlighted: 'Highlighted'
+  content: 'Content'
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
-  footer: Footer
+  secondary_content: 'Secondary Content'
+  prefooter: 'Pre-Footer'

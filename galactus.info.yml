@@ -6,8 +6,8 @@ version: 0.12
 core: 8.x
 
 libraries:
-  - galactus/global-styling
-  
+  - galactus/global
+
 ckeditor_stylesheets:
   - css/ckeditor-iframe.css
 

@@ -1,8 +1,7 @@
 # galactus.libraries.yml
 
-### Global Styles ###
-global-styling:
-  version: VERSION
+### Global Styles & Scripts ###
+global:
   css:
     theme:
       css/clf.fixes.css: {}
@@ -14,42 +13,41 @@ global-styling:
     //cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
   dependencies:
     - core/jquery
-    
+
 ### CDN CLF Versions ###
-      
+
 # Full-width, White on Blue
 clf-cdn-fw-wb:
   version: 7.0.4
   css:
     base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external, minified: true }
-      
+
 # Full-width, Blue on White
 clf-cdn-fw-bw:
   version: 7.0.4
   css:
     base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external, minified: true }
-      
+
 # Full-width, White on Grey
 clf-cdn-fw-wg:
   version: 7.0.4
   css:
     base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external, minified: true }
-      
+
 # Full-width, Grey on White
 clf-cdn-fw-gw:
   version: 7.0.4
   css:
     base:
       //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
-    
+
 ### Minimal CLF Versions ###
 
 # First, a file to clean up any inconsistencies
 local-clf-fixes:
-  version: VERSION
   css:
     base:
       css/local.clf.fixes.css: {}
@@ -60,14 +58,14 @@ clf-fw-wb:
   css:
     base:
       //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
-      
+
 # Full-width, Blue on White
 clf-fw-bw:
   version: 7.0.4
   css:
     base:
       //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
-      
+
 # Full-width, White on Grey
 clf-fw-wg:
   version: 7.0.4
@@ -110,16 +108,14 @@ clf-sw-gw:
     base:
       //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
 
-### Local Task Files ###  
+### Local Task Files ###
 local-tasks:
-  version: VERSION
   css:
     theme:
       css/local-tasks.css: {}
 
-### Message / Alert Files ###         
+### Message / Alert Files ###
 messages:
-  version: VERSION
   css:
     theme:
       css/alerts.css: {}
@@ -128,9 +124,8 @@ messages:
   dependencies:
     - core/jquery
 
- ### Maintenance Page ###         
+### Maintenance Page ###
 maintenance-page:
-  version: VERSION
   css:
     theme:
       css/maintenance-page.css: {}

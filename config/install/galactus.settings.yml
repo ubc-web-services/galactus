@@ -1,23 +1,5 @@
 # Set Defaults for the Galactus Theme Settings Form (via export)
 
-general:
-  clf_theme_colour: 'bw'
-  clf_layout: ''
-  clf_override: false
-  clf_navoption: true
-identity:
-  clf_unit_campus: ''
-unit:
-  clf_unitname: 'UBC Unit'
-  clf_theme_unit_colour: 002145
-  unuglify: true
-  breadcrumb_display: true
-location:
-  clf_streetaddr: '123 Main St.'
-  clf_locality: Vancouver
-  clf_region: BC
-  clf_country: Canada
-unit_name: 'Test Name'
 features:
   logo: true
   name: true
@@ -27,27 +9,28 @@ features:
   comment_user_verification: true
   favicon: true
 logo:
-  use_default: true
+  use_default: false
   path: ''
 favicon:
   use_default: true
   path: ''
+
+clf_unitname: 'Unit Name'
 clf_theme_colour: 'bw'
-clf_layout: full
+clf_layout: 'full'
 clf_override: 0
-clf_navoption: 1
+clf_navoption: 0
 clf_unit_campus: ''
 clf_faculty: 0
+clf_theme_unit_colour: '002145'
 clf_faculty_name: 'Allard School of Law'
-clf_unitname: 'Test Name'
 unuglify: 1
-breadcrumb_display: 1
 clf_streetaddr: '123 Main St.'
 clf_locality: 'Vancouver'
 clf_region: 'BC'
 clf_country: 'Canada'
 clf_postal: ''
-clf_telephone: ''
+clf_telephone: '604 822 0000'
 clf_fax: ''
 clf_email: ''
 clf_website: ''

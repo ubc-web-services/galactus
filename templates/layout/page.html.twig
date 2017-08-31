@@ -192,12 +192,14 @@
       {{ page.featured }}
     </section> 
   {% endif %}
-  {% if layout_option == 'full' or 'fluid' %}
-    <div class="container clearfix non-clf">
-  {% endif %}
-    {{ page.breadcrumb }}
-  {% if layout_option == 'full' or 'fluid' %}
-    </div>
+  {% if page.breadcrumb %}
+    {% if layout_option == 'full' or 'fluid' %}
+      <div class="container clearfix non-clf">
+    {% endif %}
+      {{ page.breadcrumb }}
+    {% if layout_option == 'full' or 'fluid' %}
+      </div>
+    {% endif %}
   {% endif %}
   <div class="content expand unit-content non-clf">
     {% if layout_option == 'full' or 'fluid' %}

@@ -1,12 +1,16 @@
 name: galactus
 type: theme
+core: 8.x
+base theme: classy
 description: 'A flexible UBC CLF theme with many regions and a responsive, mobile-first layout.'
 package: galactus
 version: 0.12
-core: 8.x
 
 libraries:
   - galactus/global
+
+libraries-override:
+  classy/base: false
 
 ckeditor_stylesheets:
   - css/ckeditor-iframe.css

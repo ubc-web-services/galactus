@@ -15,13 +15,19 @@ function galactus_page_attachments_alter(array &$page) {
   $clf_theme_color = theme_get_setting('clf_theme_colour');
   $clf_layout = theme_get_setting('clf_layout');
 
+  if (($clf_layout = 'full') || ($clf_layout = 'fluid')){
+    $clf_layout_id = 'fw';
+  }
+  else {
+    $clf_layout_id = 'sw';
+  }
+  
   // Switch between minimal and full CLF libraries.
   if ($use_minimal_clf) {
-    $clf_layout_id = $clf_layout ? 'sw' : 'fw';
     $page['#attached']['library'][] = 'galactus/clf-' . $clf_layout_id . '-' . $clf_theme_color;
   }
   else {
-    // Switch between CDN hosted CLF libraries.
+    // Use full CLF library.
     $page['#attached']['library'][] = 'galactus/clf-cdn-fw-' . $clf_theme_color;
   }
 }

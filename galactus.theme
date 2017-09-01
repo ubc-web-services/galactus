@@ -5,18 +5,19 @@
  * Functions to support theming in the galactus theme.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
 /**
  * Implements hook_page_attachments_alter().
  */
 function galactus_page_attachments_alter(array &$page) {
-  $use_local_clf = theme_get_setting('clf_override');
+  $use_minimal_clf = theme_get_setting('clf_override');
   $clf_theme_color = theme_get_setting('clf_theme_colour');
   $clf_layout = theme_get_setting('clf_layout');
 
-  // Switch between locally hosted CLF libraries.
-  if ($use_local_clf) {
+  // Switch between minimal and full CLF libraries.
+  if ($use_minimal_clf) {
     $clf_layout_id = $clf_layout ? 'sw' : 'fw';
-    $page['#attached']['library'][] = 'galactus/local-clf-fixes';
     $page['#attached']['library'][] = 'galactus/clf-' . $clf_layout_id . '-' . $clf_theme_color;
   }
   else {
@@ -31,6 +32,99 @@ function galactus_page_attachments_alter(array &$page) {
  * Adds body classes if certain regions have content.
  */
 function galactus_preprocess_html(&$variables) {
+
+  // Add in custom theme variables so they are available in html.twig.
+  $variables['color_option'] = theme_get_setting('clf_theme_colour');
+  $variables['layout_option2'] = theme_get_setting('clf_layout');
+  $variables['local_clf'] = theme_get_setting('clf_override');
+  $variables['unuglify'] = theme_get_setting('unuglify') ? TRUE : FALSE;
+
+  // Add Apple Touch Icons.
+  $clf_apple_touch_144 = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-144-precomposed.png',
+      'rel' => 'apple-touch-icon-precomposed',
+      'sizes' => '144x144',
+    ],
+  ];
+  $clf_apple_touch_114 = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-114-precomposed.png',
+      'rel' => 'apple-touch-icon-precomposed',
+      'sizes' => '114x114',
+    ],
+  ];
+  $clf_apple_touch_72 = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-72-precomposed.png',
+      'rel' => 'apple-touch-icon-precomposed',
+      'sizes' => '72x72',
+    ],
+  ];
+  $clf_apple_touch = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-57-precomposed.png',
+      'rel' => 'apple-touch-icon-precomposed',
+    ],
+  ];
+  $variables['page']['#attached']['html_head'][] = [$clf_apple_touch_144, 'clf-apple-touch-144'];
+  $variables['page']['#attached']['html_head'][] = [$clf_apple_touch_114, 'clf-apple-touch-114'];
+  $variables['page']['#attached']['html_head'][] = [$clf_apple_touch_72, 'clf-apple-touch-72'];
+  $variables['page']['#attached']['html_head'][] = [$clf_apple_touch, 'clf-apple-touch'];
+
+  /* Add a NOFOLLOW tag if the site is not meant for production */
+  if (theme_get_setting('clf_noindex') == TRUE) {
+    $nofollow = [
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => [
+        'name' => 'robots',
+        'content' => 'noindex, nofollow',
+      ],
+    ];
+    $variables['page']['#attached']['html_head'][] = [$nofollow, 'nofollow'];
+  }
+  $prefetch = [
+    '#type' => 'html_tag',
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'dns-prefetch',
+      'href' => 'https://cdn.ubc.ca',
+    ],
+  ];
+  $variables['page']['#attached']['html_head'][] = [$prefetch, 'prefetch'];
+  
+  /* Add Google nad Bing Verification Tags */
+  $googleVerificationCode = theme_get_setting('clf_google_verify');
+  if (!empty(theme_get_setting('clf_google_verify'))) {
+    $googleverify = [
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => [
+        'name' => 'google-site-verification',
+        'content' => $googleVerificationCode,
+      ],
+    ];
+    $variables['page']['#attached']['html_head'][] = [$googleverify, 'googleverify'];
+  }
+
+  $bingVerificationCode = theme_get_setting('clf_bing_verify');
+  if (!empty(theme_get_setting('clf_bing_verify'))) {
+    $bingverify = [
+      '#type' => 'html_tag',
+      '#tag' => 'meta',
+      '#attributes' => [
+        'name' => 'msvalidate.01',
+        'content' => $bingVerificationCode,
+      ],
+    ];
+    $variables['page']['#attached']['html_head'][] = [$bingverify, 'bingverify'];
+  }
+
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['attributes']['class'][] = 'layout-two-sidebars';
@@ -50,13 +144,7 @@ function galactus_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'featured';
   }
 
-  // Add in custom theme variables so they are available in html.twig
-  $variables['color_option'] = theme_get_setting('clf_theme_colour');
-  $variables['layout_option2'] = theme_get_setting('clf_layout');
-  $variables['local_clf'] = theme_get_setting('clf_override');
-  $variables['unuglify'] = theme_get_setting('unuglify') ? TRUE : FALSE;
-
-  // Add inline banner colour
+  // Add inline banner colour.
   $unit_color_option = theme_get_setting('clf_theme_unit_colour');
   $css = "#ubc7-unit { background-color: #$unit_color_option !important; }";
   $variables['page']['#attached']['html_head'][] = [
@@ -64,8 +152,33 @@ function galactus_preprocess_html(&$variables) {
       '#tag' => 'style',
       '#value' => $css,
     ],
-    'unit-colour-css'
+    'unit-colour-css',
   ];
+
+  // Add sticky class and library.
+  if (theme_get_setting('clf_navigation_sticky') == TRUE) {
+    $variables['attributes']['class'][] = 'clf-navigation-sticky';
+    $variables['#attached']['library'][] = 'galactus/clf-sticky-navigation';
+  }
+  // Add secondary navigation class and library.
+  if (theme_get_setting('clf_secondarynavoption') == TRUE) {
+    $variables['attributes']['class'][] = 'clf-navigation-secondary';
+    $variables['#attached']['library'][] = 'galactus/clf-secondary-navigation';
+  }
+
+  // Add Whitney library if set.
+  if (theme_get_setting('clf_use_whitney') == 'dev') {
+    $variables['#attached']['library'][] = 'galactus/clf-whitney-dev';
+  }
+  if (theme_get_setting('clf_use_whitney') == 'prod') {
+    $variables['#attached']['library'][] = 'galactus/clf-whitney-prod';
+  }
+
+  // Add Fontawesome library if set.
+  if (theme_get_setting('clf_fontawesome') == TRUE) {
+    $variables['#attached']['library'][] = 'galactus/clf-fontawesome';
+  }
+
 }
 
 /**
@@ -89,8 +202,8 @@ function galactus_preprocess_page(&$variables) {
     $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
   }
 
-  // add in our custom theme variables so we can use them in page.twig
-  // general options
+  // Add in our custom theme variables so we can use them in page.twig
+  // general options.
   $variables['layout_option'] = theme_get_setting('clf_layout');
   $variables['mobilenav_option'] = theme_get_setting('clf_navoption') ? FALSE : TRUE;
   $variables['campus_option'] = theme_get_setting('clf_unit_campus');
@@ -98,11 +211,34 @@ function galactus_preprocess_page(&$variables) {
   $variables['faculty_name'] = theme_get_setting('clf_faculty_name');
   $variables['unit_name'] = theme_get_setting('clf_unitname');
 
-  // search options
+  // Search options.
   $variables['searchlabel_option'] = theme_get_setting('clf_searchlabel');
   $variables['searchdomain_option'] = theme_get_setting('clf_searchdomain');
 
-  // footer options
+  // Content layout classes.
+  $variables['content_row_class_option'] = theme_get_setting('clf_content_row_class');
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['content_class_option'] = theme_get_setting('clf_two_sidebar_class');
+    $variables['sidebar_first_class_option'] = theme_get_setting('clf_two_sidebar_class_sidebar1');
+    $variables['sidebar_second_class_option'] = theme_get_setting('clf_two_sidebar_class_sidebar2');
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['content_class_option'] = theme_get_setting('clf_one_sidebar_class');
+    $variables['sidebar_first_class_option'] = theme_get_setting('clf_one_sidebar_class_sidebar');
+    $variables['sidebar_second_class_option'] = '';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['content_class_option'] = theme_get_setting('clf_one_sidebar_class');
+    $variables['sidebar_first_class_option'] = '';
+    $variables['sidebar_second_class_option'] = theme_get_setting('clf_one_sidebar_class_sidebar');
+  }
+  else {
+    $variables['content_class_option'] = theme_get_setting('clf_no_sidebar_class');
+    $variables['sidebar_first_class_option'] = '';
+    $variables['sidebar_second_class_option'] = '';
+  }
+
+  // Footer options.
   $variables['address_option'] = theme_get_setting('clf_streetaddr');
   $variables['locality_option'] = theme_get_setting('clf_locality');
   $variables['region_option'] = theme_get_setting('clf_region');
@@ -113,12 +249,13 @@ function galactus_preprocess_page(&$variables) {
   $variables['email_option'] = theme_get_setting('clf_email');
   $variables['website_option'] = theme_get_setting('clf_website');
 
-  // social media options
+  // Social media options.
   $variables['facebook_option'] = theme_get_setting('clf_social_facebook');
   $variables['twitter_option'] = theme_get_setting('clf_social_twitter');
   $variables['linkedin_option'] = theme_get_setting('clf_social_linkedin');
   $variables['googleplus_option'] = theme_get_setting('clf_social_googleplus');
   $variables['youtube_option'] = theme_get_setting('clf_social_youtube');
+
 }
 
 /**
@@ -133,7 +270,7 @@ function galactus_preprocess_maintenance_page(&$variables) {
     $variables['site_name'] = '';
   }
 
-  // galactus has custom styling for the maintenance page.
+  // Galactus has custom styling for the maintenance page.
   $variables['#attached']['library'][] = 'galactus/maintenance_page';
 
   // Set the options that apply to both page and maintenance page.
@@ -150,10 +287,10 @@ function galactus_preprocess_node(&$variables) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
 
-  // Add node--node_type--view_mode.html.twig suggestions
+  // Add node--node_type--view_mode.html.twig suggestions.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['elements']['#node']->bundle() . '__' . $variables['view_mode'];
 
-  // Add node--view_mode.html.twig suggestions
+  // Add node--view_mode.html.twig suggestions.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['view_mode'];
 }
 
@@ -190,15 +327,33 @@ function galactus_preprocess_field(&$variables) {
 }
 
 /**
+ * Implements hook_form_alter() for forms.
+ */
+function galactus_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'search_block_form') {
+    $form['keys']['#theme_wrappers'] = NULL;
+    $form['keys']['#prefix'] = '<div class="form-inline input-append">';
+    $form['keys']['#attributes']['placeholder'] = t('Search...');
+    $form['actions']['#theme_wrappers'] = NULL;
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary';
+    $form['actions']['#suffix'] = '</div>';
+  }
+  if ($form_id == 'user_login_form') {
+    $form['actions']['#theme_wrappers'] = NULL;
+    $form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary btn-block';
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter() for page.html.twig.
  */
 function galactus_theme_suggestions_page_alter(array &$suggestions, array $variables) {
-  // Get current node
+  // Get current node.
   $node = \Drupal::request()->attributes->get('node');
   if ($node) {
-    // Add the Node Type as a template suggestion
+    // Add the Node Type as a template suggestion.
     if ($node->getType()) {
-      $suggestions[] = 'page__' . 'node_type' . '__' . $node->getType();
+      $suggestions[] = 'page__node_type__' . $node->getType();
     }
   }
 }

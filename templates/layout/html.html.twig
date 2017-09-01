@@ -24,7 +24,7 @@
  */
 #}
 {%
-  set body_classes = [
+  set bodyClasses = [
     logged_in ? 'user-logged-in',
     not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
     node_type ? 'page-node-type-' ~ node_type|clean_class,
@@ -32,40 +32,43 @@
   ]
 %}
 {% if layout_option2 == 'full' %}
-{%
-  set layoutClasses = [
-    'full-width',
-  ]
-%}
+  {%
+    set layoutClasses = [
+      'full-width',
+    ]
+  %}
 {% endif %}
 {% if layout_option2 == 'fluid' %}
-{%
-  set layoutClasses = [
-    'full-width',
-    'full-width-left',
-  ]
-%}
+  {%
+    set layoutClasses = [
+      'full-width',
+      'full-width-left',
+    ]
+  %}
 {% endif %}
 {% if unuglify %}
-{%
-  set niceClasses = [
-    'make-nice',
-  ]
-%}
+  {%
+    set niceClasses = [
+      'make-nice',
+    ]
+  %}
+{% endif %}
+{% if local_modernizr %}
+  {%
+    set modClasses = [
+      'supports-no-js',
+    ]
+  %}
 {% endif %}
 <!DOCTYPE html>
-<html{{ html_attributes }}>
+<html{{ html_attributes.addClass(modClasses) }}>
   <head>
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="//cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="//cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-57-precomposed.png">
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
-  <body{{ attributes.addClass(body_classes).addClass(layoutClasses).addClass(niceClasses).addClass('all-content') }}>
+  <body{{ attributes.addClass(bodyClasses).addClass(layoutClasses).addClass(niceClasses).addClass('all-content') }}>
     <a href="#main-content" class="visually-hidden focusable skip-link">
       {{ 'Skip to main content'|t }}
     </a>

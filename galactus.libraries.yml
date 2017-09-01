@@ -4,12 +4,11 @@
 global:
   css:
     theme:
-      css/clf.fixes.css: {}
-      css/system.theme.local.css: {}
-      css/layout.css: {}
-      css/print.css: { media: print }
+      css/clf.drupal.css: {}
+      css/style.css: {}
   js:
-    //cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
+    https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
+    js/lib/bootstrap/bootstrap-alert.js: {}
   dependencies:
     - core/jquery
 
@@ -20,92 +19,86 @@ clf-cdn-fw-wb:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external, minified: true }
 
 # Full-width, Blue on White
 clf-cdn-fw-bw:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external, minified: true }
 
 # Full-width, White on Grey
 clf-cdn-fw-wg:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external, minified: true }
 
 # Full-width, Grey on White
 clf-cdn-fw-gw:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
 
 ### Minimal CLF Versions ###
-
-# First, a file to clean up any inconsistencies
-local-clf-fixes:
-  css:
-    base:
-      css/local.clf.fixes.css: {}
 
 # Full-width, White on Blue
 clf-fw-wb:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
 
 # Full-width, Blue on White
 clf-fw-bw:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
 
 # Full-width, White on Grey
 clf-fw-wg:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external, minified: true }
 
 # Full-width, Grey on White
 clf-fw-gw:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external, minified: true }
 
 # Standard-width, White on Blue
 clf-sw-wb:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external, minified: true }
 
 # Standard-width, Blue on White
 clf-sw-bw:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external, minified: true }
 
 # Standard-width, White on Grey
 clf-sw-wg:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external, minified: true }
 
 # Standard-width, Grey on White
 clf-sw-gw:
   version: 7.0.4
   css:
     base:
-      //cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
 
 ### Local Task Files ###
 local-tasks:
@@ -113,15 +106,34 @@ local-tasks:
     theme:
       css/local-tasks.css: {}
 
-### Message / Alert Files ###
-messages:
+### Secondary Navigation ###
+clf-secondary-navigation:
   css:
     theme:
-      css/alerts.css: {}
-  js:
-    js/lib/bootstrap-alert.js: {}
-  dependencies:
-    - core/jquery
+      css/secondary.navigation.css: {}
+
+### Sticky Navigation ###
+clf-sticky-navigation:
+  css:
+    theme:
+      css/sticky.navigation.css: {}
+
+### Whitney Font ###
+clf-whitney-dev:
+  css:
+    base:
+      https://cloud.typography.com/7574694/6365152/css/fonts.css: { type: external, minified: true }
+
+clf-whitney-prod:
+  css:
+    base:
+      https://cloud.typography.com/6804272/781004/css/fonts.css: { type: external, minified: true }
+
+### Fontawesome ###
+clf-fontawesome:
+  css:
+    base:
+      https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
 
 ### Maintenance Page ###
 maintenance-page:

@@ -11,6 +11,7 @@ libraries:
 
 libraries-override:
   classy/base: false
+  #core/modernizr: false
 
 ckeditor_stylesheets:
   - css/ckeditor-iframe.css

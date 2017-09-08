@@ -1,6 +1,5 @@
 #Defines settings for the Breadcrumbs block
 
-uuid: fd63f029-d23f-4bcd-b8d2-6e17986091f5
 langcode: en
 status: true
 dependencies:

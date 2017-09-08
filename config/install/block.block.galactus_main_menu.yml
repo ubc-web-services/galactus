@@ -1,6 +1,5 @@
 #Defines settings for the Main Menu block
 
-uuid: 63810b4d-925b-4832-bc00-f1ae567cc86f
 langcode: en
 status: true
 dependencies:

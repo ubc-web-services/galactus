@@ -11,7 +11,7 @@ This package includes both a base and child theme. The base theme, *galactus* is
 
 #IE8 Support
 _________________
-Drupal 8 does not support Internet Explorer versions earlier than version 9 due to using jQuery version 2.x. Support for this is may be investigated further, but for the time being, this limitation also holds true for this theme. If IE8 support is required, Drupal 7 should be used instead with the CLF base theme (Megatron).
+Drupal 8 does not support Internet Explorer versions earlier than version 9 due to using jQuery version 2.x. Support for this  may be investigated further, but for the time being, this limitation also holds true for this theme. If IE8 support is required, Drupal 7 should be used instead with the CLF base theme (Megatron).
 
 #RECOMMENDED MODULES
 ___________________

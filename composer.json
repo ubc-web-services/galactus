@@ -1,0 +1,12 @@
+{
+    "name": "ubc-web-services/galactus",
+    "description": "A Drupal 8 UBC CLF 7.0.4 theme",
+    "type": "drupal-theme",
+    "authors": [
+        {
+            "name": "O'Toole, James",
+            "email": "jotoole@mail.ubc.ca"
+        }
+    ],
+    "require": {}
+}

@@ -50,6 +50,9 @@ clf-fw-wb:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
+
 
 # Full-width, Blue on White
 clf-fw-bw:
@@ -57,6 +60,8 @@ clf-fw-bw:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
 
 # Full-width, White on Grey
 clf-fw-wg:
@@ -64,6 +69,8 @@ clf-fw-wg:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
 
 # Full-width, Grey on White
 clf-fw-gw:
@@ -71,6 +78,8 @@ clf-fw-gw:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
 
 # Standard-width, White on Blue
 clf-sw-wb:
@@ -78,6 +87,8 @@ clf-sw-wb:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
 
 # Standard-width, Blue on White
 clf-sw-bw:
@@ -85,6 +96,8 @@ clf-sw-bw:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
 
 # Standard-width, White on Grey
 clf-sw-wg:
@@ -92,6 +105,8 @@ clf-sw-wg:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
 
 # Standard-width, Grey on White
 clf-sw-gw:
@@ -99,6 +114,8 @@ clf-sw-gw:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
+    theme:
+      css/clf.social-icons.css: {}
 
 ### Local Task Files ###
 local-tasks:

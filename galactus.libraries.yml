@@ -5,7 +5,6 @@ global:
   css:
     theme:
       css/clf.drupal.css: {}
-      css/style.css: {}
   js:
     https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
     js/lib/bootstrap/bootstrap-alert.js: {}

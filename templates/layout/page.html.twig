@@ -82,7 +82,7 @@
       {% if layout_option == 'full' or 'fluid' %}
       <div class="container">
       {% endif %}
-      <div id="ubc7-search-box">      
+      <div id="ubc7-search-box">
         <form class="form-search" method="get" action="http://www.ubc.ca/search/refine/" role="search">
           {% if searchlabel_option %}
           <input type="text" name="q" placeholder="{{ searchlabel_option }}" class="input-xlarge search-query">
@@ -124,7 +124,7 @@
     </div>
     <div class="span2">
       <div id="ubc7-apom">
-        <a href="//cdn.ubc.ca/clf/ref/aplaceofmind">UBC - A Place of Mind</a>                        
+        <a href="//cdn.ubc.ca/clf/ref/aplaceofmind">UBC - A Place of Mind</a>
       </div>
     </div>
     <div class="span9" id="ubc7-wordmark-block">
@@ -161,19 +161,17 @@
           <span class="icon-bar"></span>
         </a>
       </div>
-      {% if faculty_option == '' %}
-      <div id="ubc7-unit-name">
-        <a href="/">
-          <span id="ubc7-unit-faculty">{{ faculty_name }}</span>
-      {% else %}
-      <div id="ubc7-unit-name" class="ubc7-single-element">
-        <a href="/">
-      {% endif %}
-        <span id="ubc7-unit-identifier">{{ unit_name }}</span></a>
+      <div id="ubc7-unit-name"{{ faculty_option == '' ? ' class="ubc7-single-element"' }}>
+        <a href="{{ base_path }}">
+          {% if faculty_option == '' %}
+            <span id="ubc7-unit-faculty">{{ faculty_name }}</span>
+          {% endif %}
+          <span id="ubc7-unit-identifier">{{ unit_name }}</span>
+        </a>
       </div>
     </div>
     {% if layout_option == 'full' or 'fluid' %}
-    </div> <!-- /container -->
+    </div><!-- /container -->
     {% endif %}
   </div>
   <!-- End of UBC Unit Identifier -->
@@ -191,9 +189,9 @@
   {% if page.featured %}
   <section id="featured" class="non-clf section clearfix" role="complementary">
     {{ page.featured }}
-  </section> 
+  </section>
   {% endif %}
-  
+
   {% if page.breadcrumb %}
     {% if layout_option == 'full' or 'fluid' %}
       <div class="container clearfix non-clf">
@@ -247,7 +245,7 @@
       {{ page.prefooter }}
     </div>
     {% endif %}
-  
+
   {% if mobilenav_option == '' %}
   <!-- Footer Area Unit Menu - Mobile Only -->
   <div id="ubc7-unit-alternate-navigation" class="navbar expand visible-phone clf-optional" role="navigation">
@@ -298,7 +296,7 @@
       </div> <!-- /container -->
       {% endif %}
     </div>
-    
+
     <div class="row-fluid expand ubc7-back-to-top">
       {% if layout_option == 'full' or 'fluid' %}
       <div class="container">

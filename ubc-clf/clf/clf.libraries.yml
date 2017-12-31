@@ -6,3 +6,5 @@ bootstrap:
   css:
     theme:
       css/bootstrap-grid.css: {}
+
+# Add in styles for default drupal form classes.

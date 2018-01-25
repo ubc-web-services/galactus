@@ -1,4 +1,4 @@
-UBC CLF 7.0.4 DRUPAL THEME (aka Galactus) - WORK IN PROGRESS
+UBC CLF 7.0.4 DRUPAL THEME (aka Galactus)
 =======================================
 
 A responsive UBC CLF (Common Look and Feel) theme for Drupal 8. Created by the UBC IT Web Services Department.

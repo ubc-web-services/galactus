@@ -39,7 +39,7 @@
  * @see template_preprocess_table()
  */
 #}
-<table{{ attributes }}.addClass('table table-hover')>
+<table{{ attributes.addClass('table table-hover') }}>
   {% if caption %}
     <caption>{{ caption }}</caption>
   {% endif %}

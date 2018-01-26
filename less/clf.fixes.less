@@ -2,35 +2,41 @@
  * @file
  * Overrides some default CLF styles
  */
- 
+
  /* Change the 'body' background colour when full width and left-aligned layouts are chosen */
  body.full-width,
  body.fluid-width {
    background-color: #fff;
  }
- 
- /* remove the inset shadoes and text shadows from the unit area */
+
+ /* Remove the inset shadoes and text shadows from the unit area */
 .make-nice #ubc7-unit {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
-.make-nice #ubc7-unit-name a, 
+.make-nice #ubc7-unit-name a,
 .make-nice #ubc7-unit-name a:hover {
   text-shadow: none;
 }
 
-/* add some padding to the main content region */
+/* Add some padding to the main content region. */
 #unit-content {
   padding-bottom: 2em;
 }
 
-/* alter default CLF form styles */
+/* Alter default CLF form styles */
 // TODO - revise this to exclude important statements - blech
-input {
-  width: 100%;
-  box-sizing: border-box !important;
-  padding: .25em !important;
-  height: auto !important;
+// input {
+//   box-sizing: border-box !important;
+//   padding: .25em !important;
+//   height: auto !important;
+// }
+
+// Undo the forced width of 206px in the CLF.
+input,
+textarea,
+.uneditable-input {
+  width: inherit;
 }
 
 #block-userlogin .item-list ul {
@@ -49,7 +55,7 @@ input {
   margin-right: 0;
 }
 
-/* add in styles for default drupal form classes */
+/* Add in styles for default drupal form classes. */
 .form--inline .form-item {
   float: left;
   margin-right: 1em;

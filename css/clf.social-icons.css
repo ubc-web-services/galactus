@@ -1,1 +1,42 @@
-#ubc7-unit-social-icons a{text-decoration:none}#ubc7-unit-social-icons i{display:inline-block;height:32px;width:32px;background-color:#002145;background-repeat:no-repeat;background-position:center center;background-size:24px 24px}#ubc7-unit-social-icons i:hover{background-color:rgba(0,33,69,.9)}.icon-facebook-sign{background-image:url(../img/social-icons/facebook.svg)}.icon-twitter-sign{background-image:url(../img/social-icons/twitter.svg)}.icon-youtube-sign{background-image:url(../img/social-icons/youtube.svg)}.icon-linkedin-sign{background-image:url(../img/social-icons/linkedin.svg)}.icon-googleplus-sign{background-image:url(../img/social-icons/gplus.svg)}
+/**
+ * @file
+ * Reproduce the CLF's alert styles when we load the minimal CLF.
+ */
+
+#ubc7-unit-social-icons a {
+  text-decoration: none
+}
+
+#ubc7-unit-social-icons i {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  background-color: #002145;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px 24px
+}
+
+#ubc7-unit-social-icons i:hover {
+  background-color: rgba(0, 33, 69, .9)
+}
+
+.icon-facebook-sign {
+  background-image: url(../img/social-icons/facebook.svg)
+}
+
+.icon-twitter-sign {
+  background-image: url(../img/social-icons/twitter.svg)
+}
+
+.icon-youtube-sign {
+  background-image: url(../img/social-icons/youtube.svg)
+}
+
+.icon-linkedin-sign {
+  background-image: url(../img/social-icons/linkedin.svg)
+}
+
+.icon-googleplus-sign {
+  background-image: url(../img/social-icons/gplus.svg)
+}

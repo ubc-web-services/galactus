@@ -5,6 +5,7 @@ global:
   css:
     theme:
       css/clf.drupal.css: {}
+      css/unit.custom.css: {}
   js:
     https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
     js/lib/bootstrap/bootstrap-alert.js: {}
@@ -126,13 +127,13 @@ local-tasks:
 clf-secondary-navigation:
   css:
     theme:
-      css/secondary.navigation.css: {}
+      css/navigation.secondary.css: {}
 
 ### Sticky Navigation ###
 clf-sticky-navigation:
   css:
     theme:
-      css/sticky.navigation.css: {}
+      css/navigation.sticky.css: {}
 
 ### Whitney Font ###
 clf-whitney-dev:

@@ -2,6 +2,7 @@
  * @file
  * Overrides some default Drupal tab styles
  */
+
 div.tabs {
   margin: 0 0 5px 0;
 }

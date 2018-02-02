@@ -1,23 +1,12 @@
-UBC CLF 7.0.4 DRUPAL THEME (aka Galactus) - WORK IN PROGRESS
+UBC CLF 7.0.4 DRUPAL THEME (aka Galactus)
 =======================================
 
 A responsive UBC CLF (Common Look and Feel) theme for Drupal 8. Created by the UBC IT Web Services Department.
 
+Galactus is a *parent theme* for Drupal 8, providing UBC-branded units with the basic structure of the UBC CLF ([Common Look and Feel](http://clf.ubc.ca). If you need to modify the theme to suit your needs, we recommend using the [Drupal 8 CLF theme](https://github.com/ubc-web-services/clf) as a child theme to extend this one instead.
 
-#UBC CLF 7.0.4 DRUPAL THEME FEATURES
+Created by the UBC IT Web Services Department.
+
+# IE8 Support
 _________________
-
-This package includes both a base and child theme. The base theme, *galactus* is not intended to be used as the site theme. Instead, use *clf* as your theme and make any overrides, changes and additions there. This will allow for easier updates should they become necessary.
-
-#IE8 Support
-_________________
-Drupal 8 does not support Internet Explorer versions earlier than version 9 due to using jQuery version 2.x. Support for this  may be investigated further, but for the time being, this limitation also holds true for this theme. If IE8 support is required, Drupal 7 should be used instead with the CLF base theme (Megatron).
-
-#RECOMMENDED MODULES
-___________________
-
-
-
-
-#MODULES NOT RECOMMENDED
-_______________________
+Drupal 8 does not support Internet Explorer versions earlier than version 9 due to jQuery version incompatibilities. If IE8 support is required, Drupal 7 should be used instead, along with the CLF base theme ([Megatron](https://github.com/ubc-web-services/megatron)).

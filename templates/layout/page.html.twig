@@ -161,7 +161,7 @@
           <span class="icon-bar"></span>
         </a>
       </div>
-      <div id="ubc7-unit-name"{{ faculty_option == '' ? ' class="ubc7-single-element"' }}>
+      <div id="ubc7-unit-name"{{ faculty_option != '' ? ' class="ubc7-single-element"' }}>
         <a href="{{ base_path }}">
           {% if faculty_option == '' %}
             <span id="ubc7-unit-faculty">{{ faculty_name }}</span>

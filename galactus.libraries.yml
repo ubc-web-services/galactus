@@ -126,13 +126,13 @@ local-tasks:
 clf-secondary-navigation:
   css:
     theme:
-      css/secondary.navigation.css: {}
+      css/navigation.secondary.css: {}
 
 ### Sticky Navigation ###
 clf-sticky-navigation:
   css:
     theme:
-      css/sticky.navigation.css: {}
+      css/navigation.sticky.css: {}
 
 ### Whitney Font ###
 clf-whitney-dev:

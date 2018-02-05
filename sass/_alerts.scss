@@ -7,12 +7,12 @@
 -------------------------------------------------- */
 
 /* VARIABLES */
-@unit-warning:  #ef8843;
-@unit-danger:   #b33542;
-@unit-error:    @unit-danger;
-@unit-success:  #95be4f;
-@unit-info:     #324d6a;
-@unit-status:   @unit-info;
+$unit-warning:  #ef8843;
+$unit-danger:   #b33542;
+$unit-error:    $unit-danger;
+$unit-success:  #95be4f;
+$unit-info:     #324d6a;
+$unit-status:   $unit-info;
 
 /* GENERAL STYLES */
 .alert {
@@ -51,23 +51,23 @@ a.close {
 }
 
 .alert-warning {
-  background-color: @unit-warning;
+  background-color: $unit-warning;
   border-color: #d77a3c;
 }
 
 .alert-danger,
 .alert-error {
-  background-color: @unit-danger;
+  background-color: $unit-danger;
   border-color: #900f1d;
 }
 
 .alert-success,
 .alert-status {
-  background-color: @unit-success;
+  background-color: $unit-success;
   border-color: #73963d;
 }
 
 .alert-info {
-  background-color: @unit-info;
+  background-color: $unit-info;
   border-color: #00162f;
 }

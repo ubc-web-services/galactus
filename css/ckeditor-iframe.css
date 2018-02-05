@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * @file
  * Approximate CLF's style in CKEditor instances on the Drupal back-end.
@@ -8,6 +9,7 @@
   padding: 0.5ex;
   border: 1px solid #ccc;
 }
+
 .caption > figcaption {
   border: 1px solid #ccc;
   border-top: none;
@@ -15,17 +17,23 @@
   font-size: small;
   text-align: center;
 }
+
 /* Override clf's default blockquote and pre styles when captioned. */
 .caption-pre > pre,
 .caption-blockquote > blockquote {
   margin: 0;
 }
+
 .caption-blockquote > figcaption::before {
   content: "— ";
 }
+
 .caption-blockquote > figcaption {
   text-align: left;
 }
+
 [dir="rtl"] .caption-blockquote > figcaption {
   text-align: right;
 }
+
+/*# sourceMappingURL=ckeditor-iframe.css.map */

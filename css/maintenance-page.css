@@ -6,6 +6,7 @@ body.maintenance-page {
   background-color: #fff;
   color: #000;
 }
+
 .maintenance-page #page-wrapper {
   background: #fff;
   margin-left: auto;
@@ -15,49 +16,61 @@ body.maintenance-page {
   border: 1px solid #ddd;
   margin-top: 40px;
 }
+
 .maintenance-page #page {
   margin: 10px;
 }
+
 .maintenance-page #main-wrapper {
   min-height: inherit;
 }
+
 .maintenance-page #header,
 .maintenance-page #messages {
   width: auto;
 }
+
 .maintenance-page #main {
   margin: 0;
 }
+
 .maintenance-page #content .section {
   padding: 0 0 0 10px;
 }
+
 .maintenance-page #header {
   background-color: #fff;
   background-image: none;
 }
+
 .maintenance-page #name-and-slogan {
   margin-bottom: 50px;
   margin-left: 0;
   padding-top: 20px;
   font-size: 90%;
 }
+
 .maintenance-page #name-and-slogan,
 .maintenance-page #name-and-slogan a,
 .maintenance-page #name-and-slogan a:hover,
 .maintenance-page #name-and-slogan a:focus {
   color: #777;
 }
+
 .maintenance-page h1#page-title {
   line-height: 1em;
   margin-top: 0;
 }
+
 .maintenance-page #messages {
   padding: 0;
   margin-top: 30px;
 }
+
 .maintenance-page #messages div.messages {
   margin: 0;
 }
+
 @media all and (min-width: 800px) {
   .maintenance-page #page-wrapper {
     width: 800px;
@@ -71,9 +84,12 @@ body.maintenance-page {
     width: auto;
   }
 }
+
 @media all and (min-width: 600px) {
-  /* @TODO find the proper breakpoint */
+  /* $TODO find the proper breakpoint */
   .maintenance-page #page {
     margin: 20px 40px 40px;
   }
 }
+
+/*# sourceMappingURL=maintenance-page.css.map */

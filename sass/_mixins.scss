@@ -10,7 +10,7 @@
 // Clearfix
 // --------
 // For clearing floats like a boss h5bp.com/q
-.clearfix() {
+@mixin clearfix() {
   *zoom: 1;
   &:before,
   &:after {
@@ -27,7 +27,7 @@
 
 // Webkit-style focus
 // ------------------
-.tab-focus() {
+@mixin tab-focus() {
   // Default
   outline: thin dotted #333;
   // Webkit
@@ -37,7 +37,7 @@
 
 // Center-align a block level element
 // ----------------------------------
-.center-block() {
+@mixin center-block() {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -47,7 +47,7 @@
 // Text overflow
 // -------------------------
 // Requires inline-block or block for proper styling
-.text-overflow() {
+@mixin text-overflow() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -56,7 +56,7 @@
 // CSS image replacement
 // -------------------------
 // Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
-.hide-text() {
+@mixin hide-text() {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
@@ -68,15 +68,17 @@
 // --------------------------------------------------
 
 // Block level inputs
-.input-block-level() {
+@mixin input-block-level() {
   display: block;
   width: 100%;
-  min-height: 28px;        // Make inputs at least the height of their button counterpart
-  .box-sizing(border-box); // Makes inputs behave like true block-level elements
+  // Make inputs at least the height of their button counterpart.
+  min-height: 28px;
+  // Makes inputs behave like true block-level elements.
+  box-sizing: border-box;
 }
 
-// Vertical align 
-.vertical-align() {
+// Vertical align
+@mixin vertical-align() {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -85,7 +87,7 @@
 }
 
 // Reset filters for IE
-.reset-filter() {
+@mixin reset-filter() {
   filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
 }
 
@@ -93,8 +95,8 @@
 // -----------
 
 // Centered container element
-.container-fixed() {
+@mixin container-fixed() {
   margin-right: auto;
   margin-left: auto;
-  .clearfix();
+  @include clearfix();
 }

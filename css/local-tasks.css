@@ -2,14 +2,15 @@
  * @file
  * Overrides some default Drupal tab styles
  */
-
 div.tabs {
   margin: 0 0 5px 0;
 }
+
 ul.primary,
 ul.secondary {
   width: 99%;
 }
+
 ul.primary {
   margin: 0 0 .5em 0;
   padding: 0;
@@ -18,20 +19,24 @@ ul.primary {
   line-height: normal;
   box-shadow: inset 0 -3px #999;
 }
+
 ul.primary li {
   float: left;
   margin: 0;
   padding: 0;
 }
+
 ul.primary li a.is-active {
   background-color: #f3f3f3;
   color: #005ca7;
   box-shadow: inset 0 -3px #005ca7;
 }
+
 ul.primary li a.is-active:hover {
   color: #01a7e1;
   box-shadow: inset 0 -3px #01a7e1;
 }
+
 ul.primary li a {
   display: inline-block;
   margin: 0 3px 0 0;
@@ -40,9 +45,11 @@ ul.primary li a {
   color: #999;
   transition: color 0.3s, box-shadow 0.3s;
 }
+
 ul.primary li a:hover {
   color: #005ca7;
 }
+
 ul.primary li a .tab {
   display: block;
   height: 24px;
@@ -50,6 +57,7 @@ ul.primary li a .tab {
   padding: 4px 13px 4px 6px;
   line-height: 20px;
 }
+
 ul.secondary {
   margin: 0;
   padding: 0 0 0 5px;
@@ -57,12 +65,14 @@ ul.secondary {
   list-style: none;
   white-space: nowrap;
 }
+
 ul.secondary li {
   float: left;
   margin: 0 5px 0 0;
   padding: 5px 0;
   border-right: none;
 }
+
 ul.secondary a {
   display: block;
   height: 24px;
@@ -72,11 +82,13 @@ ul.secondary a {
   text-decoration: none;
   color: #777;
 }
+
 ul.secondary a.is-active,
 ul.secondary a.is-active:hover {
   border: 1px solid silver;
   color: #000;
 }
+
 ul.secondary a .tab {
   display: block;
   height: 18px;
@@ -84,3 +96,5 @@ ul.secondary a .tab {
   padding: 3px 8px;
   line-height: 18px;
 }
+
+/*# sourceMappingURL=local-tasks.css.map */

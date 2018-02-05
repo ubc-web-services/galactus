@@ -5,3 +5,9 @@
 *.espressostorage
 *.codekit
 *.espproj
+
+# Node JS packages.
+node_modules
+
+# Development source maps.
+*.map

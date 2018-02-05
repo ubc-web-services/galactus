@@ -7,8 +7,8 @@
 -------------------------------------------------- */
 
 /* VARIABLES */
-@clf-social-icon-color: #002145;
-@clf-social-icon-color--hover: fade(@clf-social-icon-color, 90%);
+$clf-social-icon-color: #002145;
+$clf-social-icon-color--hover: rgba($clf-social-icon-color, .9);
 
 
 /* GENERAL STYLES */
@@ -19,13 +19,13 @@
   display: inline-block;
   height: 32px;
   width: 32px;
-  background-color: @clf-social-icon-color;
+  background-color: $clf-social-icon-color;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 24px 24px;
 }
 #ubc7-unit-social-icons i:hover {
-  background-color: @clf-social-icon-color--hover;
+  background-color: $clf-social-icon-color--hover;
 }
 
 .icon-facebook-sign {

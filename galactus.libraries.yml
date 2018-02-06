@@ -7,7 +7,7 @@ global:
       css/clf.drupal.css: {}
   js:
     https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
-    js/lib/bootstrap/bootstrap-alert.js: {}
+    js/lib/bootstrap/alert.js: {}
   dependencies:
     - core/jquery
 

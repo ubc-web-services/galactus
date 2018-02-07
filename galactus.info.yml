@@ -4,7 +4,7 @@ core: 8.x
 base theme: classy
 description: 'Galactus is a Drupal base theme that provides integration with the UBC CLF (<a href="http://clf.ubc.ca">Common Look and Feel</a>) for UBC-branded units. <em>We recommend against using this theme for any customizations or modifications</em>. If you require a customized UBC CLF theme, please consider the <a href="https://github.com/ubc-web-services/clf">Drupal CLF theme</a>'
 package: galactus
-version: 1.0
+version: 1.0.1
 
 libraries:
   - galactus/global

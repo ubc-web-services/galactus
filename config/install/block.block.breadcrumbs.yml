@@ -9,7 +9,7 @@ dependencies:
     - galactus
 id: breadcrumbs
 theme: galactus
-region: featured
+region: breadcrumb
 weight: -2
 provider: null
 plugin: system_breadcrumb_block

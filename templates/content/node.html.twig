@@ -81,7 +81,7 @@
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  <header>
+
   {{ title_prefix }}
   {% if not page %}
     <h2{{ title_attributes }}>
@@ -99,7 +99,6 @@
       </div>
     </div>
   {% endif %}
-  </header>
 
   <div{{ content_attributes.addClass('node__content').addClass(contentClasses) }}>
     {{ content|without('links') }}

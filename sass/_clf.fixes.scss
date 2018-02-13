@@ -63,3 +63,8 @@ textarea,
 .form--inline .form-actions {
   clear: both;
 }
+
+/* Remove the overly-opinionated CLF footer style */
+footer {
+  background-color: inherit;
+}

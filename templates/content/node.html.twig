@@ -91,13 +91,13 @@
   {{ title_suffix }}
 
   {% if display_submitted %}
-    <footer class="node__meta">
+    <div class="node__meta">
       {{ author_picture }}
       <div{{ author_attributes.addClass('node__submitted') }}>
         {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
         {{ metadata }}
       </div>
-    </footer>
+    </div>
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content').addClass(contentClasses) }}>

@@ -1,4 +1,6 @@
 {
+  "name": "galactus",
+  "version": "1.0.1",
   "description": "UBC CLF DRUPAL THEME (aka Galactus)",
   "license": "MIT",
   "scripts": {

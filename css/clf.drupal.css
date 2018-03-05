@@ -101,6 +101,11 @@ textarea,
   clear: both;
 }
 
+/* Remove the overly-opinionated CLF footer style */
+footer {
+  background-color: inherit;
+}
+
 /**
  * @file
  * Override the CLF's alert styles.

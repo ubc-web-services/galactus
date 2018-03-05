@@ -152,14 +152,15 @@ function galactus_preprocess_html(&$variables) {
 
   // Add inline banner colour.
   $unit_color_option = theme_get_setting('clf_theme_unit_colour');
-  $css = "#ubc7-unit { background-color: #$unit_color_option !important; }";
-  $variables['page']['#attached']['html_head'][] = [
-    [
-      '#tag' => 'style',
-      '#value' => $css,
-    ],
-    'unit-colour-css',
-  ];
+  if (!empty($unit_color_option)) {
+    $variables['page']['#attached']['html_head'][] = [
+      [
+        '#tag' => 'style',
+        '#value' => '#ubc7-unit { background-color: #' . $unit_color_option . ' !important; }',
+      ],
+      'unit-colour-css',
+    ];
+  }
 
   // Add sticky class and library.
   if (theme_get_setting('clf_navigation_sticky') == TRUE) {

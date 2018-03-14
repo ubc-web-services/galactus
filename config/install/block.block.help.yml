@@ -1,0 +1,21 @@
+#Defines settings for the Help block
+
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - galactus
+id: help
+theme: galactus
+region: help
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: visible
+visibility: {  }

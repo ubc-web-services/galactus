@@ -353,7 +353,6 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#title' => t('Navigation Settings'),
     '#group' => 'clf',
   ];
-
   $form['navigation']['clf_navigation_placement'] = [
     '#type' => 'select',
     '#title' => t('Choose the type of primary navigation that should be used on this website. | NOT YET ACTIVE'),
@@ -363,7 +362,10 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
       'default' => t('Default CLF - Horizontal'),
       'double' => t('Default CLF - Horizontal, Two Rows'),
       'higher' => t('Default CLF - Horizontal, Double Height'),
-      'slidein' => t('Right Slidein Drawer'),
+      'drawer--push-left' => t('Left Push Drawer'),
+      'drawer--cover-left' => t('Left Cover Drawer'),
+      'drawer--push-right' => t('Right Push Drawer'),
+      'drawer--cover-right' => t('Right Cover Drawer'),
     ],
   ];
 

@@ -132,7 +132,39 @@ clf-secondary-navigation:
 clf-sticky-navigation:
   css:
     theme:
-      css/navigation.sticky.css: {}
+      css/navigation/navigation.sticky.css: {}
+  js:
+    js/navigation.sticky.js: {}
+  dependencies:
+    - core/jquery
+
+### Default Navigation ###
+clf-default-navigation:
+  css:
+    theme:
+      css/navigation/navigation.default.css: {}
+
+### Higher Navigation ###
+clf-higher-navigation:
+  css:
+    theme:
+      css/navigation/navigation.higher.css: {}
+
+### Double Navigation ###
+clf-double-navigation:
+  css:
+    theme:
+      css/navigation/navigation.double.css: {}
+
+### Slide-in Navigation ###
+clf-slidein-navigation:
+  css:
+    theme:
+      css/navigation/navigation.slidein.css: {}
+  js:
+    js/navigation.slidein.js: {}
+  dependencies:
+    - core/jquery
 
 ### Whitney Font ###
 clf-whitney-dev:

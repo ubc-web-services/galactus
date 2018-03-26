@@ -16,6 +16,22 @@ $drawer--border-color: #414141;
 $drawer--inner--color: #fff;
 $drawer--inner--font-size: 16px;
 
+#button--slide-in {
+  float:right;
+  color:#000;
+  border:none;
+  background-color:rgba(0, 0, 0, 0);
+  font-family: Arial,Sans-Serif;
+  padding:10px;
+  font-size:14px;
+  line-height: 1.75em!important;
+  outline: 0;
+  &:hover {
+    background-color: #002145!important;
+    color: #fff!important;
+  }
+}
+
 @import 'components/button-clf-hamburger';
 
 #pushed-content {

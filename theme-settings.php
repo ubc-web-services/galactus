@@ -355,7 +355,7 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
   ];
   $form['navigation']['clf_navigation_placement'] = [
     '#type' => 'select',
-    '#title' => t('Choose the type of primary navigation that should be used on this website. | NOT YET ACTIVE'),
+    '#title' => t('Choose the type of primary navigation that should be used on this website.'),
     '#prefix' => t('<h2>General Navigation Options</h2>'),
     '#default_value' => theme_get_setting('clf_navigation_placement'),
     '#options' => [
@@ -371,7 +371,7 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
 
   $form['navigation']['clf_navigation_sticky'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Make the default CLF navigation sticky | NOT YET ACTIVE</strong>'),
+    '#title' => t('<strong>Make the default CLF navigation sticky.</strong>'),
     '#description' => t("If you'd like the primary navigation to be 'sticky' (stay on top of window when scrolling downward), select this option."),
     '#default_value' => theme_get_setting('clf_navigation_sticky'),
   ];

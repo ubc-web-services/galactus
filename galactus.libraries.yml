@@ -135,8 +135,6 @@ clf-sticky-navigation:
       css/navigation/navigation.sticky.css: {}
   js:
     js/navigation.sticky.js: {}
-  dependencies:
-    - core/jquery
 
 ### Default Navigation ###
 clf-default-navigation:

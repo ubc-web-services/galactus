@@ -1,4 +1,5 @@
 // VARIABLES
+$box-shadow: 2px 0 2px rgba(0, 0, 0, .15);
 $transition-speed: .125s;
 $transition-easing: ease;
 $hide-desktop-trigger-below: 979px;
@@ -7,6 +8,8 @@ $drawer--padding: 18px;
 $drawer--z-index: 10;
 $mask--z-index: 2;
 $pushed-content--z-index: 1;
+$rotation-transition: all .3s ease;
+$rotation-transform: rotate(90deg);
 
 $mask--background: rgba(255, 255, 255, 0.5);
 $drawer--background-color: #686868;
@@ -15,20 +18,28 @@ $drawer--background-color--focus: darken($drawer--background-color, 15%);
 $drawer--border-color: #414141;
 $drawer--inner--color: #fff;
 $drawer--inner--font-size: 16px;
+$drawer-button--background-color: rgba(0, 0, 0, 0);
+$drawer-button--background-color--hover: #002145!important;
+$drawer-button--color: #000;
+$drawer-button--color--hover: #fff!important;
+$drawer-button--font-family: Arial, Sans-Serif;
+$drawer-button--font-size: 14px;
+$drawer-button--line-height: 1.75em!important;
+$drawer-button--padding: 10px;
 
 #button--slide-in {
-  float:right;
-  color:#000;
-  border:none;
-  background-color:rgba(0, 0, 0, 0);
-  font-family: Arial,Sans-Serif;
-  padding:10px;
-  font-size:14px;
-  line-height: 1.75em!important;
+  float: right;
+  color: $drawer-button--color;
+  border: none;
+  background-color: $drawer-button--background-color;
+  font-family: $drawer-button--font-family;
+  padding: $drawer-button--padding;
+  font-size: $drawer-button--font-size;
+  line-height: $drawer-button--line-height;
   outline: 0;
   &:hover {
-    background-color: #002145!important;
-    color: #fff!important;
+    background-color: $drawer-button--background-color--hover;
+    color: $drawer-button--color--hover;
   }
 }
 
@@ -39,16 +50,15 @@ $drawer--inner--font-size: 16px;
   z-index: $pushed-content--z-index;
   display: block;
   overflow: hidden;
-  //transform: translate3D(0, 0, 0);
   transition: transform $transition-speed $transition-easing;
 }
 #pushed-content.drawer--push-left.off-canvas-drawer--is-active {
   transform: translate3D(-$drawer--width, 0, 0);
-  box-shadow: 2px 0 2px rgba(0, 0, 0, .15);
+  box-shadow: $box-shadow;
 }
 #pushed-content.drawer--push-right.off-canvas-drawer--is-active {
   transform: translate3D($drawer--width, 0, 0);
-  box-shadow: 2px 0 2px rgba(0, 0, 0, .15);
+  box-shadow: $box-shadow;
 }
 #off-canvas-drawer--primary {
   transition: transform $transition-speed $transition-easing, visibility $transition-speed $transition-easing;
@@ -171,10 +181,10 @@ $drawer--inner--font-size: 16px;
       height: 55px;
       box-shadow: none;
       span {
-        transition: all .3s ease;
+        transition: $rotation-transition;
       }
       &:hover span {
-        transform: rotate(90deg);
+        transform: $rotation-transform;
       }
     }
     .dropdown-menu {
@@ -210,8 +220,8 @@ $drawer--inner--font-size: 16px;
     }
     &.open {
       span {
-        transform: rotate(90deg);
-        transition: all .3s ease;
+        transform: $rotation-transform;
+        transition: $rotation-transition;
       }
       .btn.dropdown-toggle {
         background-color: $drawer--background-color--hover;

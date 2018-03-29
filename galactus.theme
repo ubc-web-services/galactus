@@ -174,7 +174,6 @@ function galactus_preprocess_html(&$variables) {
   }
 
   // Add navigation class and library.
-  // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
   if (theme_get_setting('clf_navigation_placement') == 'default') {
     $variables['attributes']['class'][] = 'clf-navigation-default';
     $variables['#attached']['library'][] = 'galactus/clf-default-navigation';
@@ -191,7 +190,6 @@ function galactus_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'clf-navigation-slidein';
     $variables['#attached']['library'][] = 'galactus/clf-slidein-navigation';
   }
-  // +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
   // Add Whitney library if set.
   if (theme_get_setting('clf_use_whitney') == 'dev') {
@@ -279,10 +277,6 @@ function galactus_preprocess_page(&$variables) {
   else {
     $variables['navigation_placement_drawer'] = TRUE;
   }
-//   $variables['navigation_placement_drawer--push-right'] = theme_get_setting('clf_navigation_placement') == 'drawer--push-right' ? TRUE: FALSE;
-//   $variables['navigation_placement_drawer--cover-right'] = theme_get_setting('clf_navigation_placement') == 'drawer--cover-right' ? TRUE: FALSE;
-//   $variables['navigation_placement_drawer--push-left'] = theme_get_setting('clf_navigation_placement') == 'drawer--push-left' ? TRUE: FALSE;
-//   $variables['navigation_placement_drawer--cover-left'] = theme_get_setting('clf_navigation_placement') == 'drawer--cover-left' ? TRUE: FALSE;
 
   // Footer options.
   $variables['address_option'] = theme_get_setting('clf_streetaddr');

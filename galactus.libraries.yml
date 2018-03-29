@@ -163,8 +163,6 @@ clf-slidein-navigation:
       css/navigation/navigation.slidein.css: {}
   js:
     js/navigation.slidein.js: {}
-  dependencies:
-    - core/jquery
 
 ### Whitney Font ###
 clf-whitney-dev:

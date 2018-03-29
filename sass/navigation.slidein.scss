@@ -25,18 +25,20 @@ $drawer-button--color--hover: #fff!important;
 $drawer-button--font-family: Arial, Sans-Serif;
 $drawer-button--font-size: 14px;
 $drawer-button--line-height: 1.75em!important;
+$drawer-button--margin-right: 17px;
 $drawer-button--padding: 10px;
 
-#button--slide-in {
-  float: right;
-  color: $drawer-button--color;
-  border: none;
+#drawer-button {
   background-color: $drawer-button--background-color;
+  border: none;
+  color: $drawer-button--color;
+  float: right;
   font-family: $drawer-button--font-family;
-  padding: $drawer-button--padding;
   font-size: $drawer-button--font-size;
   line-height: $drawer-button--line-height;
+  margin-right: $drawer-button--margin-right;
   outline: 0;
+  padding: $drawer-button--padding;
   &:hover {
     background-color: $drawer-button--background-color--hover;
     color: $drawer-button--color--hover;

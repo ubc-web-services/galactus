@@ -1,5 +1,6 @@
-#button--slide-in {
+#drawer-button {
   float:right;
+  margin-right: 17px;
   color:#000;
   border:none;
   background-color:rgba(0, 0, 0, 0);
@@ -10,7 +11,7 @@
   outline: 0;
 }
 
-#button--slide-in:hover {
+#drawer-button:hover {
   background-color: #002145!important;
   color: #fff!important;
 }

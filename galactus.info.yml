@@ -29,3 +29,4 @@ regions:
   sidebar_second: 'Sidebar second'
   secondary_content: 'Secondary Content'
   prefooter: 'Pre-Footer'
+  drawer: 'Off Canvas Drawer'

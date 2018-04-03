@@ -264,6 +264,7 @@ function galactus_preprocess_page(&$variables) {
   }
 
   // Navigation options.
+  $variables['navigation_placement_drawer'] = FALSE;
   $variables['navigation_placement'] = theme_get_setting('clf_navigation_placement');
   if (theme_get_setting('clf_navigation_placement') == 'default') {
     $variables['navigation_placement_default'] = TRUE;

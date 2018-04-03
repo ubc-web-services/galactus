@@ -1,21 +1,3 @@
-#drawer-button {
-  float:right;
-  margin-right: 17px;
-  color:#000;
-  border:none;
-  background-color:rgba(0, 0, 0, 0);
-  font-family: Arial,Sans-Serif;
-  padding:10px;
-  font-size:14px;
-  line-height: 1.75em!important;
-  outline: 0;
-}
-
-#drawer-button:hover {
-  background-color: #002145!important;
-  color: #fff!important;
-}
-
 .drawer-toggle--hamburger {
   background-color: #fff;
   -webkit-box-shadow: 1px 1px 1px #191938;
@@ -24,16 +6,13 @@
   padding: 11px 0 0 13px;
   width: 32px;
 }
-
 .drawer-toggle--hamburger,.drawer-toggle--hamburger:hover {
   box-shadow: 1px 1px 1px #191938;
   -moz-box-shadow: 1px 1px 1px #191938;
 }
-
 .drawer-toggle--hamburger:hover {
   -webkit-box-shadow: inset 1px 1px 1px #191938;
 }
-
 .drawer-toggle--hamburger span {
   margin-top: 3px;
   display: block;
@@ -42,11 +21,9 @@
   background-color: #002145;
   box-shadow: 0 1px 0 rgba(0,0,0,.25);
 }
-
 .drawer-toggle--hamburger span:first-child {
   margin-top: 0;
 }
-
 @media screen and (min-width:998px) {
   .drawer-toggle--hamburger {
     display: block!important;
@@ -55,7 +32,6 @@
     margin-bottom: 3px;
   }
 }
-
 @media screen and (min-width:1200px) {
   .drawer-toggle--hamburger {
     margin-top: 5px;
@@ -63,12 +39,26 @@
     margin-bottom: 5px;
   }
 }
-
+#drawer-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #000;
+  float: right;
+  font-family: Arial, Sans-Serif;
+  font-size: 14px;
+  line-height: 1.75em !important;
+  margin-right: 17px;
+  outline: 0;
+  padding: 10px;
+}
+#drawer-button:hover {
+  background-color: #002145 !important;
+  color: #fff !important;
+}
 #pushed-content {
   position: relative;
   z-index: 1;
   display: block;
-  overflow: hidden;
   transition: transform 0.125s ease;
 }
 #pushed-content.drawer--push-left.off-canvas-drawer--is-active {

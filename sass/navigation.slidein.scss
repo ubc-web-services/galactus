@@ -45,13 +45,13 @@ $drawer-button--padding: 10px;
   }
 }
 
-@import 'components/button-clf-hamburger';
+@import 'button-clf-hamburger';
 
 #pushed-content {
   position: relative;
   z-index: $pushed-content--z-index;
   display: block;
-  overflow: hidden;
+  //overflow: hidden;
   transition: transform $transition-speed $transition-easing;
 }
 #pushed-content.drawer--push-left.off-canvas-drawer--is-active {

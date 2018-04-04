@@ -360,8 +360,6 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#default_value' => theme_get_setting('clf_navigation_placement'),
     '#options' => [
       'default' => t('Default CLF - Horizontal'),
-      'double' => t('Default CLF - Horizontal, Two Rows'),
-      'higher' => t('Default CLF - Horizontal, Double Height'),
       'drawer--push-left' => t('Left Push Drawer'),
       'drawer--cover-left' => t('Left Cover Drawer'),
       'drawer--push-right' => t('Right Push Drawer'),

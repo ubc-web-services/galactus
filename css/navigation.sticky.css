@@ -1,0 +1,41 @@
+/**
+ * @file
+ * Placeholder
+ */
+@media screen and (max-width: 979px) {
+  body.unit-area-is-sticky {
+    padding-top: 50px;
+  }
+  #ubc7-unit.navigation-is-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  body.unit-area-is-sticky #ubc7-unit-menu {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+  }
+  #ubc7-unit.navigation-is-sticky .btn-navbar {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  body.unit-menu-is-sticky {
+    padding-top: 40px;
+  }
+  #ubc7-unit-menu.navigation-is-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 980px) and (min-width: 1200px) {
+  body.unit-menu-is-sticky {
+    padding-top: 45px;
+  }
+}
+
+/*# sourceMappingURL=navigation.sticky.css.map */

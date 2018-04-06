@@ -56,18 +56,6 @@
  * @see html.html.twig
  */
 #}
-
-{#
-{{ kint() }}
-#}
-
-{% if layout_option == 'full' or 'fluid' %}
-{%
-  set layoutClasses = [
-    'full-width',
-  ]
-%}
-{% endif %}
 {% set maincontent_attributes = create_attribute() %}
 {% set sidebarfirst_attributes = create_attribute() %}
 {% set sidebarsecond_attributes = create_attribute() %}
@@ -349,7 +337,7 @@
     </footer>
   {% if layout_option == '' %}
   </div> <!-- /container -->
-{% endif %}
+  {% endif %}
 {% if navigation_placement_drawer %}
 </div> <!-- /pushed~content -->
 {% endif %}

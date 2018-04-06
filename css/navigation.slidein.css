@@ -65,6 +65,10 @@
   }
 }
 
+body.toolbar-tray-open.toolbar-vertical.toolbar-fixed.off-canvas-drawer--is-active {
+  margin-left:0 !important;
+}
+
 body.off-canvas-drawer--is-animating,
 body.off-canvas-drawer--is-active {
   overflow: hidden !important;

@@ -47,6 +47,9 @@ $drawer-button--padding: 10px;
 
 @import 'button-clf-hamburger';
 
+body.toolbar-tray-open.toolbar-vertical.toolbar-fixed.off-canvas-drawer--is-active {
+  margin-left:0 !important;
+}
 body {
   &.off-canvas-drawer--is-animating,
   &.off-canvas-drawer--is-active {

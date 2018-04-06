@@ -56,22 +56,9 @@
  * @see html.html.twig
  */
 #}
-
-{#
-{{ kint() }}
-#}
-
-{% if layout_option == 'full' or 'fluid' %}
-{%
-  set layoutClasses = [
-    'full-width',
-  ]
-%}
-{% endif %}
 {% set maincontent_attributes = create_attribute() %}
 {% set sidebarfirst_attributes = create_attribute() %}
 {% set sidebarsecond_attributes = create_attribute() %}
-
 
 {% if layout_option == '' %}
 <div class="container">

@@ -16,11 +16,6 @@
  */
 #}
 {% import _self as menus %}
-
-{#
-{{ kint() }}
-#}
-
 {#
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
@@ -47,13 +42,13 @@
         ]
       %}
       {% if menu_level == 0 and item.is_expanded %}
-        <li{{ item.attributes.addClass( classes,'expanded', 'dropdown').removeClass('menu-item') }}>
+        <li{{ item.attributes.addClass(classes, 'expanded', 'dropdown').removeClass('menu-item') }}>
           <div class="btn-group">
             {{ link(item.title, item.url, item.attributes.addClass('btn')) }}
             <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
       {% else %}
-        <li{{ item.attributes.addClass( classes,'item').removeClass('menu-item') }}> 
-          {{ link(item.title, item.url, { 'class':['navbar-link']}) }}
+        <li{{ item.attributes.addClass(classes, 'item').removeClass('menu-item') }}>
+          {{ link(item.title, item.url, {'class': ['navbar-link']}) }}
       {% endif %}
       {% if item.below %}
         {{ menus.menu_links(item.below, attributes.removeClass('nav', 'navbar-nav'), menu_level + 1) }}

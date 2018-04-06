@@ -47,11 +47,17 @@ $drawer-button--padding: 10px;
 
 @import 'button-clf-hamburger';
 
+body {
+  &.off-canvas-drawer--is-animating,
+  &.off-canvas-drawer--is-active {
+    overflow: hidden !important;
+  }
+}
 #pushed-content {
   position: relative;
   z-index: $pushed-content--z-index;
   display: block;
-  //overflow: hidden;
+//   overflow: hidden;
   transition: transform $transition-speed $transition-easing;
 }
 #pushed-content.drawer--push-left.off-canvas-drawer--is-active {

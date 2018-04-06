@@ -65,10 +65,16 @@
   }
 }
 
+body.off-canvas-drawer--is-animating,
+body.off-canvas-drawer--is-active {
+  overflow: hidden !important;
+}
+
 #pushed-content {
   position: relative;
   z-index: 1;
   display: block;
+/*   overflow: hidden; */
   transition: transform 0.125s ease;
 }
 

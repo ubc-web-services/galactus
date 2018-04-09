@@ -101,10 +101,10 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content').addClass(contentClasses) }}>
-    {{ content|without('links') }}
     {% if unpublished %}
       <div class="unpublished">Unpublished</div>
     {% endif %}
+    {{ content|without('links') }}
   </div>
 
   {% if content.links %}

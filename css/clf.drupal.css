@@ -111,7 +111,16 @@ textarea,
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  word-wrap: break-word
+  word-wrap: break-word;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.node--unpublished div.field__item {
+  position: relative;
 }
 
 /* Remove the overly-opinionated CLF footer style */

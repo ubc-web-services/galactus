@@ -162,6 +162,10 @@ body.off-canvas-drawer--is-active {
   color: #fff;
 }
 
+.off-canvas-drawer .ubc7-arrow {
+  background-position: -1113px -227px !important;
+}
+
 .off-canvas-drawer .drawer__close {
   background-color: #686868;
   border-top: 1px solid #414141;

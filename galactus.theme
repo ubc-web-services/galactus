@@ -313,13 +313,7 @@ function galactus_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
-  if (!$variables['status']) {
-    $variables['classes_array'][] = 'node-unpublished';
-    $variables['unpublished'] = TRUE;
-  }
-  else {
-    $variables['unpublished'] = FALSE;
-  }
+
   // Add node--node_type--view_mode.html.twig suggestions.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['elements']['#node']->bundle() . '__' . $variables['view_mode'];
 

@@ -45,7 +45,7 @@
         <li{{ item.attributes.addClass(classes, 'expanded', 'dropdown').removeClass('menu-item') }}>
           <div class="btn-group">
             {{ link(item.title, item.url, item.attributes.addClass('btn')) }}
-            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow white right-arrow"></span></button>
+            <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="ubc7-arrow blue down-arrow"></span></button>
       {% else %}
         <li{{ item.attributes.addClass(classes, 'item').removeClass('menu-item') }}>
           {{ link(item.title, item.url, {'class': ['navbar-link']}) }}

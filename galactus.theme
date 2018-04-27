@@ -299,9 +299,6 @@ function galactus_preprocess_maintenance_page(&$variables) {
 
   // Galactus has custom styling for the maintenance page.
   $variables['#attached']['library'][] = 'galactus/maintenance_page';
-
-  // Set the options that apply to both page and maintenance page.
-  _galactus_process_page($variables);
 }
 
 /**

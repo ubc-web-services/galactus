@@ -1,4 +1,4 @@
-(function ($) {
+(function () {
 
   Drupal.behaviors.galactusDrawer = {
     attach: function(context, settings) {
@@ -34,4 +34,4 @@
       }
     }
   }
-}(jQuery));
+}());

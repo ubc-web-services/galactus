@@ -353,23 +353,23 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#title' => t('Navigation Settings'),
     '#group' => 'clf',
   ];
-
   $form['navigation']['clf_navigation_placement'] = [
     '#type' => 'select',
-    '#title' => t('Choose the type of primary navigation that should be used on this website. | NOT YET ACTIVE'),
+    '#title' => t('Choose the type of primary navigation that should be used on this website.'),
     '#prefix' => t('<h2>General Navigation Options</h2>'),
     '#default_value' => theme_get_setting('clf_navigation_placement'),
     '#options' => [
       'default' => t('Default CLF - Horizontal'),
-      'double' => t('Default CLF - Horizontal, Two Rows'),
-      'higher' => t('Default CLF - Horizontal, Double Height'),
-      'slidein' => t('Right Slidein Drawer'),
+      'drawer--push-left' => t('Left Push Drawer'),
+      'drawer--cover-left' => t('Left Cover Drawer'),
+      'drawer--push-right' => t('Right Push Drawer'),
+      'drawer--cover-right' => t('Right Cover Drawer'),
     ],
   ];
 
   $form['navigation']['clf_navigation_sticky'] = [
     '#type' => 'checkbox',
-    '#title' => t('<strong>Make the default CLF navigation sticky | NOT YET ACTIVE</strong>'),
+    '#title' => t('<strong>Make the default CLF navigation sticky.</strong>'),
     '#description' => t("If you'd like the primary navigation to be 'sticky' (stay on top of window when scrolling downward), select this option."),
     '#default_value' => theme_get_setting('clf_navigation_sticky'),
   ];

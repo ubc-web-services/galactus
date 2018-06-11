@@ -1,0 +1,250 @@
+// VARIABLES
+$box-shadow: 2px 0 2px rgba(0, 0, 0, .15);
+$transition-speed: .125s;
+$transition-easing: ease;
+$hide-desktop-trigger-below: 979px;
+$drawer--width: 20rem;
+$drawer--padding: 18px;
+$drawer--z-index: 10;
+$mask--z-index: 2;
+$pushed-content--z-index: 1;
+$rotation-transition: all .3s ease;
+$rotation-transform: rotate(90deg);
+
+$mask--background: rgba(255, 255, 255, 0.5);
+$drawer--background-color: #686868;
+$drawer--background-color--hover: darken($drawer--background-color, 10%);
+$drawer--background-color--focus: darken($drawer--background-color, 15%);
+$drawer--border-color: #414141;
+$drawer--inner--color: #fff;
+$drawer--inner--font-size: 16px;
+$drawer-button--background-color: rgba(0, 0, 0, 0);
+$drawer-button--background-color--hover: #002145!important;
+$drawer-button--color: #000;
+$drawer-button--color--hover: #fff!important;
+$drawer-button--font-family: Arial, Sans-Serif;
+$drawer-button--font-size: 14px;
+$drawer-button--line-height: 1.75em!important;
+$drawer-button--margin-right: 17px;
+$drawer-button--padding: 10px;
+
+#drawer-button {
+  background-color: $drawer-button--background-color;
+  border: none;
+  color: $drawer-button--color;
+  float: right;
+  font-family: $drawer-button--font-family;
+  font-size: $drawer-button--font-size;
+  line-height: $drawer-button--line-height;
+  margin-right: $drawer-button--margin-right;
+  outline: 0;
+  padding: $drawer-button--padding;
+  &:hover {
+    background-color: $drawer-button--background-color--hover;
+    color: $drawer-button--color--hover;
+  }
+}
+
+@import 'button-clf-hamburger';
+
+body.toolbar-tray-open.toolbar-vertical.toolbar-fixed.off-canvas-drawer--is-active {
+  margin-left:0 !important;
+}
+body {
+  &.off-canvas-drawer--is-animating,
+  &.off-canvas-drawer--is-active {
+    overflow: hidden !important;
+  }
+}
+#pushed-content {
+  position: relative;
+  z-index: $pushed-content--z-index;
+  display: block;
+//   overflow: hidden;
+  transition: transform $transition-speed $transition-easing;
+}
+#pushed-content.drawer--push-left.off-canvas-drawer--is-active {
+  transform: translate3D(-$drawer--width, 0, 0);
+  box-shadow: $box-shadow;
+}
+#pushed-content.drawer--push-right.off-canvas-drawer--is-active {
+  transform: translate3D($drawer--width, 0, 0);
+  box-shadow: $box-shadow;
+}
+#off-canvas-drawer--primary {
+  transition: transform $transition-speed $transition-easing, visibility $transition-speed $transition-easing;
+  visibility: visible;
+  height: 100% !important;
+  width: 0;
+  position: fixed;
+  top: 0;
+  background-color: $drawer--background-color;
+  display: block;
+  overflow: auto;
+}
+#off-canvas-drawer--primary.drawer--cover-left,
+#off-canvas-drawer--primary.drawer--push-left {
+  right: 0;
+  transform: translate3D($drawer--width, 0, 0);
+}
+#off-canvas-drawer--primary.drawer--cover-right,
+#off-canvas-drawer--primary.drawer--push-right {
+  left: 0;
+  transform: translate3D(-$drawer--width, 0, 0);
+}
+#off-canvas-drawer--primary.off-canvas-drawer--is-animating {
+  width: $drawer--width;
+  z-index: $drawer--z-index;
+}
+#off-canvas-drawer--primary.off-canvas-drawer--is-active {
+  transform: translate3D(0, 0, 0);
+  z-index: $drawer--z-index;
+  width: $drawer--width;
+}
+#off-canvas-mask {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: $mask--z-index;
+  top: 0;
+  left: 0;
+  background-color: $mask--background;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  opacity: 0;
+  transition: opacity $transition-speed;
+}
+#off-canvas-mask.off-canvas-drawer--is-active {
+  width: 100% !important;
+  opacity: .5;
+}
+
+@media screen and (max-width: $hide-desktop-trigger-below) {
+  .has-off-canvas-drawer #ubc7-unit-menu {
+    display: none;
+  }
+}
+
+// Custom Trigger
+.drawer-toggle--hamburger
+
+
+/* Alter CLF Navigation markup to work vertically */
+.off-canvas-drawer,
+.off-canvas-drawer a,
+.off-canvas-drawer .dropdown-menu a {
+  color: $drawer--inner--color;
+}
+.off-canvas-drawer {
+  .drawer__close {
+    background-color: $drawer--background-color;
+    border-top: 1px solid $drawer--border-color;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    color: $drawer--inner--color;
+    padding: $drawer--padding;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    text-align: right;
+    width: 100%;
+    &:hover {
+      background-color: $drawer--background-color--hover;
+    }
+    &:focus {
+      background-color: $drawer--background-color--focus;
+    }
+  }
+  a {
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-color: $drawer--border-color;
+    box-shadow: none;
+    box-sizing: border-box;
+    padding: $drawer--padding;
+    padding-right: 0;
+    text-decoration: none;
+    &:hover {
+      color: $drawer--inner--color;
+      border-color: $drawer--border-color;
+    }
+  }
+  .nav>li>a:focus,
+  .nav>li>a:hover,
+  .btn-group:hover>.btn,
+  .btn-group>a:focus {
+    background-color: $drawer--background-color--hover;
+  }
+  .btn-group {
+    width: 100%;
+    .dropdown-toggle {
+      &:hover:after,
+      &:focus:after {
+        color: $drawer--inner--color;
+      }
+      z-index: 2;
+      float: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 55px;
+      box-shadow: none;
+      span {
+        transition: $rotation-transition;
+      }
+      &:hover span {
+        transform: $rotation-transform;
+      }
+    }
+    .dropdown-menu {
+      border: none;
+      width: 100%;
+      margin-top: 0;
+      li {
+        border-bottom: none;
+      }
+      a {
+        background-color: lighten($drawer--background-color, 10%);
+        padding-top: $drawer--padding;
+        padding-bottom: $drawer--padding;
+      }
+    }
+    > a {
+      width: 100%;
+      z-index: 1;
+    }
+    > .btn {
+      background-color: $drawer--background-color;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      border-color: $drawer--border-color;
+      line-height: 18px;
+      box-shadow: none !important;
+      background-image: none !important;
+      text-align: left;
+    }
+    &:hover>.dropdown-toggle{
+      background-color: $drawer--background-color--focus;
+    }
+    &.open {
+      span {
+        transform: $rotation-transform;
+        transition: $rotation-transition;
+      }
+      .btn.dropdown-toggle {
+        background-color: $drawer--background-color--hover;
+        border-color: $drawer--background-color--hover;
+      }
+      > .dropdown-menu {
+        display: block;
+        position: relative;
+      }
+    }
+  }
+  button:focus {
+    outline: 0;
+  }
+}

@@ -101,6 +101,28 @@ textarea,
   clear: both;
 }
 
+.node--unpublished div.unpublished {
+  height: 0;
+  overflow: visible;
+  color: #d8d8d8;
+  font-size: 4.6875em;
+  line-height: 1;
+  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.node--unpublished div.field__item {
+  position: relative;
+}
+
 /* Remove the overly-opinionated CLF footer style */
 footer {
   background-color: inherit;

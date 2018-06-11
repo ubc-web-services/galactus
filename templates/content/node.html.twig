@@ -101,6 +101,9 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('node__content').addClass(contentClasses) }}>
+    {% if not node.isPublished() %}
+      <div class="unpublished">Unpublished</div>
+    {% endif %}
     {{ content|without('links') }}
   </div>
 

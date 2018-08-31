@@ -25,11 +25,11 @@ ul.menu {
 ul.menu a.is-active {
   color: inherit;
 }
-.node--unpublished div.unpublished {
+.node--unpublished .unpublished {
   height: 0;
   overflow: visible;
   color: #d8d8d8;
-  font-size: 4.6875em;
+  font-size: 5em;
   line-height: 1;
   font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
   font-weight: bold;
@@ -37,11 +37,10 @@ ul.menu a.is-active {
   text-align: center;
   word-wrap: break-word;
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
 }
-.node--unpublished div.field__item {
+.node--unpublished .field__item {
   position: relative;
 }

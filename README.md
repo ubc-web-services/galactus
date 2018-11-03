@@ -10,6 +10,12 @@ you need to modify the theme to suit your needs, we recommend using the
 [Drupal 8 CLF theme](https://github.com/ubc-web-services/clf) as a child theme
 to extend this one instead.
 
+# Composer Builds
+If you're using composer, add the project with:
+```
+composer require ubc-web-services/galactus
+```
+
 # IE8 Support
 Drupal 8 does not support Internet Explorer versions earlier than version 9 due
 to jQuery version incompatibilities. If IE8 support is required, Drupal 7 should

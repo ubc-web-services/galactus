@@ -17,9 +17,7 @@ ckeditor_stylesheets:
   - css/ckeditor-iframe.css
 
 regions:
-  header: 'Header'
   primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
   featured: 'Featured'
   breadcrumb: 'Breadcrumb'
   help: 'Help'
@@ -29,3 +27,4 @@ regions:
   sidebar_second: 'Sidebar second'
   secondary_content: 'Secondary Content'
   prefooter: 'Pre-Footer'
+  drawer: 'Off Canvas Drawer'

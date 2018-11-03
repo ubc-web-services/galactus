@@ -173,6 +173,16 @@ function galactus_preprocess_html(&$variables) {
     $variables['#attached']['library'][] = 'galactus/clf-secondary-navigation';
   }
 
+  // Add navigation class and library.
+  if (theme_get_setting('clf_navigation_placement') == 'default') {
+    $variables['navigation_placement'] = FALSE;
+    $variables['attributes']['class'][] = 'clf-navigation-default';
+  }
+  else {
+    $variables['attributes']['class'][] = 'clf-navigation-slidein';
+    $variables['#attached']['library'][] = 'galactus/clf-slidein-navigation';
+  }
+
   // Add Whitney library if set.
   if (theme_get_setting('clf_use_whitney') == 'dev') {
     $variables['#attached']['library'][] = 'galactus/clf-whitney-dev';
@@ -245,6 +255,16 @@ function galactus_preprocess_page(&$variables) {
     $variables['sidebar_second_class_option'] = '';
   }
 
+  // Navigation options.
+  if (theme_get_setting('clf_navigation_placement') == 'default') {
+    $variables['navigation_placement_default'] = TRUE;
+    $variables['navigation_placement'] = FALSE;
+  }
+  else {
+    $variables['navigation_placement_drawer'] = TRUE;
+    $variables['navigation_placement'] = theme_get_setting('clf_navigation_placement');
+  }
+
   // Footer options.
   $variables['address_option'] = theme_get_setting('clf_streetaddr');
   $variables['locality_option'] = theme_get_setting('clf_locality');
@@ -279,9 +299,6 @@ function galactus_preprocess_maintenance_page(&$variables) {
 
   // Galactus has custom styling for the maintenance page.
   $variables['#attached']['library'][] = 'galactus/maintenance_page';
-
-  // Set the options that apply to both page and maintenance page.
-  _galactus_process_page($variables);
 }
 
 /**

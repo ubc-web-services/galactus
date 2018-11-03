@@ -133,6 +133,21 @@ clf-sticky-navigation:
   css:
     theme:
       css/navigation.sticky.css: {}
+  js:
+    js/navigation.sticky.js: {}
+  dependencies:
+    - core/drupal
+
+### Slide-in Navigation ###
+clf-slidein-navigation:
+  css:
+    theme:
+      css/navigation.slidein.css: {}
+  js:
+    js/navigation.slidein.js: {}
+  dependencies:
+    - core/drupal
+
 
 ### Whitney Font ###
 clf-whitney-dev:

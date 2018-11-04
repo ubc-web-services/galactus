@@ -1,16 +1,24 @@
 #drawer-button {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   color: #000;
   float: right;
   font-family: Arial, Sans-Serif;
   font-size: 14px;
+  line-height: 1.75em !important;
   margin-right: 17px;
   outline: 0;
-  padding: 10px;
+  padding: 8px 10px;
 }
 
-#drawer-button:hover {
+@media (min-width: 1200px) {
+  #drawer-button {
+    padding: 10px;
+  }
+}
+
+#drawer-button:hover,
+.off-canvas-drawer--is-active #drawer-button {
   background-color: #002145 !important;
   color: #fff !important;
 }
@@ -62,17 +70,13 @@
     margin-right: 17px;
     margin-bottom: 5px;
   }
-  #drawer-button {
-    line-height: 1.75em !important;
-  }
 }
 
 body.toolbar-tray-open.toolbar-vertical.toolbar-fixed.off-canvas-drawer--is-active {
-  margin-left:0 !important;
+  margin-left: 0 !important;
 }
 
-body.off-canvas-drawer--is-animating,
-body.off-canvas-drawer--is-active {
+body.off-canvas-drawer--is-animating, body.off-canvas-drawer--is-active {
   overflow: hidden !important;
 }
 
@@ -80,7 +84,6 @@ body.off-canvas-drawer--is-active {
   position: relative;
   z-index: 1;
   display: block;
-/*   overflow: hidden; */
   transition: transform 0.125s ease;
 }
 
@@ -101,7 +104,7 @@ body.off-canvas-drawer--is-active {
   width: 0;
   position: fixed;
   top: 0;
-  background-color: #686868;
+  background-color: #0055B7;
   display: block;
   overflow: auto;
 }
@@ -155,20 +158,16 @@ body.off-canvas-drawer--is-active {
   }
 }
 
-.drawer-toggle--hamburger
+/* Alter CLF Navigation markup to work vertically */
 .off-canvas-drawer,
 .off-canvas-drawer a,
 .off-canvas-drawer .dropdown-menu a {
   color: #fff;
 }
 
-.off-canvas-drawer .ubc7-arrow {
-  background-position: -1113px -227px !important;
-}
-
 .off-canvas-drawer .drawer__close {
-  background-color: #686868;
-  border-top: 1px solid #414141;
+  background-color: #0055B7;
+  border-top: 1px solid #002145;
   border-bottom: none;
   border-left: none;
   border-right: none;
@@ -182,17 +181,17 @@ body.off-canvas-drawer--is-active {
 }
 
 .off-canvas-drawer .drawer__close:hover {
-  background-color: #4f4f4f;
+  background-color: #003d84;
 }
 
 .off-canvas-drawer .drawer__close:focus {
-  background-color: #424242;
+  background-color: #00316b;
 }
 
 .off-canvas-drawer a {
   border-top-style: solid;
   border-top-width: 1px;
-  border-color: #414141;
+  border-color: #002145;
   box-shadow: none;
   box-sizing: border-box;
   padding: 18px;
@@ -202,14 +201,18 @@ body.off-canvas-drawer--is-active {
 
 .off-canvas-drawer a:hover {
   color: #fff;
-  border-color: #414141;
+  border-color: #002145;
+}
+
+.off-canvas-drawer .nav {
+  border-bottom: 1px solid #002145;
 }
 
 .off-canvas-drawer .nav > li > a:focus,
 .off-canvas-drawer .nav > li > a:hover,
 .off-canvas-drawer .btn-group:hover > .btn,
 .off-canvas-drawer .btn-group > a:focus {
-  background-color: #4f4f4f;
+  background-color: #003d84;
 }
 
 .off-canvas-drawer .btn-group {
@@ -249,7 +252,7 @@ body.off-canvas-drawer--is-active {
 }
 
 .off-canvas-drawer .btn-group .dropdown-menu a {
-  background-color: #828282;
+  background-color: #006dea;
   padding-top: 18px;
   padding-bottom: 18px;
 }
@@ -260,11 +263,11 @@ body.off-canvas-drawer--is-active {
 }
 
 .off-canvas-drawer .btn-group > .btn {
-  background-color: #686868;
+  background-color: #0055B7;
   border-left: none;
   border-right: none;
   border-bottom: none;
-  border-color: #414141;
+  border-color: #002145;
   line-height: 18px;
   box-shadow: none !important;
   background-image: none !important;
@@ -272,7 +275,7 @@ body.off-canvas-drawer--is-active {
 }
 
 .off-canvas-drawer .btn-group:hover > .dropdown-toggle {
-  background-color: #424242;
+  background-color: #00316b;
 }
 
 .off-canvas-drawer .btn-group.open span {
@@ -281,13 +284,18 @@ body.off-canvas-drawer--is-active {
 }
 
 .off-canvas-drawer .btn-group.open .btn.dropdown-toggle {
-  background-color: #4f4f4f;
-  border-color: #4f4f4f;
+  background-color: #003d84;
+  border-color: #002145;
 }
 
 .off-canvas-drawer .btn-group.open > .dropdown-menu {
   display: block;
   position: relative;
+}
+
+.off-canvas-drawer .ubc7-arrow,
+.off-canvas-drawer .ubc7-arrow.down-arrow {
+  background-position: -1178px -227px;
 }
 
 .off-canvas-drawer button:focus {

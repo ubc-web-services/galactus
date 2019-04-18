@@ -33,10 +33,7 @@
       'alert-' ~ type,
     ]
   %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-    {#% if type == 'error' %}
-      <div role="alert">
-    {% endif %#}
+  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.setAttribute('class', classes)|without('role', 'aria-label') }}>
       <a class="close" data-dismiss="alert" href="#">&times;</a>
       {% if status_headings[type] %}
         <h4 class="alert-heading">{{ status_headings[type] }}</h4>
@@ -50,11 +47,6 @@
       {% else %}
         {{ messages|first }}
       {% endif %}
-    {#% if type == 'error' %}
-      </div>
-    {% endif % #}
   </div>
-  {# Remove type specific classes. #}
-  {{ attributes.removeClass(classes) }}
 {% endfor %}
 {% endblock messages %}

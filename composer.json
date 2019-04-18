@@ -6,8 +6,5 @@
     "name": "O'Toole, James",
     "email": "james.otoole@ubc.ca"
   }],
-  "require": {},
-  "suggest": {
-    "ubc-web-services/clf": "A child CLF theme intended as a starting point for theme cutomizations."
-  }
+  "require": {}
 }

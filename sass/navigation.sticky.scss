@@ -1,6 +1,6 @@
 /**
  * @file
- * Placeholder
+ * Styles for sticky navigation
  */
 
  // VARIABLES
@@ -21,11 +21,13 @@ $menu-height-large-desktop: 45px;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 300;
   }
   body.unit-area-is-sticky #ubc7-unit-menu {
     position: fixed;
     top: $menu-height-mobile;
     width: 100%;
+    z-index: 300;
   }
 
   #ubc7-unit.navigation-is-sticky .btn-navbar {
@@ -42,6 +44,7 @@ $menu-height-large-desktop: 45px;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 300;
   }
 }
 

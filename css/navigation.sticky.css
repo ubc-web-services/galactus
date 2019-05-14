@@ -1,6 +1,6 @@
 /**
  * @file
- * Placeholder
+ * Styles for sticky navigation
  */
 @media screen and (max-width: 979px) {
   body.unit-area-is-sticky {
@@ -10,11 +10,13 @@
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 300;
   }
   body.unit-area-is-sticky #ubc7-unit-menu {
     position: fixed;
     top: 50px;
     width: 100%;
+    z-index: 300;
   }
   #ubc7-unit.navigation-is-sticky .btn-navbar {
     margin-right: 40px;
@@ -29,6 +31,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 300;
   }
 }
 

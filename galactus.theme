@@ -280,7 +280,7 @@ function galactus_preprocess_page(&$variables) {
   $variables['facebook_option'] = theme_get_setting('clf_social_facebook');
   $variables['twitter_option'] = theme_get_setting('clf_social_twitter');
   $variables['linkedin_option'] = theme_get_setting('clf_social_linkedin');
-  $variables['googleplus_option'] = theme_get_setting('clf_social_googleplus');
+  $variables['instagram_option'] = theme_get_setting('clf_social_instagram');
   $variables['youtube_option'] = theme_get_setting('clf_social_youtube');
 
 }

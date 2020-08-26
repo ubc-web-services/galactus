@@ -285,10 +285,10 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#description' => t('Format of https://www.xyz.com'),
   ];
 
-  $form['social']['clf_social_googleplus'] = [
+  $form['social']['clf_social_instagram'] = [
     '#type' => 'textfield',
-    '#title' => t('Google Plus Account Link'),
-    '#default_value' => theme_get_setting('clf_social_googleplus'),
+    '#title' => t('Instagram Account Link'),
+    '#default_value' => theme_get_setting('clf_social_instagram'),
     '#size' => 60,
     '#maxlength' => 128,
     '#description' => t('Format of https://www.xyz.com'),

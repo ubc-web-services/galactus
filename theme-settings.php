@@ -86,21 +86,19 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
   $form['general']['clf_override'] = [
     '#type' => 'checkbox',
     '#title' => t('<strong>Use Minimal CLF</strong>'),
-    '#description' => t('Use an external, minimal copy of the CLS css files.<br><strong>Warning</strong>: Advanced users only. This will require creating and adding your own css for non-clf regions of the site, including navigation.'),
+    '#description' => t('Use an external, minimal copy of the CLS css files.<br><strong>Warning</strong>: Advanced users only. This will require creating and adding your own css for non-clf regions of the site, including navigation.<br><small><strong>Replaced by <i>CLF Version and Source</i> setting, kept for legacy purposes.</strong></small>'),
     '#default_value' => theme_get_setting('clf_override'),
   ];
 
-  $form['general']['clf_use_whitney'] = [
+  $form['general']['clf_source'] = [
     '#type' => 'select',
-    '#title' => t('Use the UBC Whitney webfont'),
-    '#description' => t('If you\'d like to use the Whitney webfont on the website, choose the version you will be using.<br /><small>Please note that the production version provided by Web Communications requires authorization via <a href=":url">this form</a>, and it only includes two weights (400 and 600).</small>', [
-      ':url' => 'http://brand.ubc.ca/font-request-form/',
-    ]),
-    '#default_value' => theme_get_setting('clf_use_whitney'),
+    '#title' => t('<strong>CLF Version and Source</strong>'),
+    '#description' => t('Choose the version and source of the UBC CLF.<br><strong>Warning</strong>: Minimal and local versions are inteneded for advanced users only. These will require creating and adding your own css for non-clf regions of the site, including navigation.<br><small>Replaces the Old Use Minimal CLF setting</small>'),
+    '#default_value' => theme_get_setting('clf_source'),
     '#options' => [
-      '' => t("Don't use Whitney"),
-      'dev' => t('Web Services - Development version'),
-      'prod' => t('Web Communications - Production version'),
+      '' => t('CDN Full Version - default'),
+      'min' => t('CDN Minimal Version'),
+      'local' => t('Local Minimal Version'),
     ],
   ];
 

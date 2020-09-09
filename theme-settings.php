@@ -102,6 +102,20 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     ],
   ];
 
+  $form['general']['clf_use_whitney'] = [
+    '#type' => 'select',
+    '#title' => t('Use the UBC Whitney webfont'),
+    '#description' => t('If you\'d like to use the Whitney webfont on the website, choose the version you will be using.<br /><small>Please note that the production version provided by Web Communications requires authorization via <a href=":url">this form</a>, and it only includes two weights (400 and 600).</small>', [
+      ':url' => 'http://brand.ubc.ca/font-request-form/',
+    ]),
+    '#default_value' => theme_get_setting('clf_use_whitney'),
+    '#options' => [
+      '' => t("Don't use Whitney"),
+      'dev' => t('Web Services - Development version'),
+      'prod' => t('Web Communications - Production version'),
+    ],
+  ];
+
   // CLF UNIT / WEBSITE INFORMATION.
   $form['unit'] = [
     '#type' => 'details',

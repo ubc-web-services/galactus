@@ -11,6 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_page_attachments_alter().
  */
 function galactus_page_attachments_alter(array &$page) {
+  $clf_source = theme_get_setting('clf_source');
   $use_minimal_clf = theme_get_setting('clf_override');
   $clf_theme_color = theme_get_setting('clf_theme_colour');
   $clf_layout = theme_get_setting('clf_layout');

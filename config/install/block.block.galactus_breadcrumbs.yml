@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - galactus
-id: breadcrumbs
+id: galactus_breadcrumbs
 theme: galactus
 region: breadcrumb
 weight: -2

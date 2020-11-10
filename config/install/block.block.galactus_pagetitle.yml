@@ -1,19 +1,19 @@
-#Defines settings for the Admin Actions block
+#Defines settings for the Page Title block
 
 langcode: en
 status: true
 dependencies:
   theme:
     - galactus
-id: primaryadminactions
+id: galactus_pagetitle
 theme: galactus
 region: content
-weight: -3
+weight: -1
 provider: null
-plugin: local_actions_block
+plugin: page_title_block
 settings:
-  id: local_actions_block
-  label: 'Primary admin actions'
+  id: page_title_block
+  label: 'Page title'
   provider: core
   label_display: '0'
 visibility: {  }

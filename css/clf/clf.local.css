@@ -1,9 +1,40 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 versions,ie 11
+*/
+
+/** @define clf.local */
+
+/*
+* This file contains all styles related to UBC Common Look and Feel, v.7.
+*/
+
+/* Centered layout */
+
+body {
+  background: #ccc;
+}
+
+#ubc7-header,
+#ubc7-footer,
+#unit-content {
+  background: #fff;
+}
+
+.full-width body,
+.full-width #main-content {
+  background: initial;
+}
+
 #ubc7-global-menu,
 #ubc7-header,
 #ubc7-unit,
 #ubc7-unit-menu,
 #ubc7-footer {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   font-family: Arial, sans-serif !important
 }
 
@@ -27,8 +58,8 @@
 #ubc7-unit-menu .container:after,
 #ubc7-footer .container:after,
 .row-fluid:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 
 #ubc7-global-menu .container:after,
@@ -37,23 +68,27 @@
 #ubc7-unit-menu .container:after,
 #ubc7-footer .container:after,
 .row-fluid:after {
-    clear: both;
+  clear: both;
 }
 
 #ubc7-global-menu {
   background-color: #fff;
-  box-shadow: inset 0 -60px 60px -60px #ccc
+  -webkit-box-shadow: inset 0 -60px 60px -60px #ccc;
+          box-shadow: inset 0 -60px 60px -60px #ccc
 }
 
-#ubc7-global-menu.collapse {
+.collapse {
   position: relative;
   height: 0;
   overflow: hidden;
   -webkit-transition: height .35s ease;
-  -moz-transition: height .35s ease;
   -o-transition: height .35s ease;
-  transition: height .35s ease;
-  }
+  transition: height .35s ease
+}
+
+.collapse.in {
+  height: auto
+}
 
 #ubc7-search {
   width: 100%;
@@ -71,7 +106,8 @@
 }
 
 #ubc7-search-box input {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   width: 270px;
   height: 20px;
   padding: 4px 3px;
@@ -79,8 +115,13 @@
   font-size: 16px;
   background-color: #fff;
   border: 1px solid #ccc;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
-  transition: border .2s linear, box-shadow .2s linear
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border .2s linear, -webkit-box-shadow .2s linear;
+  transition: border .2s linear, -webkit-box-shadow .2s linear;
+  -o-transition: border .2s linear, box-shadow .2s linear;
+  transition: border .2s linear, box-shadow .2s linear;
+  transition: border .2s linear, box-shadow .2s linear, -webkit-box-shadow .2s linear
 }
 
 #ubc7-search-box input,
@@ -107,17 +148,20 @@
   text-decoration: none;
   text-shadow: none;
   background-color: #002145;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#002145), to(#191938));
+  background-image: -o-linear-gradient(top, #002145, #191938);
   background-image: linear-gradient(180deg, #002145, #191938);
   background-image: -moz-linear-gradient(top, #002145, #191938);
   background-repeat: repeat-x;
   border: 1px solid #002145;
   border-radius: 0;
-  box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .2), 0 1px 2px rgba(0, 0, 0, .05);
+  -webkit-box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .2), 0 1px 2px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, .2), 0 1px 2px rgba(0, 0, 0, .05);
   cursor: pointer;
   -webkit-filter: progid:dximagetransform.microsoft.gradient(startColorstr="#002145", endColorstr="#191938", GradientType=0);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr="#002145", endColorstr="#191938", GradientType=0);
+          filter: progid:dximagetransform.microsoft.gradient(startColorstr="#002145", endColorstr="#191938", GradientType=0);
   -webkit-filter: progid:dximagetransform.microsoft.gradient(enabled=false);
-  filter: progid:dximagetransform.microsoft.gradient(enabled=false)
+          filter: progid:dximagetransform.microsoft.gradient(enabled=false)
 }
 
 #ubc7-global-menu .btn:active,
@@ -134,6 +178,8 @@
   background-color: #2f5d7c;
   background-position: 0 -200px;
   border-color: #2f5d7c;
+  -webkit-transition: background-position .1s linear;
+  -o-transition: background-position .1s linear;
   transition: background-position .1s linear
 }
 
@@ -143,18 +189,19 @@
 }
 
 #ubc7-global-header ul {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   margin: 0 0 10px;
 }
 
 #ubc7-global-header .reverse:before,
 #ubc7-global-header .reverse:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 
 #ubc7-global-header .reverse:after {
-    clear: both;
+  clear: both;
 }
 
 #ubc7-global-header li {
@@ -198,7 +245,8 @@
 #ubc7-header .span1,
 #ubc7-header .span9 {
   display: block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 95px;
   min-height: 30px
 }
@@ -211,6 +259,26 @@
 #ubc7-logo,
 #ubc7-wordmark {
   height: 100%
+}
+
+.ubc7-campus {
+  bottom: 17px;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 18px;
+  left: 35px;
+  overflow: hidden;
+  position: absolute;
+  width: 100px;
+}
+
+#ubc7-vancouver-campus {
+  background-position: -1319px -301px;
+}
+
+#ubc7-okanagan-campus {
+  background-position: -1319px -329px;
 }
 
 #ubc7-global-utility-no-script,
@@ -269,6 +337,7 @@
 #ubc7-logo a,
 #ubc7-signature a,
 #ubc7-wordmark a,
+.ubc7-campus,
 .hide-text {
   overflow: hidden;
   white-space: nowrap;
@@ -302,7 +371,8 @@
   padding: 0;
   background: transparent;
   border: 0;
-  box-shadow: 0 0;
+  -webkit-box-shadow: 0 0;
+          box-shadow: 0 0;
   cursor: pointer
 }
 
@@ -341,18 +411,18 @@ a#ubc7-global-utility-no-script {
 }
 
 #ubc7-global-utility button span.opened {
-  background-position: -1167px -54px
+  background-position: -1163px -291px;
 }
 
 .clf-theme-wg #ubc7-global-utility button span.opened {
-  background-position: -1167px -50px;
+  background-position: -1163px -324px;
 }
 
 #ubc7-unit {
   width: 100%;
   height: 50px;
   overflow: hidden;
-  background-color: #002145
+  background-color: var(--color-primary);
 }
 
 #ubc7-unit .span12 {
@@ -368,7 +438,7 @@ a#ubc7-global-utility-no-script {
 #ubc7-unit .btn-navbar {
   width: 32px;
   height: 24px;
-  margin: -9px 0 0;
+  margin: 3px 0 0;
   padding: 11px 0 0 13px;
   background: #fff;
   border: 0
@@ -391,7 +461,8 @@ a#ubc7-global-utility-no-script {
   height: 2px;
   background: #002145;
   border-radius: 1px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, .25)
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, .25)
 }
 
 #ubc7-unit .btn-navbar .icon-bar+.icon-bar {
@@ -408,7 +479,7 @@ a#ubc7-global-utility-no-script {
 #ubc7-unit-name a,
 #ubc7-unit-name a:hover {
   display: block;
-  color: #fff !important;
+  color: #fff;
   line-height: 20px;
   text-decoration: none !important
 }
@@ -422,6 +493,10 @@ a#ubc7-global-utility-no-script {
   font-size: 18px;
   letter-spacing: 1px;
   white-space: nowrap
+}
+
+#ubc7-unit-faculty {
+  display: block;
 }
 
 #ubc7-unit-menu,
@@ -440,7 +515,8 @@ a#ubc7-global-utility-no-script {
   position: relative;
   margin-right: -20px;
   margin-left: -20px;
-  box-shadow: 0 3px 6px #ccc
+  -webkit-box-shadow: 0 3px 6px #ccc;
+          box-shadow: 0 3px 6px #ccc
 }
 
 #ubc7-unit-menu .navbar-inner {
@@ -480,7 +556,8 @@ a#ubc7-global-utility-no-script {
 #ubc7-unit-menu .dropdown .btn-group .btn,
 #ubc7-unit-menu .dropdown .btn-group button {
   z-index: 1;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 41px;
   margin-top: 0;
   margin-bottom: 0;
@@ -489,7 +566,8 @@ a#ubc7-global-utility-no-script {
   line-height: 40px;
   background-image: none;
   border-radius: 0;
-  box-shadow: 0 0 0 transparent
+  -webkit-box-shadow: 0 0 0 transparent;
+          box-shadow: 0 0 0 transparent
 }
 
 #ubc7-unit-menu .dropdown .btn-group a.btn {
@@ -516,14 +594,17 @@ a#ubc7-global-utility-no-script {
   background-color: #193056 !important
 }
 
-#ubc7-unit-menu .dropdown .btn-group button .ubc7-arrow {
+.ubc7-arrow {
   display: inline-block;
-  width: 15px;
   height: 15px;
+  text-decoration: inherit;
+  width: 15px;
+  vertical-align: text-top;
+}
+
+#ubc7-unit-menu .dropdown .btn-group button .ubc7-arrow {
   margin-top: 0;
   margin-left: 11px;
-  text-decoration: inherit;
-  vertical-align: text-top;
   background-position: -1178px -261px !important
 }
 
@@ -536,6 +617,10 @@ a#ubc7-global-utility-no-script {
   background-position: -1178px -227px !important
 }
 
+.ubc7-arrow.up-arrow.grey {
+  background-position: -1207px -195px;
+}
+
 #ubc7-unit-menu .nav-collapse .dropdown-menu {
   position: static;
   top: auto;
@@ -546,18 +631,21 @@ a#ubc7-global-utility-no-script {
   background-color: transparent;
   border: 0;
   border-radius: 0;
-  box-shadow: none
+  -webkit-box-shadow: none;
+          box-shadow: none
+}
+
+#ubc7-unit-menu .dropdown-menu {
+  display: none
+}
+
+#ubc7-unit-menu .open>.dropdown-menu {
+  display: block
 }
 
 #ubc7-unit-menu .btn-group>.btn,
 #ubc7-unit-menu .btn-group>.dropdown-menu {
   font-size: 14px
-}
-
-#ubc7-unit-menu .nav-collapse,
-#ubc7-unit-menu .nav-collapse.collapse {
-  height: 0;
-  overflow: hidden;
 }
 
 #ubc7-unit-menu .nav-collapse .dropdown-menu a,
@@ -585,16 +673,45 @@ a#ubc7-global-utility-no-script {
   background-color: #002145
 }
 
+#ubc7-unit-menu .nav>li.active>a,
 #ubc7-unit-menu .nav>li.active>.btn-group,
-#ubc7-unit-menu .nav>li.active>a {
+#ubc7-unit-menu .nav>li>a.is-active {
   background: #d7e0e7;
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, .125)
+  -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 8px rgba(0, 0, 0, .125);
 }
 
+#ubc7-unit-menu .nav>li.active>a:hover,
 #ubc7-unit-menu .nav>li.active>.btn-group:hover,
-#ubc7-unit-menu .nav>li.active>a:hover {
+#ubc7-unit-menu .nav>li>a.is-active:hover {
   color: #fff;
-  background: #002145
+  background: #002145;
+}
+
+.ubc7-back-to-top {
+  padding-top: 10px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  line-height: 22px;
+  min-height: 30px;
+}
+
+#ubc7-unit-footer {
+  background: #fff;
+  border-top: 1px solid #D7E0E7;
+  color: #002145;
+  padding-top: 20px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#ubc7-unit-footer a,
+.ubc7-back-to-top a {
+  color: #2f5d7c;
+}
+
+#ubc7-address-unit-name {
+  font-weight: 700;
 }
 
 #ubc7-global-footer {
@@ -621,14 +738,16 @@ a#ubc7-global-utility-no-script {
 }
 
 #ubc7-signature {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 70px;
   padding-top: 20px
 }
 
 #ubc7-signature a {
   display: block;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 100%;
   background-position: -2px -544px;
   background-size: auto
@@ -701,23 +820,37 @@ a#ubc7-global-utility-no-script {
   background-color: #002145
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
+
   #ubc7-global-menu .container,
   #ubc7-header .container,
   #ubc7-unit .container,
   #ubc7-unit-menu .container,
-  #ubc7-footer .container
-  {
-    width: 724px;
+  #ubc7-footer .container {
+    width: auto;
     margin: 0 auto
-  }
-
-  #ubc7-unit-menu .container {
-    width: auto
   }
 
   #ubc7-global-header li {
     width: 23%
+  }
+
+  #ubc7-wordmark-block {
+    background-position: -1px -205px
+  }
+
+  .ubc7-campus {
+    bottom: 30px;
+    left: 40px;
+    width: 120px;
+  }
+
+  #ubc7-vancouver-campus {
+    background-position: -1319px -301px;
+  }
+
+  #ubc7-okanagan-campus {
+    background-position: -1319px -262px;
   }
 
   #ubc7-global-utility-no-script,
@@ -731,11 +864,11 @@ a#ubc7-global-utility-no-script {
   }
 
   .clf-theme-wg #ubc7-global-utility button span {
-    background-position: -1233px -50px;
+    background-position: -1233px -54px;
   }
 
   .clf-theme-wg #ubc7-global-utility button span.opened {
-    background-position: -1167px -50px;
+    background-position: -1167px -54px;
   }
 
   #ubc7-global-footer .span5,
@@ -743,7 +876,8 @@ a#ubc7-global-utility-no-script {
   #ubc7-global-footer .span7 {
     display: block;
     float: left;
-    box-sizing: border-box
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box
   }
 
   #ubc7-global-footer .span5 {
@@ -762,40 +896,65 @@ a#ubc7-global-utility-no-script {
   #ubc7-global-footer .span7 {
     width: 57.18232044198895%
   }
+
 }
 
-@media screen and (min-width:960px) {
+@media screen and (min-width: 980px) {
+
+  .dialog-off-canvas-main-canvas>.container {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .full-width .dialog-off-canvas-main-canvas>.container {
+    width: 100%;
+  }
+
   #ubc7-global-menu .container,
   #ubc7-header .container,
   #ubc7-unit .container,
   #ubc7-unit-menu .container,
   #ubc7-footer .container {
-    width: 928px;
+    width: 940px;
     padding-top: 0;
     padding-right: 16px;
     padding-bottom: 0;
     padding-left: 16px;
   }
 
-  .full-width  #ubc7-header .container {
+  .full-width-left #ubc7-global-menu .container,
+  .full-width-left #ubc7-unit .container,
+  .full-width-left #ubc7-unit-menu .container,
+  .full-width-left #ubc7-footer .container {
+    width: auto;
+  }
+
+  .full-width #ubc7-header .container {
     padding-right: 14px;
     padding-left: 14px;
     border-right: 1px solid #d7e0e7;
     border-left: 1px solid #d7e0e7
   }
 
-  .clf-theme-wb.full-width  #ubc7-header .container {
+  .clf-theme-wb.full-width #ubc7-header .container {
     border-right: 1px solid #1f385f;
     border-left: 1px solid #1f385f
   }
 
-  .clf-theme-wg.full-width  #ubc7-header .container {
+  .clf-theme-wg.full-width #ubc7-header .container {
     border-right: 1px solid #446d89;
     border-left: 1px solid #446d89
   }
 
+  .full-width.full-width-left #ubc7-header .container {
+    margin-left: 0;
+    border-right-width: 0;
+  }
+
   #ubc7-search .span8 {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     width: 65.81196581196582%;
     margin: 0 auto
   }
@@ -838,9 +997,37 @@ a#ubc7-global-utility-no-script {
     width: 85% !important
   }
 
+  .ubc7-campus {
+    bottom: 17px;
+    left: 28px;
+    width: 135px;
+  }
+
+  #ubc7-vancouver-campus {
+    background-position: -1320px -122px;
+  }
+
+  #ubc7-okanagan-campus {
+    background-position: -1320px -165px;
+  }
+
   #ubc7-global-utility button {
     width: 45px;
-    margin-right: 13px
+    margin-right: 13px;
+    top: 1px;
+  }
+
+  #ubc7-global-utility button span,
+  a#ubc7-global-utility-no-script {
+    height: 35px;
+  }
+
+  .clf-theme-wg #ubc7-global-utility button span {
+    background-position: -1233px -48px;
+  }
+
+  .clf-theme-wg #ubc7-global-utility button span.opened {
+    background-position: -1167px -48px;
   }
 
   #ubc7-unit .navbar {
@@ -855,7 +1042,8 @@ a#ubc7-global-utility-no-script {
   #ubc7-unit-navigation {
     margin-right: 0;
     margin-left: 0;
-    box-shadow: none
+    -webkit-box-shadow: none;
+            box-shadow: none
   }
 
   #ubc7-unit-menu .navbar-inner {
@@ -925,7 +1113,8 @@ a#ubc7-global-utility-no-script {
     background-image: none;
     border: 0;
     border-radius: 0;
-    box-shadow: 0 0 0 transparent
+    -webkit-box-shadow: 0 0 0 transparent;
+            box-shadow: 0 0 0 transparent
   }
 
   #ubc7-unit-menu .dropdown .btn-group:hover button,
@@ -962,16 +1151,7 @@ a#ubc7-global-utility-no-script {
     vertical-align: text-top
   }
 
-  #ubc7-unit-menu .nav-collapse .disclose__content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    min-width: 160px
-  }
-
   #ubc7-unit-menu .nav-collapse .dropdown-menu {
-    display: none;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -980,15 +1160,17 @@ a#ubc7-global-utility-no-script {
     border: 1px solid #ccc;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 0;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2)
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 160px
   }
 
   #ubc7-unit-menu .nav-collapse .dropdown-menu li {
     float: none
-  }
-
-  #ubc7-unit-menu .is-open>.dropdown-menu {
-    display: block
   }
 
   #ubc7-unit-menu .dropdown-menu li {
@@ -1014,21 +1196,34 @@ a#ubc7-global-utility-no-script {
     font-size: 14px;
     line-height: 20px
   }
+
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width: 1200px) {
+
+  .dialog-off-canvas-main-canvas>.container {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .full-width .dialog-off-canvas-main-canvas>.container {
+    width: 100%;
+  }
 
   #ubc7-global-menu .container,
   #ubc7-header .container,
   #ubc7-unit .container,
   #ubc7-unit-menu .container,
   #ubc7-footer .container {
-    width: 1200px
+    width: 1170px
   }
 
   #ubc7-header .span1,
   #ubc7-header .span9 {
-    height: 115px
+    height: 115px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
 
   #ubc7-header .span1 {
@@ -1037,7 +1232,8 @@ a#ubc7-global-utility-no-script {
 
   #ubc7-header .span9 {
     width: 91.45299145299145%;
-    background-position: -83px 14px
+    background-position: -83px 14px;
+    margin-left: 30px;
   }
 
   #ubc7-logo {
@@ -1046,16 +1242,41 @@ a#ubc7-global-utility-no-script {
     background-position: 32px 14px
   }
 
+  #ubc7-wordmark {
+    float: left;
+    position: relative;
+    width: 85% !important;
+  }
+
+  .ubc7-campus {
+    bottom: 19px;
+    height: 24px;
+    left: 36px;
+    width: 170px;
+  }
+
+  #ubc7-vancouver-campus {
+    background-position: -1320px -5px;
+  }
+
+  #ubc7-okanagan-campus {
+    background-position: -1320px -53px;
+  }
+
+  #ubc7-global-utility button {
+    height: 45px;
+    margin-right: 17px;
+    top: 4px;
+  }
+
   #ubc7-global-utility button span,
   a#ubc7-global-utility-no-script {
-    top: -4px;
-    height: 43px;
-    margin-right: 19px;
-    background-position: -1233px 11px
+    height: 45px;
+    background-position: -1233px 13px
   }
 
   #ubc7-global-utility button span.opened {
-    background-position: -1167px 11px
+    background-position: -1167px 13px
   }
 
   #ubc7-unit {
@@ -1064,6 +1285,11 @@ a#ubc7-global-utility-no-script {
 
   #ubc7-unit .ubc7-single-element a {
     margin-top: 20px
+  }
+
+  #ubc7-unit-name {
+    margin-top: 7px;
+    font-size: 14px;
   }
 
   #ubc7-unit-identifier {
@@ -1091,12 +1317,15 @@ a#ubc7-global-utility-no-script {
   #ubc7-unit-menu .nav-collapse .nav.dropdown-menu>li>a {
     line-height: 20px
   }
+
 }
 
-@media screen and (min--moz-device-pixel-ratio:0) and (min-width:1200px) {
+@media screen and (min--moz-device-pixel-ratio:0) and (min-width: 1200px) {
+
   #ubc7-unit-menu .nav>li>a {
     padding-top: 11px !important
   }
+
 }
 
 @media only screen and (-o-min-device-pixel-ratio:"3/2"),
@@ -1110,10 +1339,9 @@ only screen and (min-device-pixel-ratio:1.5) {
   #ubc7-okanagan-campus,
   #ubc7-signature a,
   #ubc7-vancouver-campus,
-  #ubc7-wordmark,
   #ubc7-wordmark-block,
   .ubc7-arrow {
-    background-image: url(../../img/clf/ubc7-clf-sprite-blue-2x.png) !important;
+    background-image: url(../../img/clf/ubc7-clf-sprite-blue-2x.png);
     background-size: 1500px !important
   }
 
@@ -1151,30 +1379,87 @@ only screen and (min-device-pixel-ratio:1.5) {
 
 }
 
-@media only screen and (-o-min-device-pixel-ratio:"3/2") and (max-width:959px),
-only screen and (-webkit-min-device-pixel-ratio:1.5) and (max-width:959px),
-only screen and (min--moz-device-pixel-ratio:1.5) and (max-width:959px),
-only screen and (min-device-pixel-ratio:1.5) and (max-width:959px) {
+@media only screen and (-o-min-device-pixel-ratio:"3/2") and (max-width: 979px),
+only screen and (-webkit-min-device-pixel-ratio:1.5) and (max-width: 979px),
+only screen and (min--moz-device-pixel-ratio:1.5) and (max-width: 979px),
+only screen and (min-device-pixel-ratio:1.5) and (max-width: 979px) {
+
   #ubc7-signature a {
     background-position: -2px -435px !important;
     background-size: 1400px !important
   }
+
 }
 
-@media only screen and (-o-min-device-pixel-ratio:"3/2") and (max-width:767px),
-only screen and (-webkit-min-device-pixel-ratio:1.5) and (max-width:767px),
-only screen and (min--moz-device-pixel-ratio:1.5) and (max-width:767px),
-only screen and (min-device-pixel-ratio:1.5) and (max-width:767px) {
+@media only screen and (-o-min-device-pixel-ratio:"3/2") and (max-width: 767px),
+only screen and (-webkit-min-device-pixel-ratio:1.5) and (max-width: 767px),
+only screen and (min--moz-device-pixel-ratio:1.5) and (max-width: 767px),
+only screen and (min-device-pixel-ratio:1.5) and (max-width: 767px) {
+
   #ubc7-signature a {
     background-position: -2px -544px !important;
     background-size: 1500px !important
   }
+
 }
 
-@media (max-width:360px) {
+@media (max-width: 360px) {
+
   #ubc7-unit-identifier {
     font-size: 13px !important;
     line-height: 15px;
     white-space: normal !important
   }
+
+}
+
+@media (max-width: 979px) {
+
+  #ubc7-unit-menu .nav>li.active>.btn-group {
+    -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, .125);
+  }
+
+  #ubc7-unit-menu .nav>li.active>.btn-group .btn {
+    background: 0;
+  }
+
+  #ubc7-unit-menu .nav-collapse .dropdown-menu a {
+    padding: 9px 20px 9px 35px;
+  }
+
+  #ubc7-unit-menu .dropdown-menu .active>a,
+  #ubc7-unit-menu .dropdown-menu .active>a:hover,
+  #ubc7-unit-menu .dropdown-menu .active>a:focus {
+    background-color: #d7e0e7 !important;
+    background-image: none;
+    color: #002145;
+  }
+
+}
+
+@media screen and (min-width: 980px) {
+
+  #main-content {
+    width: 970px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .full-width #main-content {
+    width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+  #main-content {
+    width: 1200px;
+  }
+
+  .full-width #main-content {
+    width: 100%;
+  }
+
 }

@@ -1,6 +1,6 @@
 {
   "name": "galactus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "UBC CLF DRUPAL THEME (aka Galactus)",
   "license": "MIT",
   "scripts": {
@@ -8,6 +8,6 @@
     "watch-css": "node-sass -w --output-style expanded  --source-map true --recursive --output css sass"
   },
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^5.0.0"
   }
 }

@@ -201,8 +201,22 @@ function galactus_preprocess_html(&$variables) {
   }
 
   // Add a class to define the active CLF theme colour
-  $clfcolour = theme_get_setting('clf_theme_colour');
-  $variables['attributes']['class'][] = 'clf-theme-' . $clfcolour;
+  $theme_color_option = theme_get_setting('clf_theme_colour');
+  $variables['attributes']['class'][] = 'legacy--' . $theme_color_option;
+
+  // Add a class to define the active CLF theme layout
+  if (theme_get_setting('clf_layout') == 'fluid') {
+    $variables['attributes']['class'][] = 'layout--full-width-left';
+  }
+
+  if (theme_get_setting('clf_layout') == 'full') {
+    $variables['attributes']['class'][] = 'layout--full-width';
+  }
+
+  // Add a class if the faulty option is shown
+  if (theme_get_setting('clf_faculty') == TRUE) {
+    $variables['attributes']['class'][] = 'show-faculty';
+  }
 
 }
 
@@ -216,7 +230,7 @@ function galactus_preprocess_page(&$variables) {
     // Add a wrapper div using the title_prefix and title_suffix render
     // elements.
     $variables['title_prefix']['shortcut_wrapper'] = [
-      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#markup' => '<div class="clearfix shortcut-wrapper">',
       '#weight' => 100,
     ];
     $variables['title_suffix']['shortcut_wrapper'] = [

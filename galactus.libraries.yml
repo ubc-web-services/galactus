@@ -150,7 +150,8 @@ clf-local:
   version: 7.0.4
   css:
     base:
-      css/clf/clf.local.css: {}
+      css/clf.reset.css: {}
+      css/clf.local.css: {}
     theme:
       css/clf.social-icons.css: {}
   js:

@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Styles for drawer navigation
+ */
 #drawer-button {
   background-color: rgba(0, 0, 0, 0);
   border: none;
@@ -76,7 +80,8 @@ body.toolbar-tray-open.toolbar-vertical.toolbar-fixed.off-canvas-drawer--is-acti
   margin-left: 0 !important;
 }
 
-body.off-canvas-drawer--is-animating, body.off-canvas-drawer--is-active {
+body.off-canvas-drawer--is-animating,
+body.off-canvas-drawer--is-active {
   overflow: hidden !important;
 }
 
@@ -104,7 +109,7 @@ body.off-canvas-drawer--is-animating, body.off-canvas-drawer--is-active {
   width: 0;
   position: fixed;
   top: 0;
-  background-color: #0055B7;
+  background-color: #0055b7;
   display: block;
   overflow: auto;
 }
@@ -166,7 +171,7 @@ body.off-canvas-drawer--is-animating, body.off-canvas-drawer--is-active {
 }
 
 .off-canvas-drawer .drawer__close {
-  background-color: #0055B7;
+  background-color: #0055b7;
   border-top: 1px solid #002145;
   border-bottom: none;
   border-left: none;
@@ -229,7 +234,8 @@ body.off-canvas-drawer--is-animating, body.off-canvas-drawer--is-active {
   box-shadow: none;
 }
 
-.off-canvas-drawer .btn-group .dropdown-toggle:hover:after, .off-canvas-drawer .btn-group .dropdown-toggle:focus:after {
+.off-canvas-drawer .btn-group .dropdown-toggle:hover:after,
+.off-canvas-drawer .btn-group .dropdown-toggle:focus:after {
   color: #fff;
 }
 
@@ -263,7 +269,7 @@ body.off-canvas-drawer--is-animating, body.off-canvas-drawer--is-active {
 }
 
 .off-canvas-drawer .btn-group > .btn {
-  background-color: #0055B7;
+  background-color: #0055b7;
   border-left: none;
   border-right: none;
   border-bottom: none;

@@ -7,7 +7,7 @@ dependencies:
     - help
   theme:
     - galactus
-id: help
+id: galactus_help
 theme: galactus
 region: help
 weight: -5

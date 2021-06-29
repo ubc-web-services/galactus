@@ -86,11 +86,6 @@
   transform: translateY(-50%);
 }
 
-// Reset filters for IE
-@mixin reset-filter() {
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
-}
-
 // Grid System
 // -----------
 

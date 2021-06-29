@@ -7,7 +7,7 @@ dependencies:
     - system
   theme:
     - galactus
-id: breadcrumbs
+id: galactus_breadcrumbs
 theme: galactus
 region: breadcrumb
 weight: -2
@@ -18,4 +18,9 @@ settings:
   label: Breadcrumbs
   provider: system
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

@@ -395,11 +395,7 @@ function galactus_form_alter(&$form, FormStateInterface $form_state, $form_id) {
  */
 function galactus_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   // Get current node.
-  $node = \Drupal::request()->attributes->get('node');
-  if ($node) {
-    // Add the Node Type as a template suggestion.
-    if ($node->getType()) {
-      $suggestions[] = 'page__node_type__' . $node->getType();
-    }
+  if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
+    array_splice($suggestions, 1, 0, 'page__node_type__' . $node->getType());
   }
 }

@@ -204,6 +204,10 @@ function galactus_preprocess_html(&$variables) {
   $theme_color_option = theme_get_setting('clf_theme_colour');
   $variables['attributes']['class'][] = 'legacy--' . $theme_color_option;
 
+  // keep for legacy purposes, but no longer used by the theme
+  $clfcolour = theme_get_setting('clf_theme_colour');
+  $variables['attributes']['class'][] = 'clf-theme-' . $clfcolour;
+
   // Add a class to define the active CLF theme layout
   if (theme_get_setting('clf_layout') == 'fluid') {
     $variables['attributes']['class'][] = 'layout--full-width-left';

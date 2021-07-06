@@ -93,7 +93,7 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
   $form['general']['clf_source'] = [
     '#type' => 'select',
     '#title' => t('<strong>CLF Version and Source</strong>'),
-    '#description' => t('Choose the version and source of the UBC CLF.<br><strong>Warning</strong>: Minimal and local versions are inteneded for advanced users only. These will require creating and adding your own css for non-clf regions of the site, including navigation.<br><small>Replaces the Old Use Minimal CLF setting</small>'),
+    '#description' => t('Choose the version and source of the UBC CLF.<br><strong>Warning</strong>: Minimal and local versions are intended for advanced users only. These will require creating and adding your own css for non-clf regions of the site, including navigation.<br><small>Replaces the old Use Minimal CLF setting</small>'),
     '#default_value' => theme_get_setting('clf_source'),
     '#options' => [
       '' => t('CDN Full Version - default'),

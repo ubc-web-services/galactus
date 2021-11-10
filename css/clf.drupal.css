@@ -22,13 +22,13 @@ ul.menu {
   /* LTR */
 }
 
-[dir="rtl"] ul.menu {
+[dir=rtl] ul.menu {
   margin-right: inherit;
 }
 
 .menu-item--expanded,
 .menu-item--collapsed,
-[dir="rtl"] .menu-item--collapsed {
+[dir=rtl] .menu-item--collapsed {
   list-style-image: none;
   list-style-type: none;
 }
@@ -103,8 +103,8 @@ textarea,
 
 #block-userlogin .item-list li {
   float: left;
-  margin-right: .5em;
-  font-size: .875em;
+  margin-right: 0.5em;
+  font-size: 0.875em;
 }
 
 #block-userlogin .item-list li + li {
@@ -143,7 +143,6 @@ footer {
   border-width: 2px;
   border-radius: 0;
 }
-
 .alert a,
 .alert h4 {
   color: #fff;
@@ -164,7 +163,6 @@ a.close {
   font-weight: bold;
   line-height: 1;
 }
-
 a.close:hover {
   opacity: 1;
 }

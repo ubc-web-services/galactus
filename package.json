@@ -4,10 +4,10 @@
   "description": "UBC CLF DRUPAL THEME (aka Galactus)",
   "license": "MIT",
   "scripts": {
-    "build-css": "node-sass --output-style expanded  --source-map true --recursive --output css sass",
-    "watch-css": "node-sass -w --output-style expanded  --source-map true --recursive --output css sass"
+    "build:css": "sass sass:css",
+    "watch:css": "sass -w sass:css"
   },
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "sass": "^1.0.0"
   }
 }

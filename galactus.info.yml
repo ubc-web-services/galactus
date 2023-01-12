@@ -12,7 +12,7 @@ libraries-override:
   classy/base: false
   #core/modernizr: false
 
-ckeditor_stylesheets:
+ckeditor5_stylesheets:
   - css/ckeditor-iframe.css
 
 regions:

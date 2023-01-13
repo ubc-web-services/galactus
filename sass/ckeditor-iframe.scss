@@ -3,34 +3,32 @@
  * Approximate CLF's style in CKEditor instances on the Drupal back-end.
  */
 
-.ck-content {
-  /* Captions */
-  .caption > * {
-    background: #f3f3f3;
-    padding: 0.5ex;
-    border: 1px solid #ccc;
-  }
+/* Captions */
+.caption > * {
+  background: #f3f3f3;
+  padding: 0.5ex;
+  border: 1px solid #ccc;
+}
 
-  .caption > figcaption {
-    border: 1px solid #ccc;
-    border-top: none;
-    padding-top: 0.5ex;
-    font-size: small;
-    text-align: center;
-  }
+.caption > figcaption {
+  border: 1px solid #ccc;
+  border-top: none;
+  padding-top: 0.5ex;
+  font-size: small;
+  text-align: center;
+}
 
-  /* Override clf's default blockquote and pre styles when captioned. */
-  .caption-pre > pre,
-  .caption-blockquote > blockquote {
-    margin: 0;
-  }
-  .caption-blockquote > figcaption::before {
-    content: "— ";
-  }
-  .caption-blockquote > figcaption {
-    text-align: left;
-  }
-  [dir="rtl"] .caption-blockquote > figcaption {
-    text-align: right;
-  }
+/* Override clf's default blockquote and pre styles when captioned. */
+.caption-pre > pre,
+.caption-blockquote > blockquote {
+  margin: 0;
+}
+.caption-blockquote > figcaption::before {
+  content: "— ";
+}
+.caption-blockquote > figcaption {
+  text-align: left;
+}
+[dir="rtl"] .caption-blockquote > figcaption {
+  text-align: right;
 }

@@ -12,8 +12,11 @@ libraries-override:
   classy/base: false
   #core/modernizr: false
 
-ckeditor5_stylesheets:
+ckeditor_stylesheets:
   - css/ckeditor-iframe.css
+
+ckeditor5-stylesheets:
+  - css/ckeditor5-iframe.css
 
 regions:
   primary_menu: 'Primary menu'

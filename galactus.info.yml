@@ -1,19 +1,39 @@
 name: Galactus
 type: theme
-core_version_requirement: ^8 || ^9
-base theme: classy
+'base theme': false
 description: 'Galactus is a Drupal base theme that provides integration with the UBC CLF (<a href="http://clf.ubc.ca">Common Look and Feel</a>) for UBC-branded units. <em>We recommend against using this theme for any customizations or modifications</em>. If you require a customized UBC CLF theme, please consider the <a href="https://github.com/ubc-web-services/clf">Drupal CLF theme</a>'
 package: ubc-web-services
-
+core_version_requirement: ^8 || ^9 ||  ^10
+generator: 'classy:1.0.2'
+starterkit: true
 libraries:
+  # this library is equivalent to classy/base, so we exclude it
+  # - galactus/base
+  - galactus/messages
+  - core/normalize
   - galactus/global
-
-libraries-override:
-  classy/base: false
-  #core/modernizr: false
-
+libraries-extend:
+  user/drupal.user:
+    - galactus/user
+  core/drupal.dropbutton:
+    - galactus/dropbutton
+  core/drupal.dialog:
+    - galactus/dialog
+  file/drupal.file:
+    - galactus/file
+  core/drupal.progress:
+    - galactus/progress
+  media/media_embed_ckeditor_theme:
+    - galactus/media_embed_ckeditor_theme
+  media_library/view:
+    - galactus/media_library
+  media_library/widget:
+    - galactus/media_library
 ckeditor_stylesheets:
+  - css/components/media-embed-error.css
   - css/ckeditor-iframe.css
+ckeditor5-stylesheets:
+  - css/ckeditor5-iframe.css
 
 regions:
   primary_menu: 'Primary menu'

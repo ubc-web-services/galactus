@@ -19,6 +19,7 @@ clf_unitname: 'Unit Name'
 clf_theme_colour: 'bw'
 clf_layout: 'full'
 clf_override: 0
+clf_source: ''
 clf_navoption: 0
 clf_unit_campus: ''
 clf_faculty: 0

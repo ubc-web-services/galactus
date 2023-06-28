@@ -12,6 +12,7 @@ use Drupal\views\Form\ViewsForm;
  * Implements hook_page_attachments_alter().
  */
 function galactus_page_attachments_alter(array &$page) {
+  $clf_source = theme_get_setting('clf_source');
   $use_minimal_clf = theme_get_setting('clf_override');
   $clf_theme_color = theme_get_setting('clf_theme_colour');
   $clf_layout = theme_get_setting('clf_layout');
@@ -24,8 +25,11 @@ function galactus_page_attachments_alter(array &$page) {
   }
 
   // Switch between minimal and full CLF libraries.
-  if ($use_minimal_clf) {
+  if ($clf_source == 'min' || $use_minimal_clf) {
     $page['#attached']['library'][] = 'galactus/clf-' . $clf_layout_id . '-' . $clf_theme_color;
+  }
+  elseif ($clf_source == 'local') {
+    $page['#attached']['library'][] = 'galactus/clf-local';
   }
   else {
     // Use full CLF library.
@@ -196,6 +200,10 @@ function galactus_preprocess_html(&$variables) {
   if (theme_get_setting('clf_fontawesome') == TRUE) {
     $variables['#attached']['library'][] = 'galactus/clf-fontawesome';
   }
+
+  // Add a class to define the active CLF theme colour
+  $clfcolour = theme_get_setting('clf_theme_colour');
+  $variables['attributes']['class'][] = 'clf-theme-' . $clfcolour;
 
 }
 
@@ -378,12 +386,8 @@ function galactus_form_alter(array &$form, FormStateInterface $form_state, $form
  */
 function galactus_theme_suggestions_page_alter(array &$suggestions, array $variables) {
   // Get current node.
-  $node = \Drupal::request()->attributes->get('node');
-  if ($node) {
-    // Add the Node Type as a template suggestion.
-    if ($node->getType()) {
-      $suggestions[] = 'page__node_type__' . $node->getType();
-    }
+  if (($node = \Drupal::request()->attributes->get('node')) && (strpos($_SERVER['REQUEST_URI'], "revisions") == false)) {
+    array_splice($suggestions, 1, 0, 'page__node_type__' . $node->getType());
   }
 }
 

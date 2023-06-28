@@ -12,6 +12,7 @@ libraries:
   - galactus/messages
   - core/normalize
   - galactus/global
+
 libraries-extend:
   user/drupal.user:
     - galactus/user

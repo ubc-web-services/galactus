@@ -139,12 +139,17 @@ global:
     theme:
       css/clf.drupal.css: {}
   js:
-    https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
     js/lib/bootstrap/alert.js: {}
   dependencies:
     - core/jquery
 
 ### CDN CLF Versions ###
+cdn-clf-js:
+  version: 7.0.4
+  js:
+        https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
+  dependencies:
+    - core/jquery
 
 # Full-width, White on Blue
 clf-cdn-fw-wb:
@@ -152,6 +157,8 @@ clf-cdn-fw-wb:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external, minified: true }
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Full-width, Blue on White
 clf-cdn-fw-bw:
@@ -159,6 +166,8 @@ clf-cdn-fw-bw:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external, minified: true }
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Full-width, White on Grey
 clf-cdn-fw-wg:
@@ -166,6 +175,8 @@ clf-cdn-fw-wg:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external, minified: true }
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Full-width, Grey on White
 clf-cdn-fw-gw:
@@ -173,6 +184,8 @@ clf-cdn-fw-gw:
   css:
     base:
       https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
+  dependencies:
+    - galactus/cdn-clf-js
 
 ### Minimal CLF Versions ###
 
@@ -184,6 +197,8 @@ clf-fw-wb:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
 
 
 # Full-width, Blue on White
@@ -194,6 +209,8 @@ clf-fw-bw:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Full-width, White on Grey
 clf-fw-wg:
@@ -203,6 +220,8 @@ clf-fw-wg:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Full-width, Grey on White
 clf-fw-gw:
@@ -212,6 +231,8 @@ clf-fw-gw:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Standard-width, White on Blue
 clf-sw-wb:
@@ -221,6 +242,8 @@ clf-sw-wb:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Standard-width, Blue on White
 clf-sw-bw:
@@ -230,6 +253,8 @@ clf-sw-bw:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Standard-width, White on Grey
 clf-sw-wg:
@@ -239,6 +264,8 @@ clf-sw-wg:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
 
 # Standard-width, Grey on White
 clf-sw-gw:
@@ -248,6 +275,21 @@ clf-sw-gw:
       https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
     theme:
       css/clf.social-icons.css: {}
+  dependencies:
+    - galactus/cdn-clf-js
+
+# Local Version of CLF (all variants)
+clf-local:
+  version: 7.0.4
+  css:
+    base:
+      css/clf/clf.local.css: {}
+    theme:
+      css/clf.social-icons.css: {}
+  js:
+    js/clf/ubc-clf.min.js: {}
+  dependencies:
+    - core/jquery
 
 ### Local Task Files ###
 local-tasks:

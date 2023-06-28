@@ -1,19 +1,19 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - system
   theme:
     - galactus
-id: mainpagecontent
+id: galactus_tabs
 theme: galactus
 region: content
-weight: 0
+weight: -2
 provider: null
-plugin: system_main_block
+plugin: local_tasks_block
 settings:
-  id: system_main_block
-  label: 'Main page content'
-  provider: system
+  id: local_tasks_block
+  label: Tabs
+  provider: core
   label_display: '0'
+  primary: true
+  secondary: true
 visibility: {  }

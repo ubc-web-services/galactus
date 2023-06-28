@@ -35,9 +35,6 @@ ckeditor_stylesheets:
 ckeditor5-stylesheets:
   - css/ckeditor5-iframe.css
 
-ckeditor5-stylesheets:
-  - css/ckeditor5-iframe.css
-
 regions:
   primary_menu: 'Primary menu'
   featured: 'Featured'

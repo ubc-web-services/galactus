@@ -35,7 +35,7 @@
   color: #325e1c;
   border-color: #c9e1bd #c9e1bd #c9e1bd transparent;  /* LTR */
   background-color: #f3faef;
-  background-image: url(../../images/icons/73b355/check.svg);
+  background-image: url(../../img/icons/73b355/check.svg);
   box-shadow: -8px 0 0 #77b259; /* LTR */
 }
 [dir="rtl"] .messages--status {
@@ -48,7 +48,7 @@
   color: #734c00;
   border-color: #f4daa6 #f4daa6 #f4daa6 transparent;  /* LTR */
   background-color: #fdf8ed;
-  background-image: url(../../images/icons/e29700/warning.svg);
+  background-image: url(../../img/icons/e29700/warning.svg);
   box-shadow: -8px 0 0 #e09600; /* LTR */
 }
 [dir="rtl"] .messages--warning {
@@ -60,7 +60,7 @@
   color: #a51b00;
   border-color: #f9c9bf #f9c9bf #f9c9bf transparent;  /* LTR */
   background-color: #fcf4f2;
-  background-image: url(../../images/icons/e32700/error.svg);
+  background-image: url(../../img/icons/e32700/error.svg);
   box-shadow: -8px 0 0 #e62600; /* LTR */
 }
 [dir="rtl"] .messages--error {

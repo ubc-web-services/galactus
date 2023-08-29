@@ -12,7 +12,7 @@
   width: 1em;
   height: 1em;
   content: "";
-  background: url(../../images/misc/menu-expanded.png) 0 100% no-repeat; /* LTR */
+  background: url(../../img/misc/menu-expanded.png) 0 100% no-repeat; /* LTR */
 }
 [dir="rtl"] .collapse-processed > summary:before {
   float: right;

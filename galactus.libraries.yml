@@ -283,7 +283,8 @@ clf-local:
   version: 7.0.4
   css:
     base:
-      css/clf/clf.local.css: {}
+      css/clf.7.reset.css: {}
+      css/clf.7.local.css: {}
     theme:
       css/clf.social-icons.css: {}
   js:

@@ -1,0 +1,353 @@
+.clearfix {
+  zoom:1
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: ""
+}
+
+.clearfix:after {
+  clear: both
+}
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0
+}
+
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  box-sizing: border-box
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  display: inline;
+  zoom:1
+}
+
+audio:not([controls]) {
+  display: none
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+}
+
+body {
+  margin: 0;
+}
+
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px
+}
+
+a:hover,
+a:active {
+  outline: 0
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline
+}
+
+sup {
+  top: -0.5em
+}
+
+sub {
+  bottom: -0.25em
+}
+
+img {
+  width: auto\9;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic
+}
+
+#map_canvas img,
+.google-maps img {
+  max-width: none
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle
+}
+
+button,
+input {
+  overflow: visible;
+  line-height: normal
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0
+}
+
+button,html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button
+}
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+  cursor: pointer
+}
+
+input[type="search"] {
+  box-sizing: content-box;
+  -webkit-appearance: textfield
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top
+}
+
+@media print {
+  * {
+    color: #000!important;
+    text-shadow: none!important;
+    background: transparent!important;
+    box-shadow: none!important
+  }
+
+  a,a:visited {
+    text-decoration: underline
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")"
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")"
+  }
+
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid
+  }
+
+  thead {
+    display: table-header-group
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid
+  }
+
+  img {
+    max-width: 100%!important
+  }
+
+  @page {
+    margin: .5cm
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid
+  }
+
+  .page-header {
+    border: 0;
+    margin: 0;
+    padding-bottom:0
+  }
+
+  #ubc7-unit a:link:after {
+    content:none
+  }
+
+  #ubc7-unit {
+    border-bottom: 1px solid #000;
+    height: 80px;
+    overflow:visible
+  }
+
+  #ubc7-unit-name {
+    box-shadow:none
+  }
+
+  #ubc7-unit-faculty {
+    color: #000;
+    margin-bottom: 10px;
+    text-shadow:none
+  }
+
+  #ubc7-unit-identifier {
+    color: #000;
+    font-size: 20pt;
+    text-shadow:none
+  }
+
+  #ubc7-header,
+  #ubc7-apom,
+  #ubc7-wordmark-block,
+  #ubc7-wordmark,
+  #ubc7-global-menu,
+  #ubc7-unit .navbar .btn-navbar,
+  #ubc7-unit .btn,
+  #ubc7-unit-menu,
+  #ubc7-global-footer,
+  #ubc7-minimal-footer,
+  .ubc7-back-to-top,
+  .breadcrumb {
+    display:none
+  }
+
+  #ubc7-footer,
+  #ubc7-unit-footer {
+    color: #000 !important;
+    border-color: #000 !important;
+    padding-top:10px !important
+  }
+
+  #ubc7-unit-social-icons {
+    color: #000;
+    visibility:visible
+  }
+
+  .row-fluid {
+    border: 0;
+    box-shadow: none !important;
+    float: none !important;
+    margin: 0 5%;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width:auto
+  }
+
+  img {
+    max-width: 100%;
+    border:0
+  }
+
+  video,
+  audio,
+  object,
+  embed {
+    display:none
+  }
+
+  .btn,
+  .btn-group {
+    background: 0;
+    border-color: #000;
+    color:#000
+  }
+
+  .bootstrap-sidenav,
+  .pagination,
+  .pager,
+  .progress {
+    display:none
+  }
+
+  #ubc7-carousel .carousel-caption h4,
+  #ubc7-carousel .carousel-caption p,
+  #ubc7-carousel .item p > a {
+    color:#000
+  }
+
+  #ubc7-carousel-counter {
+    display:none
+  }
+
+  .nav .nav-tabs a:link:after,
+  .accordion a:link:after,
+  .btn a:link:after,
+  .dropdown-menu a:link:after,
+  .nav .nav-pills a:link:after,
+  .nav .nav-list a:link:after,
+  .tabbable a:link:after,
+  .nav .navbar a:link:after,
+  .nav a:link:after,
+  .pager a:link:after,
+  .btn-navbar a:link:after {
+    content:none
+  }
+
+  .nav-tabs > .active > a,
+  .nav-tabs > .active > a:hover {
+    border: 0;
+    color: #000;
+    font-weight: 700;
+    border-bottom:2px solid #000
+  }
+
+  .nav-tabs > li > a {
+    color: #000;
+    border:0
+  }
+}

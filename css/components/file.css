@@ -1,0 +1,62 @@
+/**
+ * @file
+ * Default style for file module.
+ */
+
+/* File icons. */
+
+.file {
+  display: inline-block;
+  min-height: 16px;
+  padding-left: 20px; /* LTR */
+  background-repeat: no-repeat;
+  background-position: left center; /* LTR */
+}
+[dir="rtl"] .file {
+  padding-right: 20px;
+  padding-left: inherit;
+  background-position: right center;
+}
+.file--general,
+.file--application-octet-stream {
+  background-image: url(../../img/icons/application-octet-stream.png);
+}
+.file--package-x-generic {
+  background-image: url(../../img/icons/package-x-generic.png);
+}
+.file--x-office-spreadsheet {
+  background-image: url(../../img/icons/x-office-spreadsheet.png);
+}
+.file--x-office-document {
+  background-image: url(../../img/icons/x-office-document.png);
+}
+.file--x-office-presentation {
+  background-image: url(../../img/icons/x-office-presentation.png);
+}
+.file--text-x-script {
+  background-image: url(../../img/icons/text-x-script.png);
+}
+.file--text-html {
+  background-image: url(../../img/icons/text-html.png);
+}
+.file--text-plain {
+  background-image: url(../../img/icons/text-plain.png);
+}
+.file--application-pdf {
+  background-image: url(../../img/icons/application-pdf.png);
+}
+.file--application-x-executable {
+  background-image: url(../../img/icons/application-x-executable.png);
+}
+.file--audio {
+  background-image: url(../../img/icons/audio-x-generic.png);
+}
+.file--video {
+  background-image: url(../../img/icons/video-x-generic.png);
+}
+.file--text {
+  background-image: url(../../img/icons/text-x-generic.png);
+}
+.file--image {
+  background-image: url(../../img/icons/image-x-generic.png);
+}

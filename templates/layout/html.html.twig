@@ -63,10 +63,10 @@
 <!DOCTYPE html>
 <html{{ html_attributes.addClass(modClasses) }}>
   <head>
-    <head-placeholder token="{{ placeholder_token|raw }}">
+    <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token|raw }}">
-    <js-placeholder token="{{ placeholder_token|raw }}">
+    <css-placeholder token="{{ placeholder_token }}">
+    <js-placeholder token="{{ placeholder_token }}">
   </head>
   <body{{ attributes.addClass(bodyClasses).addClass(layoutClasses).addClass(niceClasses).addClass('all-content') }}>
     <a href="#main-content" class="visually-hidden focusable skip-link">
@@ -75,6 +75,6 @@
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
-    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+    <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
 </html>

@@ -201,6 +201,13 @@
         </div>
       {% endif %}
     {% endif %}
+
+    {% if page.header %}
+      <header role="banner">
+        {{ page.header }}
+      </header>
+    {% endif %}
+
     <div{{ attributes.addClass(content_row_class_option, 'content', 'non-clf').setAttribute('id', 'unit-content') }}>
       {% if layout_option == 'full' or 'fluid' %}
       <div class="container clearfix">
@@ -238,13 +245,18 @@
       {% if layout_option == 'full' or 'fluid' %}
       </div>
       {% endif %}
+      {% if page.footer %}
+        <footer role="contentinfo">
+          {{ page.footer }}
+        </footer>
+      {% endif %}
     </div>
     <!-- End of Unit Content Area -->
     {% if page.prefooter %}
       <div id="prefooter-content" class="non-clf" role="complementary">
         {{ page.prefooter }}
       </div>
-      {% endif %}
+    {% endif %}
 
     {% if mobilenav_option == '' %}
     <!-- Footer Area Unit Menu - Mobile Only -->

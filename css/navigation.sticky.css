@@ -6,21 +6,18 @@
   body.unit-area-is-sticky {
     padding-top: 50px;
   }
-
   #ubc7-unit.navigation-is-sticky {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 300;
   }
-
   body.unit-area-is-sticky #ubc7-unit-menu {
     position: fixed;
     top: 50px;
     width: 100%;
     z-index: 300;
   }
-
   #ubc7-unit.navigation-is-sticky .btn-navbar {
     margin-right: 40px;
   }
@@ -29,7 +26,6 @@
   body.unit-menu-is-sticky {
     padding-top: 40px;
   }
-
   #ubc7-unit-menu.navigation-is-sticky {
     position: fixed;
     top: 0;

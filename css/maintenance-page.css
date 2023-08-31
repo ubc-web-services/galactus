@@ -75,19 +75,16 @@ body.maintenance-page {
   .maintenance-page #page-wrapper {
     width: 800px;
   }
-
   .maintenance-page #header div.section,
-.maintenance-page #main {
+  .maintenance-page #main {
     width: 700px;
   }
-
   .maintenance-page #messages div.section {
     padding: 0;
     width: auto;
   }
 }
-@media all and (min-width: 600px) {
-  /* $TODO find the proper breakpoint */
+@media all and (min-width: 600px) { /* $TODO find the proper breakpoint */
   .maintenance-page #page {
     margin: 20px 40px 40px;
   }

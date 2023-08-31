@@ -22,6 +22,7 @@ See the [Starterkit Documentation](https://www.drupal.org/docs/develop/theming-d
 
 Considering it's a galactus fork we recommend prefixing the fork with `galactus_` although you can name it any name that doesn't conflict with another project installed on your Drupal site.
 ```bash
+mkdir -p themes/custom
 php core/scripts/drupal generate-theme --starterkit galactus --path themes/custom galactus_PROJECT
 ```
 

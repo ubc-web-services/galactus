@@ -1,137 +1,90 @@
 # galactus.libraries.yml
 
 base:
-  version: VERSION
   css:
     component:
-      css/components/action-links.css:
-        weight: -10
-      css/components/breadcrumb.css:
-        weight: -10
-      css/components/button.css:
-        weight: -10
-      css/components/collapse-processed.css:
-        weight: -10
-      css/components/container-inline.css:
-        weight: -10
-      css/components/details.css:
-        weight: -10
-      css/components/exposed-filters.css:
-        weight: -10
-      css/components/field.css:
-        weight: -10
-      css/components/form.css:
-        weight: -10
-      css/components/icons.css:
-        weight: -10
-      css/components/inline-form.css:
-        weight: -10
-      css/components/item-list.css:
-        weight: -10
-      css/components/link.css:
-        weight: -10
-      css/components/links.css:
-        weight: -10
-      css/components/menu.css:
-        weight: -10
-      css/components/more-link.css:
-        weight: -10
-      css/components/pager.css:
-        weight: -10
-      css/components/tabledrag.css:
-        weight: -10
-      css/components/tableselect.css:
-        weight: -10
-      css/components/tablesort.css:
-        weight: -10
-      css/components/tabs.css:
-        weight: -10
-      css/components/textarea.css:
-        weight: -10
-      css/components/ui-dialog.css:
-        weight: -10
+      css/components/action-links.css: {}
+      css/components/breadcrumb.css: {}
+      css/components/button.css: {}
+      css/components/collapse-processed.css: {}
+      css/components/container-inline.css: {}
+      css/components/details.css: {}
+      css/components/exposed-filters.css: {}
+      css/components/field.css: {}
+      css/components/form.css: {}
+      css/components/icons.css: {}
+      css/components/inline-form.css: {}
+      css/components/item-list.css: {}
+      css/components/link.css: {}
+      css/components/links.css: {}
+      css/components/menu.css: {}
+      css/components/more-link.css: {}
+      css/components/pager.css: {}
+      css/components/tabledrag.css: {}
+      css/components/tableselect.css: {}
+      css/components/tablesort.css: {}
+      css/components/tabs.css: {}
+      css/components/textarea.css: {}
+      css/components/ui-dialog.css: {}
 book-navigation:
-  version: VERSION
   css:
     component:
-      css/components/book-navigation.css: {  }
+      css/components/book-navigation.css: {}
 dialog:
-  version: VERSION
   css:
     component:
-      css/components/dialog.css:
-        weight: -10
+      css/components/dialog.css: {}
 dropbutton:
-  version: VERSION
   css:
     component:
-      css/components/dropbutton.css:
-        weight: -10
+      css/components/dropbutton.css: {}
 file:
-  version: VERSION
   css:
     component:
-      css/components/file.css:
-        weight: -10
+      css/components/file.css: {}
 forum:
-  version: VERSION
   css:
     component:
-      css/components/forum.css:
-        weight: -10
+      css/components/forum.css: {}
 image-widget:
-  version: VERSION
   css:
     component:
-      css/components/image-widget.css: {  }
+      css/components/image-widget.css: {}
 indented:
-  version: VERSION
   css:
     component:
-      css/components/indented.css: {  }
+      css/components/indented.css: {}
 media_library:
-  version: VERSION
   css:
     layout:
-      css/layout/media-library.css: {  }
+      css/layout/media-library.css: {}
 messages:
-  version: VERSION
   css:
     component:
-      css/components/messages.css:
-        weight: -10
+      css/components/messages.css: {}
 node:
-  version: VERSION
   css:
     component:
-      css/components/node.css:
-        weight: -10
+      css/components/node.css: {}
 progress:
-  version: VERSION
   css:
     component:
-      css/components/progress.css:
-        weight: -10
+      css/components/progress.css: {}
 search-results:
-  version: VERSION
   css:
     component:
-      css/components/search-results.css: {  }
+      css/components/search-results.css: {}
 user:
-  version: VERSION
   css:
     component:
-      css/components/user.css:
-        weight: -10
+      css/components/user.css: {}
 media_embed_error:
-  version: VERSION
   css:
     component:
-      css/components/media-embed-error.css: {  }
+      css/components/media-embed-error.css: {}
 media_embed_ckeditor_theme:
-  version: VERSION
   js:
-    js/media_embed_ckeditor.theme.js: {  }
+    js/media_embed_ckeditor.theme.js: {}
 
 ### Global Styles & Scripts ###
 global:
@@ -147,7 +100,7 @@ global:
 cdn-clf-js:
   version: 7.0.4
   js:
-        https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
+    https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: {}
   dependencies:
     - core/jquery
 
@@ -338,6 +291,7 @@ clf-whitney-prod:
 
 ### Fontawesome ###
 clf-fontawesome:
+  version: 4.7.0
   css:
     base:
       https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }

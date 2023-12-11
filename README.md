@@ -1,49 +1,60 @@
 UBC CLF 7.0.4 DRUPAL THEME (aka Galactus)
 =======================================
 
-A responsive UBC CLF (Common Look and Feel) theme for Drupal 8. Created by the
+A responsive UBC CLF (Common Look and Feel) theme for Drupal 8+. Created by the
 UBC IT Web Services Department.
 
-Galactus is a *base theme* for Drupal 8, providing UBC-branded units with the
-basic structure of the UBC CLF ([Common Look and Feel](http://clf.ubc.ca)). If
-you need to modify the theme to suit your needs, we recommend using the
-[Drupal 8 CLF theme](https://github.com/ubc-web-services/clf) as a child theme
-to extend this one instead.
+Galactus is a *theme* for Drupal 8+, providing UBC-branded units with the
+basic structure of the UBC CLF ([Common Look and Feel](http://clf.ubc.ca)).
 
-# Composer Builds
+If you need to modify the theme to suit your needs, we recommend forking it as a [Starterkit](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme) extend this one instead.
+
+
+# Composer Install
 If you're using composer, add the project with:
-```
+```bash
 composer require ubc-web-services/galactus
 ```
 
-# IE8 Support
-Drupal 8 does not support Internet Explorer versions earlier than version 9 due
-to jQuery version incompatibilities. If IE8 support is required, Drupal 7 should
-be used instead, along with the CLF base theme
-([Megatron](https://github.com/ubc-web-services/megatron)).
+# Starterkit Fork
+A starterkit fork will duplicate all the files from Galactus to your new theme to modify to your needs.
+See the [Starterkit Documentation](https://www.drupal.org/docs/develop/theming-drupal/defining-a-theme-with-an-infoyml-file) for more details.
+
+Considering it's a galactus fork we recommend prefixing the fork with `galactus_` although you can name it any name that doesn't conflict with another project installed on your Drupal site.
+```bash
+mkdir -p themes/custom
+php core/scripts/drupal generate-theme --starterkit galactus --path themes/custom galactus_PROJECT
+```
+
+# Internet Explorer Support
+Drupal 8+ does not support Internet Explorer versions earlier than version 9 due
+to jQuery version incompatibilities.
+See this [Change Record](https://www.drupal.org/node/1569578) for more details.
+
+Drupal 10+ has removed Internet Explorer support all together. See this [Change Record](https://www.drupal.org/node/3199540) for more details.
 
 # Contribution
 
-CSS changes need to be made with SASS through node-sass.
+CSS changes need to be made with SASS through `sass` node package.
 
-Ensure that you have `yarn` installed.
+Ensure that you have `npm` installed.
 ```
-https://yarnpkg.com/lang/en/docs/install/
+https://nodejs.org/en/download
 ```
 
 Install the node packages with this command:
 ```
-yarn install
+npm install
 ```
 
 You can build your CSS changes with this command:
 ```
-yarn run build-css
+npm run build:css
 ```
 
 OR
 
 You can watch changes to your SASS files with this command:
 ```
-yarn run watch-css
+npm run watch:css
 ```

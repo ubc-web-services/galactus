@@ -109,7 +109,7 @@ clf-cdn-fw-wb:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external }
   dependencies:
     - galactus/cdn-clf-js
 
@@ -118,7 +118,7 @@ clf-cdn-fw-bw:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external }
   dependencies:
     - galactus/cdn-clf-js
 
@@ -127,7 +127,7 @@ clf-cdn-fw-wg:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external }
   dependencies:
     - galactus/cdn-clf-js
 
@@ -136,7 +136,7 @@ clf-cdn-fw-gw:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external }
   dependencies:
     - galactus/cdn-clf-js
 
@@ -147,7 +147,7 @@ clf-fw-wb:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -159,7 +159,7 @@ clf-fw-bw:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -170,7 +170,7 @@ clf-fw-wg:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -181,7 +181,7 @@ clf-fw-gw:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -192,7 +192,7 @@ clf-sw-wb:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -203,7 +203,7 @@ clf-sw-bw:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -214,7 +214,7 @@ clf-sw-wg:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -225,7 +225,7 @@ clf-sw-gw:
   version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
+      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external }
     theme:
       css/clf.social-icons.css: {}
   dependencies:
@@ -282,19 +282,19 @@ clf-slidein-navigation:
 clf-whitney-dev:
   css:
     base:
-      https://cloud.typography.com/7574694/6365152/css/fonts.css: { type: external, minified: true }
+      https://cloud.typography.com/7574694/6365152/css/fonts.css: { type: external }
 
 clf-whitney-prod:
   css:
     base:
-      https://cloud.typography.com/6804272/781004/css/fonts.css: { type: external, minified: true }
+      https://cloud.typography.com/6804272/781004/css/fonts.css: { type: external }
 
 ### Fontawesome ###
 clf-fontawesome:
   version: 4.7.0
   css:
     base:
-      https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
+      https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css: { type: external }
 
 ### Maintenance Page ###
 maintenance-page:

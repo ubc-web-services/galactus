@@ -204,10 +204,10 @@ body {
     border-bottom: 1px solid $drawer--border-color;
   }
 
-  .nav>li>a:focus,
-  .nav>li>a:hover,
-  .btn-group:hover>.btn,
-  .btn-group>a:focus {
+  .nav > li > a:focus,
+  .nav > li > a:hover,
+  .btn-group:hover > .btn,
+  .btn-group > a:focus {
     background-color: $drawer--background-color--hover;
   }
 
@@ -215,12 +215,6 @@ body {
     width: 100%;
 
     .dropdown-toggle {
-
-      &:hover:after,
-      &:focus:after {
-        color: $drawer--inner--color;
-      }
-
       z-index: 2;
       float: none;
       position: absolute;
@@ -228,6 +222,11 @@ body {
       top: 0;
       height: 55px;
       box-shadow: none;
+
+      &:hover:after,
+      &:focus:after {
+        color: $drawer--inner--color;
+      }
 
       span {
         transition: $rotation-transition;
@@ -254,12 +253,12 @@ body {
       }
     }
 
-    >a {
+    > a {
       width: 100%;
       z-index: 1;
     }
 
-    >.btn {
+    > .btn {
       background-color: $drawer--background-color;
       border-left: none;
       border-right: none;
@@ -271,7 +270,7 @@ body {
       text-align: left;
     }
 
-    &:hover>.dropdown-toggle {
+    &:hover > .dropdown-toggle {
       background-color: $drawer--background-color--focus;
     }
 
@@ -286,7 +285,7 @@ body {
         border-color: $drawer--border-color;
       }
 
-      >.dropdown-menu {
+      > .dropdown-menu {
         display: block;
         position: relative;
       }

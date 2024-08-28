@@ -4,10 +4,6 @@
  * Approximate CLF's style in CKEditor instances on the Drupal back-end.
  */
 .ck-content {
-  /**
-   * @file
-   * Approximate CLF's style in CKEditor instances on the Drupal back-end.
-   */
   /* Captions */
   /* Override clf's default blockquote and pre styles when captioned. */
 }
@@ -37,4 +33,4 @@
   text-align: right;
 }
 
-/*# sourceMappingURL=ckeditor5-iframe.css.map */
+/*# sourceMappingURL=ckeditor5.css.map */

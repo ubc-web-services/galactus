@@ -1,12 +1,9 @@
-# galactus.libraries.yml
-
 base:
   css:
     component:
       css/components/action-links.css: {}
       css/components/breadcrumb.css: {}
       css/components/button.css: {}
-      css/components/collapse-processed.css: {}
       css/components/container-inline.css: {}
       css/components/details.css: {}
       css/components/exposed-filters.css: {}
@@ -26,10 +23,7 @@ base:
       css/components/tabs.css: {}
       css/components/textarea.css: {}
       css/components/ui-dialog.css: {}
-book-navigation:
-  css:
-    component:
-      css/components/book-navigation.css: {}
+
 dialog:
   css:
     component:
@@ -42,10 +36,6 @@ file:
   css:
     component:
       css/components/file.css: {}
-forum:
-  css:
-    component:
-      css/components/forum.css: {}
 image-widget:
   css:
     component:
@@ -54,10 +44,6 @@ indented:
   css:
     component:
       css/components/indented.css: {}
-media_library:
-  css:
-    layout:
-      css/layout/media-library.css: {}
 messages:
   css:
     component:
@@ -78,13 +64,6 @@ user:
   css:
     component:
       css/components/user.css: {}
-media_embed_error:
-  css:
-    component:
-      css/components/media-embed-error.css: {}
-media_embed_ckeditor_theme:
-  js:
-    js/media_embed_ckeditor.theme.js: {}
 
 ### Global Styles & Scripts ###
 global:

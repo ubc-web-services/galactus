@@ -70,7 +70,7 @@ label.option {
 .marker {
   color: #e00;
 }
-.form-required:after {
+.form-required::after {
   display: inline-block;
   width: 6px;
   height: 6px;
@@ -78,7 +78,7 @@ label.option {
   content: "";
   vertical-align: super;
   /* Use a background image to prevent screen readers from announcing the text. */
-  background-image: url(../../img/icons/ee0000/required.svg);
+  background-image: url(../../img/icons/required.svg);
   background-repeat: no-repeat;
   background-size: 6px 6px;
 }
@@ -93,12 +93,12 @@ abbr.ajax-changed {
 }
 
 /* Inline error messages. */
-.form-item--error-message:before {
+.form-item--error-message::before {
   display: inline-block;
   width: 14px;
   height: 14px;
   content: "";
   vertical-align: sub;
-  background: url(../../img/icons/e32700/error.svg) no-repeat;
+  background: url(../../img/icons/error.svg) no-repeat;
   background-size: contain;
 }

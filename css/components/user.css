@@ -29,7 +29,8 @@
 .password-confirm,
 .password-field,
 .password-strength,
-.password-confirm-match {
+.password-confirm-match,
+.password-confirm-message {
   width: 55%;
 }
 

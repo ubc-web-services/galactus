@@ -5,7 +5,7 @@
 
 .icon-help {
   padding: 1px 0 1px 20px; /* LTR */
-  background: url(../../img/misc/help.png) 0 50% no-repeat; /* LTR */
+  background: url(../../img/icons/help.png) 0 50% no-repeat; /* LTR */
 }
 [dir="rtl"] .icon-help {
   padding: 1px 20px 1px 0;
@@ -17,5 +17,5 @@
   width: 16px;
   height: 16px;
   text-indent: -9999px;
-  background: url(../../img/misc/feed.svg) no-repeat;
+  background: url(../../img/icons/feed.svg) no-repeat;
 }

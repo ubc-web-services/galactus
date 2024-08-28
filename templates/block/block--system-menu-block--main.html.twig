@@ -9,15 +9,9 @@
  * - configuration: A list of the block's configuration values.
  *   - label: The configured label for the block.
  *   - label_display: The display settings for the label.
- *   - module: The module that provided this block plugin.
- *   - cache: The cache settings.
+ *   - provider: The module or other provider that provided this block plugin.
  *   - Block plugin specific settings will also be stored here.
- * - block - The full block entity.
- *   - label_hidden: The hidden block title value if the block was
- *     configured to hide the title ('label' is empty in this case).
- *   - module: The module that generated the block.
- *   - delta: An ID for the block, unique within each module.
- *   - region: The block region embedding the current block.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
  * - content: The content of this block.
  * - attributes: HTML attributes for the containing element.
  *   - id: A valid HTML ID and guaranteed unique.
@@ -36,8 +30,6 @@
  * to or skip the links.
  * See http://juicystudio.com/article/screen-readers-display-none.php and
  * http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
- *
- * @ingroup themeable
  */
 #}
 {%
@@ -46,17 +38,17 @@
   ]
 %}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
-<div{{ attributes.addClass(classes) }} aria-labelledby="{{ heading_id }}">
+<nav role="navigation" aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
   {# Label. If not displayed, we still provide it for screen readers. #}
   {% if not configuration.label_display %}
     {% set title_attributes = title_attributes.addClass('visually-hidden') %}
   {% endif %}
   {{ title_prefix }}
-  <h2 id="{{ heading_id }}"{{ title_attributes }}>{{ configuration.label }}</h2>
+  <h2{{ title_attributes.setAttribute('id', heading_id) }}>{{ configuration.label }}</h2>
   {{ title_suffix }}
 
   {# Menu. #}
   {% block content %}
     {{ content }}
   {% endblock %}
-</div>
+</nav>

@@ -438,3 +438,36 @@ function galactus_preprocess_image_widget(array &$variables) {
     unset($data['preview']);
   }
 }
+
+/**
+ * Implements template_preprocess_HOOK() for fieldset.
+ */
+function galactus_preprocess_fieldset(&$variables) {
+  $element = $variables['element'];
+  $composite_types = ['checkboxes', 'radios'];
+
+  if (!empty($element['#type']) && in_array($element['#type'], $composite_types) && !empty($variables['element']['#children_errors'])) {
+    $variables['legend_span']['attributes']->addClass('has-error');
+  }
+
+  if (!empty($element['#disabled'])) {
+    $variables['legend_span']['attributes']->addClass('is-disabled');
+
+    if (!empty($variables['description']) && !empty($variables['description']['attributes'])) {
+      $variables['description']['attributes']->addClass('is-disabled');
+    }
+  }
+
+  // Remove 'container-inline' class from the main attributes and add a flag
+  // instead.
+  // @todo Remove this after https://www.drupal.org/node/3059593 has been
+  //   resolved.
+  if (!empty($variables['attributes']['class'])) {
+    $container_inline_key = array_search('container-inline', $variables['attributes']['class']);
+
+    if ($container_inline_key !== FALSE) {
+      unset($variables['attributes']['class'][$container_inline_key]);
+      $variables['inline_items'] = TRUE;
+    }
+  }
+}

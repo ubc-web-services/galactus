@@ -1,0 +1,8 @@
+ignore:
+  - '/src/StarterKit.php'
+  - '/galactus.starterkit.yml'
+no_edit: []
+no_rename: []
+info:
+  version: 2.1.0
+  starterkit: null

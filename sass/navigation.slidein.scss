@@ -2,8 +2,8 @@
  * @file
  * Styles for drawer navigation
  */
+ @import 'partials/_button-clf-hamburger.scss';
 
-// VARIABLES
 $box-shadow: 2px 0 2px rgba(0, 0, 0, .15);
 $transition-speed: .125s;
 $transition-easing: ease;
@@ -60,8 +60,6 @@ $drawer-button--padding-small: 8px 10px;
   color: $drawer-button--color--hover;
 }
 
-@import 'button-clf-hamburger';
-
 body.toolbar-tray-open.toolbar-vertical.toolbar-fixed.off-canvas-drawer--is-active {
   margin-left: 0 !important;
 }
@@ -78,7 +76,6 @@ body {
   position: relative;
   z-index: $pushed-content--z-index;
   display: block;
-  //   overflow: hidden;
   transition: transform $transition-speed $transition-easing;
 }
 
@@ -292,7 +289,6 @@ body {
     }
   }
 
-  // Make blue arrow white by changing sprite bg position
   .ubc7-arrow,
   .ubc7-arrow.down-arrow {
     background-position: -1178px -227px;

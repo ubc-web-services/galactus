@@ -3,16 +3,11 @@
  * LESS variables for theme
  */
 
-
-// MEDIA QUERIES AND GRIDS
-// -------------------------
 $grid-gutter-width: 15px;
 $screen-md: 980px;
 $container-large-desktop: (1170px + $grid-gutter-width);
 
 
-// COLOURS
-// -------------------------
 $ubc-blue: #002145;
 $ubc-grey: #2f5d7c;
 $ubc-light-grey: #5e869f;
@@ -22,8 +17,6 @@ $ubc-silver: #d7e0e7;
 $silver: #cfcfd0;
 
 
-// GREYS
-// -------------------------
 $black: #000;
 $gray-darker: #222;
 $gray-dark: #333;
@@ -31,7 +24,3 @@ $gray: #555;
 $gray-light: #999;
 $gray-lighter: #eee;
 $white: #fff;
-
-
-// LOCAL TASKS
-// -------------------------

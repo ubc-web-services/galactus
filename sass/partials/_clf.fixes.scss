@@ -24,15 +24,7 @@
   padding-bottom: 2em;
 }
 
-/* Alter default CLF form styles */
-// TODO - revise this to exclude important statements - blech
-// input {
-//   box-sizing: border-box !important;
-//   padding: .25em !important;
-//   height: auto !important;
-// }
-
-// Undo the forced width of 206px in the CLF.
+/* Undo the forced width of 206px in the CLF. */
 input,
 textarea,
 .uneditable-input {

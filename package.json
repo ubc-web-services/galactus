@@ -3,8 +3,6 @@
   "scripts": {
     "watch": "NODE_ENV=production postcss ./sass/*.scss -d ./dist/css --ext min.css -w",
     "css": "NODE_ENV=production postcss ./sass/*.scss -d ./dist/css --ext min.css",
-    "build:css": "sass sass:css",
-    "watch:css": "sass -w sass:css"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
@@ -15,7 +13,6 @@
     "postcss-loader": "^6.2.1",
     "postcss-nesting": "^13.0.0",
     "postcss-prefix-selector": "^1.16.1",
-    "postcss-simple-vars": "^6.0.3",
-    "sass": "^1.0.0"
+    "postcss-simple-vars": "^6.0.3"
   }
 }

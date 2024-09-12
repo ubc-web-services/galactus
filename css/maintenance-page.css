@@ -2,6 +2,7 @@
  * @file
  * Styles for site in maintenance mode
  */
+
 body.maintenance-page {
   background-color: #fff;
   color: #000;
@@ -57,7 +58,7 @@ body.maintenance-page {
   color: #777;
 }
 
-.maintenance-page h1#page-title {
+.maintenance-page  h1#page-title {
   line-height: 1em;
   margin-top: 0;
 }
@@ -84,10 +85,9 @@ body.maintenance-page {
     width: auto;
   }
 }
+
 @media all and (min-width: 600px) { /* $TODO find the proper breakpoint */
   .maintenance-page #page {
     margin: 20px 40px 40px;
   }
 }
-
-/*# sourceMappingURL=maintenance-page.css.map */

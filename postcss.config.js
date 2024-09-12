@@ -9,6 +9,6 @@ module.exports = {
       includeFiles: "sass/ckeditor5.scss",
     }),
     require("autoprefixer"),
-    ...(process.env.NODE_ENV === "production" ? [require("cssnano")] : []),
+    //...(process.env.NODE_ENV === "production" ? [require("cssnano")] : []),
   ],
 };

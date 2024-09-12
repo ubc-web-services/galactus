@@ -2,6 +2,7 @@
  * @file
  * Overrides some default Drupal tab styles
  */
+
 div.tabs {
   margin: 0 0 5px 0;
 }
@@ -12,7 +13,7 @@ ul.secondary {
 }
 
 ul.primary {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 .5em 0;
   padding: 0;
   list-style: none;
   white-space: nowrap;
@@ -40,7 +41,7 @@ ul.primary li a.is-active:hover {
 ul.primary li a {
   display: inline-block;
   margin: 0 3px 0 0;
-  padding: 0.25em 1em 0.5em;
+  padding: .25em 1em .5em;
   text-decoration: none;
   color: #999;
   transition: color 0.3s, box-shadow 0.3s;
@@ -96,5 +97,3 @@ ul.secondary a .tab {
   padding: 3px 8px;
   line-height: 18px;
 }
-
-/*# sourceMappingURL=local-tasks.css.map */

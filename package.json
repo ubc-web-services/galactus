@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "watch": "NODE_ENV=production postcss ./sass/*.scss -d ./dist/css --ext min.css -w",
-    "css": "NODE_ENV=production postcss ./sass/*.scss -d ./dist/css --ext min.css",
+    "watch": "NODE_ENV=production postcss ./sass/*.scss -d ./css --ext css -w",
+    "css": "NODE_ENV=production postcss ./sass/*.scss -d ./css --ext css"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

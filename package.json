@@ -1,18 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "watch": "NODE_ENV=production postcss ./sass/*.scss -d ./css --ext css -w",
-    "css": "NODE_ENV=production postcss ./sass/*.scss -d ./css --ext css"
+    "watch:css": "postcss ./src/css/*.css -d ./css --ext css -watch",
+    "build:css": "postcss ./src/css/*.css -d ./css --ext css"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "cssnano": "^5.1.15",
     "postcss": "^8.4.21",
     "postcss-cli": "^9.1.0",
-    "postcss-import": "^14.1.0",
-    "postcss-loader": "^6.2.1",
-    "postcss-nesting": "^13.0.0",
     "postcss-prefix-selector": "^1.16.1",
-    "postcss-simple-vars": "^6.0.3"
+    "postcss-preset-env": "^10.0.3"
   }
 }

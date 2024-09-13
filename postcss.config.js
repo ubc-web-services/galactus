@@ -1,14 +1,16 @@
 module.exports = {
   plugins: [
-    require("postcss-import"),
-    require("postcss-simple-vars"),
-    require("postcss-nesting"),
+    require('postcss-preset-env')({
+      stage: 1, // Enables future CSS features at stage 1
+      features: {
+        'nesting-rules': true // Enable CSS nesting (similar to what SASS offers)
+      }
+    }),
     require("postcss-prefix-selector")({
       prefix: ".ck-content",
       exclude: ["body", "html", ":root"],
-      includeFiles: "sass/ckeditor5.scss",
+      includeFiles: "src/css/ckeditor5.css",
     }),
-    require("autoprefixer"),
-    //...(process.env.NODE_ENV === "production" ? [require("cssnano")] : []),
+    require('autoprefixer') // Automatically adds vendor prefixes based on browser support
   ],
 };

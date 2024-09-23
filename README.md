@@ -32,29 +32,3 @@ to jQuery version incompatibilities.
 See this [Change Record](https://www.drupal.org/node/1569578) for more details.
 
 Drupal 10+ has removed Internet Explorer support all together. See this [Change Record](https://www.drupal.org/node/3199540) for more details.
-
-# Contribution
-
-CSS changes need to be made with SASS through `sass` node package.
-
-Ensure that you have `npm` installed.
-```
-https://nodejs.org/en/download
-```
-
-Install the node packages with this command:
-```
-npm install
-```
-
-You can build your CSS changes with this command:
-```
-npm run build:css
-```
-
-OR
-
-You can watch changes to your SASS files with this command:
-```
-npm run watch:css
-```

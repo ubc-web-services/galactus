@@ -3,15 +3,12 @@
  * @file
  * Approximate CLF's style in CKEditor instances on the Drupal back-end.
  */
-.ck-content {
-  /* Captions */
-  /* Override clf's default blockquote and pre styles when captioned. */
-}
 .ck-content .caption > * {
   background: #f3f3f3;
   padding: 0.5ex;
   border: 1px solid #ccc;
 }
+
 .ck-content .caption > figcaption {
   border: 1px solid #ccc;
   border-top: none;
@@ -19,18 +16,20 @@
   font-size: small;
   text-align: center;
 }
+
 .ck-content .caption-pre > pre,
 .ck-content .caption-blockquote > blockquote {
   margin: 0;
 }
+
 .ck-content .caption-blockquote > figcaption::before {
   content: "— ";
 }
+
 .ck-content .caption-blockquote > figcaption {
   text-align: left;
 }
-.ck-content [dir=rtl] .caption-blockquote > figcaption {
+
+.ck-content [dir="rtl"] .caption-blockquote > figcaption {
   text-align: right;
 }
-
-/*# sourceMappingURL=ckeditor5.css.map */

@@ -471,3 +471,67 @@ function galactus_preprocess_fieldset(&$variables) {
     }
   }
 }
+
+/**
+ * Implements hook_library_info_build().
+ */
+function galactus_library_info_build() {
+  $libraries = [];
+
+  $library_definitions = [
+    # Full-width, White on Blue.
+    'clf-cdn-fw-wb' => 'https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css',
+    # Full-width, Blue on White.
+    'clf-cdn-fw-bw' => 'https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css',
+    # Full-width, Grey on White.
+    'clf-cdn-fw-wg' => 'https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css',
+    # Full-width, White on Grey.
+    'clf-cdn-fw-gw' => 'https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css',
+
+    ### Minimal CLF Versions ###
+
+    # Full-width, White on Blue.
+    'clf-fw-wb' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css',
+    # Full-width, Blue on White.
+    'clf-fw-bw' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css',
+    # Full-width, White on Grey.
+    'clf-fw-wg' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css',
+    # Full-width, Grey on White.
+    'clf-fw-gw' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css',
+
+    // Standard-width Minimal CLF.
+    # Standard-width, White on Blue.
+    'clf-sw-wb' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css',
+    # Standard-width, Blue on White.
+    'clf-sw-bw' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css',
+    # Standard-width, White on Grey.
+    'clf-sw-wg' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css',
+    # Standard-width, Grey on White.
+    'clf-sw-gw' => 'https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css',
+  ];
+
+  // Build the libraries array
+  foreach ($library_definitions as $name => $file) {
+    $libraries[$name] = [
+      'version' => '7.0.4',
+      'css' => ['base' => [$file => ['type' => 'external']]],
+      'dependencies' => ['galactus/cdn-clf-js'],
+    ];
+
+    // Add social icons only for minimal libraries.
+    if (str_contains($file, 'minimal')) {
+      $libraries[$name]['css']['theme'] = [
+        'css/clf.social-icons.css' => [],
+      ];
+    }
+  }
+
+  // Common JS.
+  $libraries['cdn-clf-js'] = [
+    'version' => '7.0.4',
+    'js' => ['https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js' => []],
+    'dependencies' => ['core/jquery'],
+  ];
+
+  return $libraries;
+}

@@ -114,7 +114,7 @@
           {% endif %}
         </div>
         <div id="ubc7-global-utility">
-          <button type="button" data-toggle="collapse" data-target="#ubc7-global-menu"><span>UBC Search</span></button>
+          <button type="button" data-toggle="collapse" data-target="#ubc7-global-menu" aria-label="UBC Search toggle" aria-controls="ubc7-global-menu"><span>UBC Search</span></button>
           <noscript><a id="ubc7-global-utility-no-script" href="http://www.ubc.ca/">UBC Search</a></noscript>
         </div>
       </div>
@@ -132,11 +132,11 @@
         <!-- Mobile Menu Icon -->
         <div class="navbar">
         <!-- TODO: -->
-          <a class="btn btn-navbar drawer-toggle--primary" data-toggle="collapse" data-target="#ubc7-unit-navigation">
+          <button class="btn btn-navbar drawer-toggle--primary" data-toggle="collapse" data-target="#ubc7-unit-navigation" aria-label="Mobile menu toggle" aria-controls="ubc7-unit-navigation" type="button">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
+          </button>
         </div>
         <div id="ubc7-unit-name"{{ faculty_option != '' ? ' class="ubc7-single-element"' }}>
           <a href="{{ base_path }}">

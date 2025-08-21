@@ -70,8 +70,6 @@ global:
   css:
     theme:
       css/clf.drupal.css: {}
-  js:
-    js/lib/bootstrap/alert.js: {}
   dependencies:
     - core/jquery
 
@@ -220,9 +218,9 @@ clf-local:
     theme:
       css/clf.social-icons.css: {}
   js:
-    js/clf/ubc-clf.min.js: {
-      minified: true
-    }
+    js/lib/popper/popper.min.js: {}
+    js/lib/bootstrap/bootstrap.min.js: {}
+    js/clf/ubc-clf.min.js: {}
   dependencies:
     - core/jquery
 

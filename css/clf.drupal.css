@@ -168,11 +168,9 @@ a.close:hover {
   border-color: #00162f;
 }
 
-/* updating ubc7-unit-navigation mobile trigger from an a tag to a button tag alters layout, so we need to reassert the styling - this could be in a better location and done without using !important by increasing the selector specificity */
-#ubc7-unit .btn-navbar {
-  height: 35px !important;
-  width: 45px !important;
-  box-sizing: border-box !important;
-  margin-top: 7px !important;
-  padding: 11px 13px !important;
+/* updating ubc7-unit-navigation mobile trigger from an a tag to a button tag alters layout, so we need to reassert the styling */
+#ubc7-unit .navbar .btn-navbar {
+  height: 35px;
+  width: 45px;
+  padding: 11px 13px;
 }

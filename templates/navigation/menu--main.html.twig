@@ -37,7 +37,7 @@
       %}
       {% if menu_level == 0 and item.is_expanded %}
         {% set menuid = item.attributes.id %}
-        <li{{ item.attributes.addClass(classes, 'expanded', 'dropdown').removeClass('menu-item') }}>
+        <li{{ item.attributes.addClass(classes, 'expanded', 'dropdown').removeClass('menu-item').removeAttribute('id') }}>
           <div class="btn-group">
             {{ link(item.title, item.url, item.attributes.addClass('btn')) }}
             {% if item.below %}

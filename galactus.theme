@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\Form\ViewsForm;
+use Drupal\Core\Template\Attribute;
 
 /**
  * Implements hook_page_attachments_alter().
@@ -360,6 +361,16 @@ function galactus_preprocess_block(&$variables) {
  */
 function galactus_preprocess_menu(&$variables) {
   $variables['attributes']['class'][] = 'clearfix';
+  // Add an id to each link attribute
+  foreach ($variables['items'] as $key => &$item) {
+    // Ensure we have an Attribute object.
+    if (!isset($item['attributes']) || !($item['attributes'] instanceof Attribute)) {
+      $item['attributes'] = new Attribute();
+    }
+    // Create a short stable hash based on the menu link key.
+    $key_hash = hash('crc32b', $key);
+    $item['attributes']->setAttribute('id', $key_hash);
+  }
 }
 
 /**

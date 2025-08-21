@@ -167,3 +167,10 @@ a.close:hover {
   background-color: #324d6a;
   border-color: #00162f;
 }
+
+/* updating ubc7-unit-navigation mobile trigger from an a tag to a button tag alters layout, so we need to reassert the styling */
+#ubc7-unit .navbar .btn-navbar {
+  height: 35px;
+  width: 45px;
+  padding: 11px 13px;
+}

@@ -22,11 +22,16 @@ You may setup your local environment with [DDEV]. This project leverages the
     without needing to modify the root composer.json. Find out more in DDEV Drupal Contrib
     [commands].
 
-5.  Install Drupal and set the theme.
+4.  Symlink the theme into the `web/themes/custom` directory.
+
+        ddev symlink-project
+
+
+6.  Install Drupal and set the theme.
 
         ddev install
 
-6.  Visit site in browser.
+7.  Visit site in browser.
 
         ddev describe
 
@@ -34,7 +39,7 @@ You may setup your local environment with [DDEV]. This project leverages the
 
         ddev drush uli
 
-7.  Push work to Merge Requests (MRs) opened via this project's [issue queue].
+8.  Push work to Merge Requests (MRs) opened via this project's [issue queue].
 
 
 CHANGING DRUPAL CORE VERSION

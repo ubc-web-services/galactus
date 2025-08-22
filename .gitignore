@@ -11,3 +11,12 @@ node_modules
 
 # Development source maps.
 *.map
+
+# Visual Regression Testing
+test-results/
+playwright-report/
+
+# DDEV
+/recipes/
+/vendor/
+/web/

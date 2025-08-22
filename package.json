@@ -1,0 +1,25 @@
+{
+  "name": "galactus-theme",
+  "version": "3.0.0",
+  "description": "UBC CLF Drupal 11 Theme with Visual Regression Testing",
+  "scripts": {
+    "test:visual": "playwright test",
+    "test:visual:ui": "playwright test --ui",
+    "test:visual:report": "playwright show-report",
+    "test:visual:clean": "rm -rf test-results/ && rm -rf playwright-report/"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "playwright": "^1.40.0"
+  },
+  "keywords": [
+    "drupal",
+    "theme",
+    "ubc",
+    "clf",
+    "visual-regression",
+    "testing"
+  ],
+  "author": "UBC Web Services",
+  "license": "MIT"
+}

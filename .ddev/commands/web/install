@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Description: Install Drupal and enable the module
+## Usage: install
+## Example: "ddev install"
+
+vendor/bin/drush site:install --yes
+vendor/bin/drush theme:install galactus --yes
+vendor/bin/drush config:set system.theme default galactus --yes

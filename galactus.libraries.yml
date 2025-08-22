@@ -69,51 +69,49 @@ user:
 global:
   css:
     theme:
+      css/bootstrap.5.css: {}
       css/clf.drupal.css: {}
   dependencies:
     - core/jquery
 
 ### CDN CLF Versions ###
 cdn-clf-js:
-  version: 7.0.4
   js:
-    https://cdn.ubc.ca/clf/7.0.4/js/ubc-clf.min.js: { type: external, minified: true }
+    js/lib/popper/popper.min.js: {}
+    js/lib/bootstrap/bootstrap.min.js: {}
+    js/clf/ubc-clf.min.js: {}
   dependencies:
     - core/jquery
 
 # Full-width, White on Blue
 clf-cdn-fw-wb:
-  version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full.min.css: { type: external, minified: true }
+      css/clf/7.0.4/css/ubc-clf-full.min.css: { }
   dependencies:
     - galactus/cdn-clf-js
 
 # Full-width, Blue on White
 clf-cdn-fw-bw:
-  version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-bw.min.css: { type: external, minified: true }
+      css/clf/7.0.4/css/ubc-clf-full-bw.min.css: { }
   dependencies:
     - galactus/cdn-clf-js
 
 # Full-width, White on Grey
 clf-cdn-fw-wg:
-  version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-wg.min.css: { type: external, minified: true }
+      css/clf/7.0.4/css/ubc-clf-full-wg.min.css: { }
   dependencies:
     - galactus/cdn-clf-js
 
 # Full-width, Grey on White
 clf-cdn-fw-gw:
-  version: 7.0.4
   css:
     base:
-      https://cdn.ubc.ca/clf/7.0.4/css/ubc-clf-full-gw.min.css: { type: external, minified: true }
+      css/clf/7.0.4/css/ubc-clf-full-gw.min.css: { }
   dependencies:
     - galactus/cdn-clf-js
 
@@ -121,96 +119,54 @@ clf-cdn-fw-gw:
 
 # Full-width, White on Blue
 clf-fw-wb:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
-
+    - galactus/clf-local
 
 # Full-width, Blue on White
 clf-fw-bw:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-bw.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
+    - galactus/clf-local
 
 # Full-width, White on Grey
 clf-fw-wg:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-wg.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
+    - galactus/clf-local
 
 # Full-width, Grey on White
 clf-fw-gw:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-full-7.0.4-gw.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
+    - galactus/clf-local
 
 # Standard-width, White on Blue
 clf-sw-wb:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
+    - galactus/clf-local
 
 # Standard-width, Blue on White
 clf-sw-bw:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-bw.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
+    - galactus/clf-local
 
 # Standard-width, White on Grey
 clf-sw-wg:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-wg.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
+    - galactus/clf-local
 
 # Standard-width, Grey on White
 clf-sw-gw:
-  version: 7.0.4
-  css:
-    base:
-      https://cdn.ubc.ca/clf/7.0.4-minimal/css/minimal-clf-7.0.4-gw.css: { type: external, minified: true }
-    theme:
-      css/clf.social-icons.css: {}
   dependencies:
     - galactus/cdn-clf-js
+    - galactus/clf-local
 
 # Local Version of CLF (all variants)
 clf-local:
-  version: 7.0.4
   css:
     base:
       css/clf.7.reset.css: {}

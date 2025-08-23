@@ -69,7 +69,6 @@ user:
 global:
   css:
     theme:
-      css/bootstrap.5.css: {}
       css/clf.drupal.css: {}
   dependencies:
     - core/jquery

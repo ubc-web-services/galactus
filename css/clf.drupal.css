@@ -217,3 +217,28 @@ a.close:hover {
     display: block;
   }
 }
+
+/* fix the global nav trigger arrow not changing direction when opened due to missing '.open' class */
+
+#ubc7-global-utility button[aria-expanded="true"] span {
+  background-position: -1167px 7px;
+}
+
+@media screen and (max-width: 379px) {
+  #ubc7-global-utility button[aria-expanded="true"] span {
+    background-position: -1163px -296px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #ubc7-global-utility button[aria-expanded="true"] span {
+    background-position: -1163px -291px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #ubc7-global-utility button[aria-expanded="true"] span {
+    background-position: -1167px 11px;
+  }
+}
+

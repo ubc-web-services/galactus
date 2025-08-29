@@ -46,7 +46,6 @@ test.describe('Galactus Theme - Essential Visual Tests', () => {
   });
 
     test('header - global menu', async ({ page }) => {
-    await page.setViewportSize({ width: 1200, height: 800 });
     await page.goto('/');
     const menu = page.locator('#ubc7-global-menu');
     const button = page.locator('#ubc7-global-utility button');

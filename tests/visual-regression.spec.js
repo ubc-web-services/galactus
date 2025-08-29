@@ -25,7 +25,6 @@ test.describe('Galactus Theme - Essential Visual Tests', () => {
     await expect(page).toHaveScreenshot('homepage-desktop.png');
   });
 
-
   test('header - global utility button', async ({ page }) => {
     await page.goto('/');
     const button = page.locator('#ubc7-global-utility button');
@@ -43,6 +42,24 @@ test.describe('Galactus Theme - Essential Visual Tests', () => {
     expect(newBackground).not.toBe(initialBackground);
     if (await button.isVisible()) {
       await expect(button).toHaveScreenshot('global-utility-button-after.png');
+    }
+  });
+
+    test('header - global menu', async ({ page }) => {
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/');
+    const menu = page.locator('#ubc7-global-menu');
+    const button = page.locator('#ubc7-global-utility button');
+    await expect(menu).toBeHidden();
+    await expect(page).toHaveScreenshot('global-menu-before.png', {
+      fullPage: true
+    });
+    await button.click();
+    await expect(menu).toBeVisible();
+    if (await menu.isVisible()) {
+      await expect(page).toHaveScreenshot('global-menu-after.png', {
+        fullPage: true
+      });
     }
   });
 

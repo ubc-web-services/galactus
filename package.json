@@ -6,11 +6,30 @@
     "test:visual": "playwright test",
     "test:visual:ui": "playwright test --ui",
     "test:visual:report": "playwright show-report",
-    "test:visual:clean": "rm -rf test-results/ && rm -rf playwright-report/"
+    "test:visual:clean": "rm -rf test-results/ && rm -rf playwright-report/",
+    "postinstall": "copy-files-from-to --silent"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0",
+    "@popperjs/core": "^2.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",
+    "copy-files-from-to": "^3.0.0",
     "playwright": "^1.40.0"
+  },
+  "copyFiles": [
+    {
+      "from": "node_modules/bootstrap/dist/js/bootstrap.js",
+      "to": "js/lib/bootstrap/"
+    },
+    {
+      "from": "node_modules/@popperjs/core/dist/umd/popper.js",
+      "to": "js/lib/popper/"
+    }
+  ],
+  "copyFilesSettings": {
+    "whenFileExists": "overwrite"
   },
   "keywords": [
     "drupal",

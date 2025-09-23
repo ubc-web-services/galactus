@@ -96,9 +96,9 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#description' => t('Choose the version and source of the UBC CLF.<br><strong>Warning</strong>: Minimal and local versions are intended for advanced users only. These will require creating and adding your own css for non-clf regions of the site, including navigation.<br><small>Replaces the old Use Minimal CLF setting</small>'),
     '#default_value' => theme_get_setting('clf_source'),
     '#options' => [
-      '' => t('CDN Full Version - default'),
-      'min' => t('CDN Minimal Version'),
-      'local' => t('Local Minimal Version'),
+      '' => t('Full Version - default'),
+      'min' => t('Minimal Version'),
+      'local' => t('Local Minimal Version (same as Minimal Version'),
     ],
   ];
 

@@ -41,7 +41,7 @@
           <div class="btn-group">
             {{ link(item.title, item.url, item.attributes.addClass('btn')) }}
             {% if item.below %}
-              <button class="btn dropdown-toggle" data-toggle="dropdown" aria-label="Toggle submenu for {{ item.title }}" aria-expanded="false" aria-haspopup="true" aria-controls="menu-id-{{ menuid }}"><span class="ubc7-arrow blue down-arrow"></span></button>
+              <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-label="Toggle submenu for {{ item.title }}" aria-expanded="false" aria-haspopup="true" aria-controls="menu-id-{{ menuid }}"><span class="ubc7-arrow blue down-arrow"></span></button>
             {% endif %}
       {% else %}
         <li{{ item.attributes.addClass(classes, 'item').removeClass('menu-item') }}>

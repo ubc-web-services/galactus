@@ -830,7 +830,6 @@ a#ubc7-global-utility-no-script {
 
   #ubc7-global-utility button span.opened,
   #ubc7-global-utility button[aria-expanded="true"] span {
-    background-color: #002145;
     background-position: -1167px 7px;
   }
 

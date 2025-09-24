@@ -32,7 +32,7 @@
     ]
   %}
   <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes.addClass(classes)|without('role', 'aria-label') }}>
-      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      <a class="close" data-bs-dismiss="alert" href="#" aria-label="Close">&times;</a>
       {% if status_headings[type] %}
         <h4 class="alert-heading">{{ status_headings[type] }}</h4>
       {% endif %}

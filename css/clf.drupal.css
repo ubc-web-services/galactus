@@ -168,9 +168,77 @@ a.close:hover {
   border-color: #00162f;
 }
 
+/* utilities from bootstrap5 for visibility */
+.collapse:not(.show):not(.in) {
+  display: none;
+}
+
+.collapsing {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.35s ease;
+}
+
+.collapse.in,
+.collapse.show {
+  height: auto;
+}
+
+.open > .dropdown-menu,
+.dropdown-menu.show {
+  display: block;
+}
+
 /* updating ubc7-unit-navigation mobile trigger from an a tag to a button tag alters layout, so we need to reassert the styling */
 #ubc7-unit .navbar .btn-navbar {
   height: 35px;
   width: 45px;
   padding: 11px 13px;
 }
+
+/* remove CLF visibility rule from global menu - the old '.in' class is no longer used, collapse behaviour now has a '.collapsing' transition state and '.show' visible state */
+#ubc7-global-menu #ubc7-search input,
+#ubc7-global-menu #ubc7-search button,
+#ubc7-global-menu #ubc7-global-header a {
+    visibility: visible;
+}
+
+/* correct issue with bootstrap 5 and boostrap 2's use of the '.show' class. In bootstrap 5, this class is used to change elements to 'display: block' */
+.btn-group .btn.show {
+  display: inline-flex;
+  place-items: center;
+  place-content: center;
+}
+
+/* override to ensure the desktop menu is visible on desktop regardless of collapse state */
+@media (min-width: 980px) {
+  #ubc7-unit-navigation {
+    display: block;
+  }
+}
+
+/* fix the global nav trigger arrow not changing direction when opened due to missing '.open' class */
+
+#ubc7-global-utility button[aria-expanded="true"] span {
+  background-position: -1167px 7px;
+}
+
+@media screen and (max-width: 379px) {
+  #ubc7-global-utility button[aria-expanded="true"] span {
+    background-position: -1163px -296px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #ubc7-global-utility button[aria-expanded="true"] span {
+    background-position: -1163px -291px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #ubc7-global-utility button[aria-expanded="true"] span {
+    background-position: -1167px 11px;
+  }
+}
+

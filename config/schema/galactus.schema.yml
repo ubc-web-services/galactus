@@ -3,3 +3,155 @@
 galactus.settings:
   type: theme_settings
   label: 'galactus settings'
+  mapping:
+    clf_unitname:
+      type: text
+      label: 'Unit name'
+    clf_theme_colour:
+      type: string
+      label: 'Version'
+      constraints:
+        Choice:
+          # @see galactus_form_system_theme_settings_alter()
+          choices:
+            - 'wb'
+            - 'wg'
+            - 'gw'
+            - 'bw'
+    clf_layout:
+      type: string
+      label: 'Layout'
+      constraints:
+        Choice:
+          # @see galactus_form_system_theme_settings_alter()
+          choices:
+            - ''
+            - 'full'
+            - 'fluid'
+    clf_override:
+      type: boolean
+      label: 'Use Minimal CLF'
+    clf_source:
+      type: string
+      label: 'CLF Version and Source'
+      constraints:
+        Choice:
+          # @see galactus_form_system_theme_settings_alter()
+          choices:
+            - ''
+            - 'min'
+            - 'local'
+    clf_navoption:
+      type: boolean
+      label: 'Nav option'
+    clf_unit_campus:
+      type: string
+      label: 'Unit campus'
+    clf_faculty:
+      type: boolean
+      label: 'Unit is part of faculty'
+    clf_theme_unit_colour:
+      type: color_hex
+      label: 'Unit primary color'
+    clf_faculty_name:
+      type: text
+      label: 'Faculty name'
+      constraints:
+        Choice:
+          # @see galactus_form_system_theme_settings_alter()
+          choices:
+            - 'Allard School of Law'
+            - 'Faculty of Applied Science'
+            - 'Faculty of Arts'
+            - 'Faculty of Dentistry'
+            - 'Faculty of Education'
+            - 'Faculty of Forestry'
+            - 'Faculty of Land and Food Systems'
+            - 'Faculty of Pharmaceutical Sciences'
+            - 'Faculty of Science'
+            - 'Graduate and Postdoctoral Studies'
+            - 'Sauder School of Business'
+    unuglify:
+      type: boolean
+      label: 'Remove the gradient from the unit name area?'
+    clf_streetaddr:
+      type: text
+      label: 'Street address'
+    clf_locality:
+      type: text
+      label: 'Locality'
+    clf_region:
+      type: text
+      label: 'Region'
+    clf_country:
+      type: text
+      label: 'Country'
+    clf_postal:
+      type: text
+      label: 'Postal code'
+    clf_telephone:
+      type: string
+      label: 'Telephone number'
+    clf_fax:
+      type: string
+      label: 'Fax number'
+    clf_email:
+      type: email
+      label: 'Email'
+    clf_website:
+      type: text
+      label: 'Website'
+    clf_social_facebook:
+      type: text
+      label: 'Facebook account'
+    clf_social_twitter:
+      type: text
+      label: 'Twitter account'
+    clf_social_linkedin:
+      type: text
+      label: 'Linkedin account'
+    clf_social_instagram:
+      type: text
+      label: 'Instagram account'
+    clf_social_youtube:
+      type: text
+      label: 'Youtube account'
+    clf_searchdomain:
+      type: text
+      label: 'Search domain'
+    clf_searchlabel:
+      type: text
+      label: 'Search label'
+    clf_content_row_class:
+      type: text
+      label: 'Content CSS Grid Classes'
+    clf_navigation_placement:
+      type: text
+      label: 'General Navigation Options'
+      constraints:
+        Choice:
+          # @see galactus_form_system_theme_settings_alter()
+          choices:
+            - 'default'
+            - 'drawer--push-left'
+            - 'drawer--cover-left'
+            - 'drawer--push-right'
+            - 'drawer--cover-right'
+    clf_no_sidebar_class:
+      type: text
+      label: 'Grid classes to use when no sidebars'
+    clf_one_sidebar_class:
+      type: text
+      label: 'Grid classes to use for content when one sidebar'
+    clf_one_sidebar_class_sidebar:
+      type: text
+      label: 'Grid classes to use for sidebar when one sidebar'
+    clf_two_sidebar_class:
+      type: text
+      label: 'Grid classes to use for content when two sidebars'
+    clf_two_sidebar_class_sidebar1:
+      type: text
+      label: 'Grid classes to use for first sidebar when two sidebars'
+    clf_two_sidebar_class_sidebar2:
+      type: text
+      label: 'Grid classes to use for second sidebar when two sidebars'

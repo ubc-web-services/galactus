@@ -51,11 +51,13 @@ function galactus_preprocess_html(&$variables) {
   $variables['local_clf'] = theme_get_setting('clf_override');
   $variables['unuglify'] = theme_get_setting('unuglify') ? TRUE : FALSE;
 
+  $theme_path = \Drupal::service('extension.path.resolver')->getPath('theme', 'galactus');
+
   // Add Apple Touch Icons.
   $clf_apple_touch_144 = [
     '#tag' => 'link',
     '#attributes' => [
-      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-144-precomposed.png',
+      'href' => $theme_path . '/css/clf/7.0.4/img/apple-touch-icon-144-precomposed.png',
       'rel' => 'apple-touch-icon-precomposed',
       'sizes' => '144x144',
     ],
@@ -63,7 +65,7 @@ function galactus_preprocess_html(&$variables) {
   $clf_apple_touch_114 = [
     '#tag' => 'link',
     '#attributes' => [
-      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-114-precomposed.png',
+      'href' => $theme_path . '/css/clf/7.0.4/img/apple-touch-icon-114-precomposed.png',
       'rel' => 'apple-touch-icon-precomposed',
       'sizes' => '114x114',
     ],
@@ -71,7 +73,7 @@ function galactus_preprocess_html(&$variables) {
   $clf_apple_touch_72 = [
     '#tag' => 'link',
     '#attributes' => [
-      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-72-precomposed.png',
+      'href' => $theme_path . '/css/clf/7.0.4/img/apple-touch-icon-72-precomposed.png',
       'rel' => 'apple-touch-icon-precomposed',
       'sizes' => '72x72',
     ],
@@ -79,7 +81,7 @@ function galactus_preprocess_html(&$variables) {
   $clf_apple_touch = [
     '#tag' => 'link',
     '#attributes' => [
-      'href' => 'https://cdn.ubc.ca/clf/7.0.4/img/apple-touch-icon-57-precomposed.png',
+      'href' => $theme_path . '/css/clf/7.0.4/img/apple-touch-icon-57-precomposed.png',
       'rel' => 'apple-touch-icon-precomposed',
     ],
   ];
@@ -100,15 +102,6 @@ function galactus_preprocess_html(&$variables) {
     ];
     $variables['page']['#attached']['html_head'][] = [$nofollow, 'nofollow'];
   }
-  $prefetch = [
-    '#type' => 'html_tag',
-    '#tag' => 'link',
-    '#attributes' => [
-      'rel' => 'dns-prefetch',
-      'href' => 'https://cdn.ubc.ca',
-    ],
-  ];
-  $variables['page']['#attached']['html_head'][] = [$prefetch, 'prefetch'];
 
   /* Add Google nad Bing Verification Tags */
   $googleVerificationCode = theme_get_setting('clf_google_verify');

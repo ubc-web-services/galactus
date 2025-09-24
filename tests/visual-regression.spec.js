@@ -25,6 +25,43 @@ test.describe('Galactus Theme - Essential Visual Tests', () => {
     await expect(page).toHaveScreenshot('homepage-desktop.png');
   });
 
+  test('header - global utility button', async ({ page }) => {
+    await page.goto('/');
+    const button = page.locator('#ubc7-global-utility button');
+    const span = button.locator('span');
+    if (await button.isVisible()) {
+      await expect(button).toHaveScreenshot('global-utility-button-before.png');
+    }
+    const initialBackground = await span.evaluate((el) =>
+      window.getComputedStyle(el).backgroundPosition
+    );
+    await button.click();
+    const newBackground = await span.evaluate((el) =>
+      window.getComputedStyle(el).backgroundPosition
+    );
+    expect(newBackground).not.toBe(initialBackground);
+    if (await button.isVisible()) {
+      await expect(button).toHaveScreenshot('global-utility-button-after.png');
+    }
+  });
+
+    test('header - global menu', async ({ page }) => {
+    await page.goto('/');
+    const menu = page.locator('#ubc7-global-menu');
+    const button = page.locator('#ubc7-global-utility button');
+    await expect(menu).toBeHidden();
+    await expect(page).toHaveScreenshot('global-menu-before.png', {
+      fullPage: true
+    });
+    await button.click();
+    await expect(menu).toBeVisible();
+    if (await menu.isVisible()) {
+      await expect(page).toHaveScreenshot('global-menu-after.png', {
+        fullPage: true
+      });
+    }
+  });
+
   test('content - main area', async ({ page }) => {
     await page.goto('/');
     const content = page.locator('#main-content');
@@ -37,7 +74,7 @@ test.describe('Galactus Theme - Essential Visual Tests', () => {
     await page.goto('/');
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
     await page.waitForTimeout(500);
-    
+
     const footer = page.locator('footer, .region-footer');
     if (await footer.isVisible()) {
       await expect(footer).toHaveScreenshot('footer.png');

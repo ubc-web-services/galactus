@@ -30,9 +30,9 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#prefix' => '<h1>' . t('UBC CLF for Drupal') . '</h1>',
     '#weight' => -10,
     '#description' => t('The CLF 7.0.4 Drupal theme is a responsive theme, developed by the <a href=":url_web_services" title="Contact UBC IT Web Services" target="_blank">UBC IT Web Services Department</a>.<br><br>The <a href=":url_clf" title="Discover the UBC CLF Brand" target="_blank">CLF</a> is developed and distributed by Communications &amp; Marketing. For support <a href=":url_support" title="Contact UBC Communications & Marketing" target="_blank">please contact us</a>.<br><br>To report an issue with this theme, please visit <a href="https://github.com/ubc-web-services/Galactus" target="_blank">the repository on Github</a>', [
-      ':url_web_services' => 'http://web.it.ubc.ca/forms/webservices/',
-      ':url_support' => 'http://clf.ubc.ca/support',
-      ':url_clf' => 'http://brand.ubc.ca/clf',
+      ':url_web_services' => 'https://web.it.ubc.ca/forms/webservices/',
+      ':url_support' => 'https://clf.ubc.ca/support',
+      ':url_clf' => 'https://brand.ubc.ca/clf',
     ]),
   ];
 
@@ -55,8 +55,8 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#type' => 'textfield',
     '#prefix' => t('<h2>General Site Information</h2>'),
     '#title' => t('This field will populate the <a href=":url_unit_name" title="View the location of the Unit Name" target="_blank">Unit Name</a> in the header and the <a href=":url_unit_sub_footer" title="View the location of the Unit Sub Footer" target="_blank">Unit Sub Footer</a>.', [
-      ':url_unit_name' => 'http://clf.ubc.ca/parts-of-the-clf/#unit-name',
-      ':url_unit_sub_footer' => 'http://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
+      ':url_unit_name' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-name',
+      ':url_unit_sub_footer' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-sub-footer',
     ]),
     '#default_value' => theme_get_setting('clf_unitname'),
     '#size' => 60,
@@ -68,11 +68,11 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#type' => 'select',
     '#title' => t('CLF Colour Scheme'),
     '#description' => t('View <a href=":url" target="_blank">colour theme options</a> and design specifications.', [
-      ':url' => 'http://clf.ubc.ca/design-specifications',
-      ':img-bw' => 'http://clf.ubc.ca/design-specifications',
-      ':img-wb' => 'http://clf.ubc.ca/design-specifications',
-      ':img-gw' => 'http://clf.ubc.ca/design-specifications',
-      ':img-wg' => 'http://clf.ubc.ca/design-specifications',
+      ':url' => 'https://clf.ubc.ca/design-specifications',
+      ':img-bw' => 'https://clf.ubc.ca/design-specifications',
+      ':img-wb' => 'https://clf.ubc.ca/design-specifications',
+      ':img-gw' => 'https://clf.ubc.ca/design-specifications',
+      ':img-wg' => 'https://clf.ubc.ca/design-specifications',
     ]),
     '#default_value' => theme_get_setting('clf_theme_colour'),
     '#options' => [
@@ -106,7 +106,7 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#type' => 'select',
     '#title' => t('Use the UBC Whitney webfont'),
     '#description' => t('If you\'d like to use the Whitney webfont on the website, choose the version you will be using.<br /><small>Please note that the production version provided by Web Communications requires authorization via <a href=":url">this form</a>, and it only includes two weights (400 and 600).</small>', [
-      ':url' => 'http://brand.ubc.ca/font-request-form/',
+      ':url' => 'https://brand.ubc.ca/font-request-form/',
     ]),
     '#default_value' => theme_get_setting('clf_use_whitney'),
     '#options' => [
@@ -128,7 +128,7 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#title' => t('Campus Identity'),
     '#prefix' => t('<h2>General Unit Information</h2>'),
     '#description' => t('This field shows your unit\'s campus mandate: Vancouver Campus or Okanagan Campus.<br /><small>If your unit has an institution-wide mandate or if neither choice is applicable, select the third option. See <a href=":url" target="_blank">Campus Identity</a> for guidelines.</small>', [
-      ':url' => 'http://clf.ubc.ca/parts-of-the-clf',
+      ':url' => 'https://clf.ubc.ca/parts-of-the-clf',
     ]),
     '#default_value' => theme_get_setting('clf_unit_campus'),
     '#options' => [
@@ -168,7 +168,7 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#type' => 'textfield',
     '#title' => t('Unit Name Background Colour'),
     '#description' => t('See design specifications for <a href=":url" title="Learn more about the Unit Name background colours" target="_blank">Unit Name background colours</a>. Use HEX colour (do not include the #)', [
-      ':url' => 'http://clf.ubc.ca/parts-of-the-clf/#unit-colors',
+      ':url' => 'https://clf.ubc.ca/parts-of-the-clf/#unit-colors',
     ]),
     '#size' => 7,
     '#maxlength' => 7,
@@ -256,7 +256,7 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
   $form['location']['clf_website'] = [
     '#type' => 'textfield',
     '#title' => t('Website'),
-    '#description' => t('Do not include the <em>http://</em>'),
+    '#description' => t('Do not include the <em>https://</em>'),
     '#default_value' => theme_get_setting('clf_website'),
     '#size' => 60,
     '#maxlength' => 128,
@@ -503,8 +503,8 @@ function galactus_form_system_theme_settings_alter(&$form, FormStateInterface &$
     '#type' => 'checkbox',
     '#title' => t('<strong>Use Fontawesome 4.7.x</strong>'),
     '#description' => t('Add all Fontawesome icon fonts to the site. <a href=":url" target="_blank">Read the documentation</a>.<br /><small>*Note: unless you\'re using the minimal CLF, version 3.x of the fontawesome library is included with the CLF package. Before enabling this option, please consider using a more efficient alternative, such as SVGs or a generating a free custom icon font through a service like <a href=":url_fontello" target="_blank">Fontello</a> or <a href=":url_icomoon" target="_blank">Icomoon</a>.</small>', [
-      ':url' => 'http://fontawesome.io/icons/',
-      ':url_fontello' => 'http://fontello.com',
+      ':url' => 'https://fontawesome.io/icons/',
+      ':url_fontello' => 'https://fontello.com',
       ':url_icomoon' => 'https://icomoon.io/app',
     ]),
     '#default_value' => theme_get_setting('clf_fontawesome'),

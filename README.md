@@ -5,7 +5,7 @@ A responsive UBC CLF (Common Look and Feel) theme for Drupal 8+. Created by the
 UBC IT Web Services Department.
 
 Galactus is a *theme* for Drupal 8+, providing UBC-branded units with the
-basic structure of the UBC CLF ([Common Look and Feel](http://clf.ubc.ca)).
+basic structure of the UBC CLF ([Common Look and Feel](https://clf.ubc.ca)).
 
 If you need to modify the theme to suit your needs, we recommend forking it as a [Starterkit](https://www.drupal.org/docs/core-modules-and-themes/core-themes/starterkit-theme) extend this one instead.
 

@@ -1,7 +1,7 @@
 name: Galactus
 type: theme
 'base theme': false
-description: 'Galactus is a Drupal base theme that provides integration with the UBC CLF (<a href="http://clf.ubc.ca">Common Look and Feel</a>) for UBC-branded units. <em>We recommend against using this theme for any customizations or modifications</em>. If you require a customized UBC CLF theme, please consider the <a href="https://github.com/ubc-web-services/clf">Drupal CLF theme</a>'
+description: 'Galactus is a Drupal base theme that provides integration with the UBC CLF (<a href="https://clf.ubc.ca">Common Look and Feel</a>) for UBC-branded units. <em>We recommend against using this theme for any customizations or modifications</em>. If you require a customized UBC CLF theme, please consider the <a href="https://github.com/ubc-web-services/clf">Drupal CLF theme</a>'
 package: ubc-web-services
 version: '3.0.0'
 core_version_requirement: '>=10'
